@@ -44,3 +44,15 @@ class TwigSageTheme extends TimberSite {
     }
 }
 new TwigSageTheme();
+
+
+/**
+ * Sage/Twig Asset function.
+ *
+ * @param Twig_Environment $twig
+ * @return $twig
+ */
+add_filter( 'timber/twig', function( \Twig_Environment $twig ) {
+    $twig->addFunction( new \Timber\Twig_Function( 'asset', '\\Roots\\Sage\\Assets\\asset_path' ) );
+    return $twig;
+} );

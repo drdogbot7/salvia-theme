@@ -37,6 +37,7 @@
     "extract-text-webpack-plugin": "^3.0.2",
     "file-loader": "^1.1.5",
     "imagemin-webpack-plugin": "^1.5.2",
+    "import-glob": "^1.5.0",
     "node-sass": "^4.5.3",
     "postcss-cssnext": "^3.0.2",
     "postcss-import": "^11.0.0",
@@ -56,7 +57,7 @@
     "webpack-assets-manifest": "^1.0.0"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-pro-webfonts": "^1.0.3",
+    "@fortawesome/fontawesome-pro": "^5.1.0",
     "tailwindcss": "^0.6.1",
     "webfontloader": "^1.6.28"
   }

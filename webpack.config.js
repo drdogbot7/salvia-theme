@@ -58,6 +58,9 @@ module.exports = (env = {}) => {
                 options: {
                   sourceMap: isDevelopment
                 }
+              },
+              {
+                loader: 'import-glob'
               }
             ]
           })
@@ -92,7 +95,10 @@ module.exports = (env = {}) => {
         proxy: themeOpts.proxy,
         files: [
           {
-            match: path.resolve(__dirname, '**/*.php')
+            match: [
+              path.resolve(__dirname, '**/*.php'),
+              path.resolve(__dirname, '**/*.twig')
+            ]
           }
         ]
       }),

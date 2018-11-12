@@ -7,19 +7,10 @@
 
         {% include 'templates/header.twig' %}
 
-        <div class="wrap container" role="document">
-            <div class="content row">
-                <main class="col-md-8">
-                    {% block content %}{% endblock %}
-                </main>
-                {% if display_sidebar %}
-                    <aside class="sidebar col-md-4">
-                        {% block sidebar %}
-                            {% include 'templates/sidebar.twig' %}
-                        {% endblock %}
-                    </aside>
-                {% endif %}
-            </div>
+        <div class="container" role="document">
+            <main class="content">
+                {% block content %}{% endblock %}
+            </main>
         </div>
 
         {% include 'templates/footer.twig' %}

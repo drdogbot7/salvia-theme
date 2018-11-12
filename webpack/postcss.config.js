@@ -3,7 +3,9 @@ module.exports = {
   plugins: {
     'postcss-import': {},
     tailwindcss: 'assets/styles/tailwind.js',
-    'postcss-cssnext': {},
+    'postcss-preset-env': {
+      stage: 2
+    },
     cssnano: {}
   }
 }

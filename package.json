@@ -1,6 +1,6 @@
 {
   "name": "salvia-theme",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "repository": {
     "type": "git",
     "url": "git@github.com:drdogbot7/salvia-theme.git"
@@ -19,7 +19,6 @@
     "node": ">= 4.5"
   },
   "devDependencies": {
-    "asset-builder": "^1.1.0",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.1",
@@ -29,7 +28,7 @@
     "clean-webpack-plugin": "^0.1.17",
     "css-loader": "^0.28.7",
     "eslint": "^4.11.0",
-    "eslint-config-standard": "^11.0.0-beta.0",
+    "eslint-config-prettier": "^3.1.0",
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-node": "^6.0.0",
     "eslint-plugin-promise": "^3.6.0",
@@ -39,17 +38,16 @@
     "imagemin-webpack-plugin": "^1.5.2",
     "import-glob": "^1.5.0",
     "node-sass": "^4.5.3",
-    "postcss-cssnext": "^3.0.2",
     "postcss-import": "^11.0.0",
-    "postcss-load-config": "^1.2.0",
     "postcss-loader": "^2.0.8",
+    "postcss-preset-env": "^6.1.1",
     "postcss-safe-parser": "^3.0.1",
     "prettier-eslint": "^8.8.1",
     "prettier-stylelint": "^0.4.2",
     "sass-loader": "^6.0.6",
     "script-loader": "^0.7.2",
     "stylelint": "^8.4.0",
-    "stylelint-config-recommended-scss": "^3.0.0",
+    "stylelint-config-prettier": "^4.0.0",
     "stylelint-order": "^0.8.0",
     "stylelint-scss": "^2.3.0",
     "uglifyjs-webpack-plugin": "^1.1.8",
@@ -59,6 +57,7 @@
   "dependencies": {
     "@fortawesome/fontawesome-pro": "^5.1.0",
     "tailwindcss": "^0.6.1",
-    "webfontloader": "^1.6.28"
+    "webfontloader": "^1.6.28",
+    "smartmenus": "^1.1.0"
   }
 }

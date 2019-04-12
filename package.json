@@ -20,47 +20,17 @@
     "node": ">= 4.5"
   },
   "devDependencies": {
-    "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.2",
-    "babel-preset-env": "^1.6.1",
-    "browser-sync": "^2.18.13",
-    "browser-sync-webpack-plugin": "^1.2.0",
-    "caniuse-lite": "^1.0.30000697",
-    "clean-webpack-plugin": "^0.1.17",
-    "copy-webpack-plugin": "^4.6.0",
-    "css-loader": "^0.28.7",
     "eslint": "^4.11.0",
     "eslint-config-prettier": "^3.1.0",
-    "eslint-plugin-import": "^2.8.0",
-    "eslint-plugin-node": "^6.0.0",
-    "eslint-plugin-promise": "^3.6.0",
-    "eslint-plugin-standard": "^3.0.1",
-    "file-loader": "^1.1.5",
-    "imagemin-webpack-plugin": "^1.5.2",
-    "import-glob": "^1.5.0",
-    "mini-css-extract-plugin": "^0.4.4",
-    "node-sass": "^4.5.3",
-    "postcss-import": "^11.0.0",
-    "postcss-loader": "^2.0.8",
-    "postcss-preset-env": "^6.1.1",
-    "postcss-safe-parser": "^3.0.1",
     "prettier-eslint": "^8.8.1",
     "prettier-stylelint": "^0.4.2",
-    "sass-loader": "^6.0.6",
-    "script-loader": "^0.7.2",
     "stylelint": "^8.4.0",
     "stylelint-config-prettier": "^4.0.0",
     "stylelint-order": "^0.8.0",
-    "stylelint-scss": "^2.3.0",
-    "uglifyjs-webpack-plugin": "^1.1.8",
-    "webpack": "^4.25.1",
-    "webpack-assets-manifest": "^1.0.0",
-    "webpack-cli": "^3.1.2"
+    "stylelint-scss": "^2.3.0"
   },
   "dependencies": {
     "@fortawesome/fontawesome-pro": "^5.1.0",
-    "smartmenus": "^1.1.0",
-    "tailwindcss": "^0.6.1",
-    "webfontloader": "^1.6.28"
+    "tailwindcss": "^0.7.4"
   }
 }

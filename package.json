@@ -12,25 +12,47 @@
     }
   ],
   "scripts": {
-    "watch": "webpack --config webpack.config.js --mode=development --watch",
-    "dev": "webpack --config webpack.config.js --mode=development",
-    "prod": "webpack --config webpack.config.js --mode=production"
+    "start": "cross-env NODE_ENV=development node ./build/start.js",
+    "build": "cross-env NODE_ENV=production node ./build/build.js",
+    "postinstall": "npm run build"
   },
   "engines": {
     "node": ">= 4.5"
   },
   "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.2.3",
+    "assets-webpack-plugin": "^3.9.7",
+    "autoprefixer": "^9.4.9",
+    "babel-loader": "^8.0.4",
+    "browser-sync": "^2.26.3",
+    "browser-sync-webpack-plugin": "^2.2.0",
+    "clean-webpack-plugin": "^1.0.0",
+    "cross-env": "^5.2.0",
+    "css-loader": "^2.0.0",
     "eslint": "^4.11.0",
     "eslint-config-prettier": "^3.1.0",
+    "friendly-errors-webpack-plugin": "^1.7.0",
+    "mini-css-extract-plugin": "^0.5.0",
+    "node-sass": "^4.10.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.1",
+    "postcss-loader": "^3.0.0",
     "prettier-eslint": "^8.8.1",
     "prettier-stylelint": "^0.4.2",
+    "sass-loader": "^7.0.0",
+    "style-loader": "^0.23.1",
     "stylelint": "^8.4.0",
     "stylelint-config-prettier": "^4.0.0",
     "stylelint-order": "^0.8.0",
-    "stylelint-scss": "^2.3.0"
+    "stylelint-scss": "^2.3.0",
+    "terser-webpack-plugin": "^1.2.2",
+    "webpack": "^4.4.0"
   },
   "dependencies": {
     "@fortawesome/fontawesome-pro": "^5.1.0",
-    "tailwindcss": "^0.7.4"
+    "file-loader": "^3.0.1",
+    "jquery": "^3.4.0",
+    "tailwindcss": "^0.7.4",
+    "url-loader": "^1.1.2"
   }
 }

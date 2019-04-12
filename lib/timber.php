@@ -1,5 +1,4 @@
 <?php
-use Roots\Sage\Setup;
 
 /**
  * Check if Timber is activated
@@ -18,7 +17,7 @@ if ( ! class_exists( 'Timber' ) ) {
  * Timber
  */
 
-class TwigSageTheme extends TimberSite {
+class SalviaTheme extends TimberSite {
     function __construct() {
         add_filter( 'timber_context', array( $this, 'add_to_context' ) );
         parent::__construct();
@@ -34,25 +33,9 @@ class TwigSageTheme extends TimberSite {
         /* Site info */
         $context['site'] = $this;
 
-        /* Site info */
-        $context['display_sidebar'] = Setup\display_sidebar();
-
         $context['sidebar_primary'] = Timber::get_widgets('sidebar-primary');
 
         return $context;
-
     }
 }
-new TwigSageTheme();
-
-
-/**
- * Sage/Twig Asset function.
- *
- * @param Twig_Environment $twig
- * @return $twig
- */
-add_filter( 'timber/twig', function( \Twig_Environment $twig ) {
-    $twig->addFunction( new \Timber\Twig_Function( 'asset', '\\Roots\\Sage\\Assets\\asset_path' ) );
-    return $twig;
-} );
+new SalviaTheme();

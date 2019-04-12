@@ -1,7 +1,5 @@
 <?php
 
-namespace Roots\Sage\Titles;
-
 /**
  * Page titles
  */

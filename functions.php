@@ -1,28 +1,21 @@
 <?php
 /**
- * Sage includes
+ * Salvia includes
  *
- * The $sage_includes array determines the code library included in your theme.
+ * The $salvia_includes array determines the code library included in your theme.
  * Add or remove files to the array as needed. Supports child theme overrides.
  *
  * Please note that missing files will produce a fatal error.
  *
- * @link https://github.com/roots/sage/pull/1042
  */
-$sage_includes = [
+$salvia_includes = [
   'lib/timber.php',     // Twig magic
-  'lib/assets.php',     // Scripts and stylesheets
-  'lib/extras.php',     // Custom functions
   'lib/setup.php',      // Theme setup
   'lib/titles.php',     // Page titles
-  'lib/customizer.php', // Theme customizer
   'lib/images.php'      // custom image sizes
-
-  // Carbon Fields
-//   'lib/fields/theme-options.php'
 ];
 
-foreach ($sage_includes as $file) {
+foreach ($salvia_includes as $file) {
     if (!$filepath = locate_template($file)) {
         trigger_error(sprintf(__('Error locating %s for inclusion', 'sage'), $file), E_USER_ERROR);
     }
@@ -30,13 +23,3 @@ foreach ($sage_includes as $file) {
     require_once $filepath;
 }
 unset($file, $filepath);
-
-/**
- * Carbon Fields
- */
-// add_action('after_setup_theme', 'crb_load');
-// function crb_load()
-// {
-//     require_once('vendor/autoload.php');
-//     \Carbon_Fields\Carbon_Fields::boot();
-// }

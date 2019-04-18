@@ -3,7 +3,7 @@
 /**
  * Page titles
  */
-function title() {
+function salvia_title() {
   if (is_home()) {
     if (get_option('page_for_posts', true)) {
       return get_the_title(get_option('page_for_posts', true));

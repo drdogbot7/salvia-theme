@@ -1,11 +1,11 @@
 import jQuery from 'jquery';
-import './style.scss';
+import './style.css';
 
 import Router from './util/Router';
 import common from './routes/common';
 import home from './routes/home';
 
-// import gorilla from './images/gorilla.jpg';
+import './images/logo.svg'
 
 /**
  * Populate Router instance with DOM routes
@@ -16,7 +16,6 @@ const routes = new Router({
   common,
   /** Home page */
   home
-  /** About Us page, note the change from about-us to aboutUs. */
 });
 
 /** Load Events */

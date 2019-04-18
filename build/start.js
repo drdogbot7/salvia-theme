@@ -7,8 +7,8 @@ const clientCompiler = webpack(config);
 
 clientCompiler.watch(
   {
-    noInfo: true,
-    quiet: true,
+    noInfo: false,
+    quiet: false,
   },
   (err, stats) => {
     if (err) return;

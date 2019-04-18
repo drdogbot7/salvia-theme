@@ -1,0 +1,14 @@
+@import "~tailwindcss/base";
+
+body {
+  background-color: theme('colors.red.300');
+  background-image:url('images/heart.svg');
+}
+
+h1 {
+  @apply text-5xl;
+}
+
+@import "~tailwindcss/components";
+
+@import "~tailwindcss/utilities";

@@ -1,16 +1,21 @@
-'use strict';
+"use strict";
 
-const webpack = require('webpack');
-const autoprefixer = require('autoprefixer');
-const AssetsPlugin = require('assets-webpack-plugin');
-const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
+const webpack = require("webpack");
+const WebpackAssetsManifest = require("webpack-assets-manifest");
+const BrowserSyncPlugin = require("browser-sync-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const CleanWebpackPlugin = require('clean-webpack-plugin');
-const TerserPlugin = require('terser-webpack-plugin');
-const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin');
+const CleanWebpackPlugin = require("clean-webpack-plugin");
+const TerserPlugin = require("terser-webpack-plugin");
+const FriendlyErrorsPlugin = require("friendly-errors-webpack-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
-const path = require('path');
-const fs = require('fs');
+const path = require("path");
+const fs = require("fs");
+
+const ImageminPlugin = require("imagemin-webpack");
+const imageminGifsicle = require("imagemin-gifsicle");
+const imageminJpegtran = require("imagemin-jpegtran");
+const imageminOptipng = require("imagemin-optipng");
+const imageminSvgo = require("imagemin-svgo");
 
 // Make sure any symlinks in the project folder are resolved:
 // https://github.com/facebookincubator/create-react-app/issues/637
@@ -21,25 +26,26 @@ function resolveApp(relativePath) {
 }
 
 const paths = {
-  appSrc: resolveApp('src'),
-  appBuild: resolveApp('dist'),
-  appIndexJs: resolveApp('src/index.js'),
-  appNodeModules: resolveApp('node_modules'),
+  appSrc: resolveApp("src"),
+  appBuild: resolveApp("dist"),
+  appIndexJs: resolveApp("src/index.js"),
+  appNodeModules: resolveApp("node_modules")
 };
 
-const DEV = process.env.NODE_ENV === 'development';
+const DEV = process.env.NODE_ENV === "development";
 
 module.exports = {
+  stats: "minimal",
   bail: !DEV,
-  mode: DEV ? 'development' : 'production',
+  mode: DEV ? "development" : "production",
   // We generate sourcemaps in production. This is slow but gives good results.
   // You can exclude the *.map files from the build during deployment.
-  target: 'web',
-  devtool: DEV ? 'cheap-eval-source-map' : 'source-map',
+  target: "web",
+  devtool: DEV ? "cheap-eval-source-map" : "source-map",
   entry: [paths.appIndexJs],
   output: {
     path: paths.appBuild,
-    filename: DEV ? 'bundle.js' : 'bundle.[hash:8].js'
+    filename: DEV ? "bundle.js" : "bundle.[hash:8].js"
   },
   module: {
     rules: [
@@ -48,47 +54,37 @@ module.exports = {
       // Transform ES6 with Babel
       {
         test: /\.js?$/,
-        loader: 'babel-loader',
-        include: paths.appSrc,
+        loader: "babel-loader",
+        include: paths.appSrc
       },
       {
-        test: /.scss$/,
+        test: /.(scss|css)$/,
         use: [
           MiniCssExtractPlugin.loader,
           {
-            loader: "css-loader",
+            loader: "css-loader"
           },
           {
             loader: "postcss-loader",
             options: {
               ident: "postcss", // https://webpack.js.org/guides/migrating/#complex-options
-              plugins: () => [
-                autoprefixer({
-                  browsers: [
-                    ">1%",
-                    "last 4 versions",
-                    "Firefox ESR",
-                    "not ie < 9" // React doesn't support IE8 anyway
-                  ]
-                })
-              ]
+              config: {
+                path: 'build/'
+              }
             }
           },
           "sass-loader"
-        ],
+        ]
       },
       {
-        test: /\.(svg|png|jpeg|jpg|gif|webp)$/i,
+        test: /\.(svg|png|jpeg|jpg|gif)$/i,
         use: [
           {
-            loader: 'url-loader',
-            options: {
-              limit: 8192
-            }
+            loader: "file-loader"
           }
         ]
       }
-    ],
+    ]
   },
   optimization: {
     minimize: !DEV,
@@ -97,7 +93,7 @@ module.exports = {
         cssProcessorOptions: {
           map: {
             inline: false,
-            annotation: true,
+            annotation: true
           }
         }
       }),
@@ -115,31 +111,29 @@ module.exports = {
     ]
   },
   plugins: [
-    !DEV && new CleanWebpackPlugin(['build']),
+    !DEV && new CleanWebpackPlugin({
+      verbose: true
+    }),
     new MiniCssExtractPlugin({
-      filename: DEV ? 'bundle.css' : 'bundle.[hash:8].css'
+      filename: DEV ? "bundle.css" : "bundle.[hash:8].css"
     }),
     new webpack.EnvironmentPlugin({
-      NODE_ENV: 'development', // use 'development' unless process.env.NODE_ENV is defined
-      DEBUG: false,
+      NODE_ENV: "development", // use 'development' unless process.env.NODE_ENV is defined
+      DEBUG: false
     }),
-    new AssetsPlugin({
-      path: paths.appBuild,
-      filename: 'assets.json',
-      prettyPrint: true,
+    new WebpackAssetsManifest({
+      output: "assets.json"
     }),
-    DEV &&
-      new FriendlyErrorsPlugin({
-        clearConsole: false,
-      }),
-    DEV &&
-      new BrowserSyncPlugin({
-        notify: false,
-        host: 'localhost',
-        port: 4000,
-        logLevel: 'silent',
-        files: ['./*.php'],
-        proxy: 'http://localhost:5318/',
-      }),
-  ].filter(Boolean),
+    DEV && new FriendlyErrorsPlugin({
+      clearConsole: false
+    }),
+    DEV && new BrowserSyncPlugin({
+      notify: false,
+      host: "localhost",
+      port: 3000,
+      logLevel: "silent",
+      files: ["./*.(php|twig)"],
+      proxy: "http://localhost:5318/"
+    }), 
+  ].filter(Boolean)
 };

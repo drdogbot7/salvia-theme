@@ -1,6 +1,6 @@
 {
   "name": "salvia-theme",
-  "version": "0.3.1",
+  "version": "0.4.0",
   "repository": {
     "type": "git",
     "url": "git@github.com:drdogbot7/salvia-theme.git"
@@ -59,6 +59,6 @@
   },
   "dependencies": {
     "jquery": "^3.4.0",
-    "tailwindcss": "^1.0.0-beta.5"
+    "tailwindcss": "^1.0.4"
   }
 }

@@ -1,6 +1,6 @@
 {
   "name": "drdogbot/salvia",
-  "description": "Starter theme - mix of Sage and Timber with webpack and carbonfields and tailwindcss",
+  "description": "Starter theme - mix of Sage and Timber with webpack and tailwindcss",
   "type": "wordpress-theme",
   "minimum-stability": "stable",
   "authors": [

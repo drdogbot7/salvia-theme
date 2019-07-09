@@ -9,11 +9,11 @@
  *
  */
 $salvia_includes = [
-  'lib/assets.php',
-  'lib/setup.php',      // Theme setup
-  'lib/titles.php',     // Page titles
-  'lib/images.php',      // custom image sizes
-  'lib/timber.php',     // Twig magic
+  'inc/assets.php',     // Asset function
+  'inc/setup.php',      // Theme setup
+  'inc/titles.php',     // Page titles
+  'inc/images.php',      // custom image sizes
+  'inc/timber.php',     // Twig magic
 ];
 
 foreach ($salvia_includes as $file) {

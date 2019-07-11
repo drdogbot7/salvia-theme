@@ -132,7 +132,7 @@ module.exports = {
       host: "localhost",
       port: 3000,
       logLevel: "silent",
-      files: ["./*.(php|twig)"],
+      files: ["**/*.(php|twig)"],
       proxy: "http://localhost:5318/"
     }), 
   ].filter(Boolean)

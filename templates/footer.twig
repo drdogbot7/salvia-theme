@@ -1,6 +1,15 @@
-<footer class="content-info">
+<footer>
     <div class="container">
         {{ function('dynamic_sidebar', 'sidebar-footer') }}
+        <img class="w-64 h-auto" src="{{ asset('logo.svg') }}" />
+        <div id="copyright">
+            ©{{ "now"|date("Y") }} {{ theme.theme_mod('site_copyright_text', site.name) }}
+        </div>
+        {% if theme.theme_mod('site_footer_text') %}
+        <div id="site-info">
+            {{ theme.theme_mod('site_footer_text') }}
+        </div>
+        {% endif %}
     </div>
 </footer>
 

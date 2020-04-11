@@ -4,7 +4,7 @@ const webpack = require("webpack");
 const WebpackAssetsManifest = require("webpack-assets-manifest");
 const BrowserSyncPlugin = require("browser-sync-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const CleanWebpackPlugin = require("clean-webpack-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
 const FriendlyErrorsPlugin = require("friendly-errors-webpack-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
@@ -47,6 +47,9 @@ module.exports = {
     path: paths.appBuild,
     filename: DEV ? "bundle.js" : "bundle.[hash:8].js"
   },
+  externals: {
+    jquery: "jQuery"
+  },
   module: {
     rules: [
       // Disable require.ensure as it's not a standard language feature.
@@ -69,7 +72,7 @@ module.exports = {
             options: {
               ident: "postcss", // https://webpack.js.org/guides/migrating/#complex-options
               config: {
-                path: 'build/'
+                path: "build/"
               }
             }
           },
@@ -111,9 +114,7 @@ module.exports = {
     ]
   },
   plugins: [
-    !DEV && new CleanWebpackPlugin({
-      verbose: true
-    }),
+    !DEV && new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
       filename: DEV ? "bundle.css" : "bundle.[hash:8].css"
     }),
@@ -124,16 +125,18 @@ module.exports = {
     new WebpackAssetsManifest({
       output: "assets.json"
     }),
-    DEV && new FriendlyErrorsPlugin({
-      clearConsole: false
-    }),
-    DEV && new BrowserSyncPlugin({
-      notify: false,
-      host: "localhost",
-      port: 3000,
-      logLevel: "silent",
-      files: ["**/*.(php|twig)"],
-      proxy: "http://localhost:5318/"
-    }), 
+    DEV &&
+      new FriendlyErrorsPlugin({
+        clearConsole: false
+      }),
+    DEV &&
+      new BrowserSyncPlugin({
+        notify: false,
+        host: "localhost",
+        port: 3000,
+        logLevel: "silent",
+        files: ["**/*.(php|twig)"],
+        proxy: "http://localhost:5318/"
+      })
   ].filter(Boolean)
 };

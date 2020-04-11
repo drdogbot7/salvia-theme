@@ -1,8 +1,26 @@
 {
-  "extends": "stylelint-config-prettier",
-  "plugins": ["stylelint-order"],
+  "extends": [
+    "stylelint-config-wordpress",
+    "stylelint-config-rational-order",
+    "stylelint-config-prettier"
+  ],
+  "plugins": [
+    "stylelint-prettier"
+  ],
   "rules": {
-    "order/order": ["custom-properties", "declarations"],
-    "order/properties-alphabetical-order": true
+    "prettier/prettier": true,
+    "at-rule-no-unknown": [
+      true,
+      {
+        "ignoreAtRules": [
+          "extends",
+          "apply",
+          "tailwind",
+          "components",
+          "utilities",
+          "screen"
+        ]
+      }
+    ]
   }
 }

@@ -1,4 +1,4 @@
-{% extends "templates/base.twig" %}
+{% extends "views/base.twig" %}
 
 {% block content %}
 
@@ -13,7 +13,7 @@
 
     {% for post in posts %}
 
-        {% include "templates/content.twig" with {post: post}  %}
+        {% include "views/content.twig" with {post: post}  %}
 
     {% endfor %}
 

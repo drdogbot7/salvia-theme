@@ -1,0 +1,40 @@
+/*
+  Tailwind Base Styles
+*/
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+
+/*
+  Common
+*/
+@import "common/global";
+
+/*
+  Components
+*/
+@import "components/buttons";
+@import "components/container";
+@import "components/dropdown";
+@import "components/forms";
+@import "components/navbar";
+@import "components/off-canvas";
+@import "components/pagination";
+@import "components/wp-classes";
+
+/*
+Vendor
+*/
+
+
+/*
+Tailwind Utilities
+*/
+@import "tailwindcss/utilities";
+
+/*
+Custom Utilities
+*/
+@import "utilities/screen-reader.css";
+/* @import "utilities/responsive-embed.css";
+@import "utilities/filter.css";
+@import "utilities/vertical-align.css"; */

@@ -1,0 +1,37 @@
+<header class="bg-white p-4">
+    <div class="container mx-auto flex justify-between items-center">
+        <h1>
+            <a href="{{ site.url }}" title="{{ site.name }}" alt="{{ site.name }} logo">
+                <img class="w-32 h-auto" src="{{ asset('logo.svg') }}" />
+            </a>
+        </h1>
+        <nav>
+            <ul class="navbar">
+                {% for item in menu.get_items %}
+                    {% if item.get_children %}
+                    <li class="navbar__item dropdown {{item.classes | join(' ')}}">
+                        <a class="navbar__link" href="{{item.get_link}}">
+                            {{item.title}}
+                        </a>
+                        <ul class="dropdown__menu">
+                            {% for child in item.get_children %}
+                                <li class="dropdown__item">
+                                    <a class="dropdown__link" href="{{child.get_link}}">
+                                        {{child.title}}
+                                    </a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </li>
+                    {% else %}
+                    <li class="navbar__item {{item.classes | join(' ')}}">
+                        <a class="navbar__link" href="{{item.get_link}}">
+                            {{item.title}}
+                        </a>
+                    </li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </nav>
+    </div>
+</header>

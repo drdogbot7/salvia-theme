@@ -1,4 +1,4 @@
 <?php
 $context = Timber::get_context();
 
-Timber::render('templates/index.twig', $context);
+Timber::render('views/index.twig', $context);

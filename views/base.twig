@@ -1,11 +1,11 @@
 <!doctype html>
 <html {{ function('language_attributes') }}>
 
-    {% include 'templates/head.twig' %}
+    {% include 'views/head.twig' %}
 
     <body {{ function('body_class') }}>
 
-        {% include 'templates/header.twig' %}
+        {% include 'views/header.twig' %}
 
         <div class="container mx-auto" role="document">
             <main class="content">
@@ -13,7 +13,7 @@
             </main>
         </div>
 
-        {% include 'templates/footer.twig' %}
+        {% include 'views/footer.twig' %}
 
     </body>
 

@@ -4,6 +4,7 @@ dist
 node_modules
 npm-debug.log
 vendor
+.data
 
 .DS_Store
 *.log

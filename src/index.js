@@ -1,9 +1,9 @@
 import jQuery from 'jquery';
-import './style.css';
+import './styles/main.css';
 
-import Router from './util/Router';
-import common from './routes/common';
-import home from './routes/home';
+import Router from './scripts/utilities/Router';
+import common from './scripts/routes/common';
+import home from './scripts/routes/home';
 
 import './images/logo.svg'
 

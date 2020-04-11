@@ -1,0 +1,24 @@
+.btn {
+  display:inline-block;
+  @apply rounded;
+  @apply px-3 py-2;
+  @apply text-base text-gray-900;
+  @apply leading-normal;
+  @apply bg-gray-100;
+  @apply border border-gray-200;
+  @apply cursor-pointer;
+}
+
+.btn:hover {
+  @apply bg-gray-200 border-gray-300 no-underline;
+}
+
+.btn--small {
+  @apply text-sm;
+  @apply px-2 py-1;
+}
+
+.btn--disabled {
+  @apply text-gray-300;
+  pointer-events: none;
+}

@@ -1,0 +1,20 @@
+/*
+  off-canvas container
+*/
+.off-canvas {
+  @apply inset-0 z-40 p-8 pr-20;
+  @apply bg-green-500 text-white;
+  @apply opacity-0;
+  height: 100vh;
+  overflow: auto;
+  position: fixed;
+  transform: translateX(101%);
+  transition: 0.25s;
+  width: 100vw;
+}
+
+.off-canvas.is-active {
+  transform: translateX(0%);
+  transition: 0.25s;
+  @apply opacity-100;
+}

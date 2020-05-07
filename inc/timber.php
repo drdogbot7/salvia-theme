@@ -1,28 +1,31 @@
 <?php
 
+$timber = new Timber\Timber();
+
 /**
  * Check if Timber is activated
  */
 
-if ( ! class_exists( 'Timber' ) ) {
-
-    add_action( 'admin_notices', function() {
-        echo '<div class="error"><p>Timber not activated. Make sure you activate the plugin in <a href="' . esc_url( admin_url( 'plugins.php#timber' ) ) . '">' . esc_url( admin_url( 'plugins.php' ) ) . '</a></p></div>';
-    } );
+if (! class_exists('Timber')) {
+    add_action('admin_notices', function () {
+        echo '<div class="error"><p>Timber not activated. Make sure you activate the plugin in <a href="' . esc_url(admin_url('plugins.php#timber')) . '">' . esc_url(admin_url('plugins.php')) . '</a></p></div>';
+    });
     return;
-
 }
 
 /**
  * Timber
  */
 
-class SalviaTheme extends TimberSite {
-    function __construct() {
-        add_filter( 'timber_context', array( $this, 'add_to_context' ) );
+class SalviaTheme extends TimberSite
+{
+    public function __construct()
+    {
+        add_filter('timber_context', array( $this, 'add_to_context' ));
         parent::__construct();
     }
-    function add_to_context( $context ) {
+    public function add_to_context($context)
+    {
 
         /* Add extra data */
         $context['foo'] = 'I am some other typical value set in your functions.php file, unrelated to the menu';
@@ -46,10 +49,10 @@ new SalviaTheme();
  * @param Twig_Environment $twig
  * @return $twig
  */
-add_filter( 'timber/twig', function( \Twig_Environment $twig ) {
-    $twig->addFunction( new \Timber\Twig_Function( 'asset', 'salvia_asset' ) );
+add_filter('timber/twig', function (\Twig_Environment $twig) {
+    $twig->addFunction(new \Timber\Twig_Function('asset', 'salvia_asset'));
     return $twig;
-} );
+});
 
 
 /**
@@ -58,7 +61,7 @@ add_filter( 'timber/twig', function( \Twig_Environment $twig ) {
  * @param Twig_Environment $twig
  * @return $twig
  */
-add_filter( 'timber/twig', function( \Twig_Environment $twig ) {
-    $twig->addFunction( new \Timber\Twig_Function( 'title', 'salvia_title' ) );
+add_filter('timber/twig', function (\Twig_Environment $twig) {
+    $twig->addFunction(new \Timber\Twig_Function('title', 'salvia_title'));
     return $twig;
-} );
+});

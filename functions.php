@@ -8,11 +8,17 @@
  * Please note that missing files will produce a fatal error.
  *
  */
+
+  /**
+  * Load Timber
+  */
+  require_once(__DIR__ . '/vendor/autoload.php');
+
 $salvia_includes = [
   'inc/assets.php',     // Asset function
   'inc/setup.php',      // Theme setup
   'inc/titles.php',     // Page titles
-  'inc/images.php',      // custom image sizes
+  'inc/images.php',     // custom image sizes
   'inc/timber.php',     // Twig magic
 ];
 

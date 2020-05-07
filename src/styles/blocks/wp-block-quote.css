@@ -1,0 +1,5 @@
+.wp-block-quote {
+  @apply border-l-2 border-gray-500 bg-gray-200;
+  @apply p-4 pl-8;
+  quotes: "“" "”" "‘" "’";
+}

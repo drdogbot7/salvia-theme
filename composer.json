@@ -10,23 +10,9 @@
       "homepage": "https://github.com/drdogbot7"
     }
   ],
-  "extra": {
-    "installer-paths": {
-      "../../plugins/{$name}/": [
-        "wpackagist-plugin/*",
-        "type:wordpress-plugin"
-      ]
-    }
-  },
   "require": {
-    "php": ">=5.4.0",
-    "composer/installers": "~1.0",
-    "wpackagist-plugin/timber-library": "*"
-  },
-  "repositories": [
-    {
-      "type": "composer",
-      "url": "http://wpackagist.org"
-    }
-  ]
+    "timber/timber": "^1.15",
+    "symfony/asset": "^4.4",
+    "djboris88/timber-debugger": "^1.1"
+  }
 }

@@ -1,22 +1,15 @@
 import jQuery from 'jquery';
+import toggleMenu from './components/toggleMenu';
+import { addBackToTop } from 'vanilla-back-to-top';
+
 import './styles/main.css';
 
-import Router from './scripts/utilities/Router';
-import common from './scripts/routes/common';
-import home from './scripts/routes/home';
-
-import './images/logo.svg'
-
-/**
- * Populate Router instance with DOM routes
- * @type {Router} routes - An instance of our router
- */
-const routes = new Router({
-  /** All pages */
-  common,
-  /** Home page */
-  home
-});
+const initPage = () => {
+	document.getElementById('hamburger').addEventListener('click', function () {
+		toggleMenu(this);
+	});
+	addBackToTop({ backgroundColor: '#008FD5' });
+};
 
 /** Load Events */
-jQuery(document).ready(() => routes.loadEvents());
+jQuery(document).ready(() => initPage());

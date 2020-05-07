@@ -1,0 +1,59 @@
+/*
+  Buttons
+*/
+.btn, .wp-block-button__link {
+  @apply inline-block py-2 px-4;
+  @apply border border-solid border-transparent rounded-none;
+  @apply bg-blue-500;
+  @apply text-sm;
+  @apply text-white;
+  @apply no-underline;
+  @apply shadow-md uppercase;
+  cursor:pointer;
+  transition:0.0s;
+}
+.btn:hover,
+.wp-block-button__link:hover {
+  @apply bg-blue-700;
+  @apply text-white border-white;
+  text-decoration:none;
+  transition:0.25s;
+}
+.btn--green,
+.wp-block-button__link.has-green-background-color {
+  @apply .bg-green-500;
+}
+.btn--green:hover,
+.wp-block-button__link.has-green-background-color:hover {
+  @apply .bg-green-700;
+}
+
+.btn--small,
+.is-style-small .wp-block-button__link {
+  @apply .py-1 .px-2;
+  @apply .text-xs;
+}
+
+.btn--large,
+.is-style-block .wp-block-button__link,
+.is-style-large .wp-block-button__link {
+  @apply .py-4 .px-6;
+  @apply .text-xl;
+}
+
+.is-style-block,
+.is-style-block .wp-block-button__link {
+  display:block;
+}
+
+.btn--outline {
+  @apply bg-transparent shadow-none;
+  border-color:currentColor;
+  text-shadow:initial;
+}
+
+.btn--outline:hover,
+.is-style-outline .wp-block-button__link:hover {
+  @apply bg-transparent;
+  text-decoration: underline;
+}

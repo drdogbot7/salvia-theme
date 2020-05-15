@@ -1,20 +1,19 @@
 <!doctype html>
 <html {{ function('language_attributes') }}>
 
-    {% include 'views/head.twig' %}
+	{% include 'views/head.twig' %}
 
-    <body {{ function('body_class') }}>
+	<body {{ function('body_class') }}>
 
-        {% include 'views/header.twig' %}
+		{% include 'views/header.twig' %}
 
-        <div class="container mx-auto" role="document">
-            <main class="content">
-                {% block content %}{% endblock %}
-            </main>
-        </div>
+		<div class="container mx-auto" role="document">
+			<main class="content"> {% block content %}{% endblock %}
+				</main>
+			</div>
 
-        {% include 'views/footer.twig' %}
+			{% include 'views/footer.twig' %}
 
-    </body>
+		</body>
 
-</html>
+	</html>

@@ -4,7 +4,8 @@ use Symfony\Component\Asset\VersionStrategy\JsonManifestVersionStrategy;
 
 function salvia_asset($file)
 {
-    $package = new Package(new JsonManifestVersionStrategy(get_stylesheet_directory() . '/dist/manifest.json'));
-    $dist_path = get_stylesheet_directory_uri() . "/dist";
-    return $dist_path . $package->getUrl($file);
+    $package = new Package(
+        new JsonManifestVersionStrategy(get_stylesheet_directory() . '/dist/manifest.json')
+    );
+    return $package->getUrl($file);
 }

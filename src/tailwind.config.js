@@ -1,4 +1,4 @@
-const defaultConfig = require('tailwindcss/defaultConfig');
+const defaultTheme = require('tailwindcss/defaultTheme');
 
 module.exports = {
 	prefix: '',
@@ -26,5 +26,8 @@ module.exports = {
 	},
 	variants: {},
 	corePlugins: {},
-	plugins: [],
+	plugins: [require('@tailwindcss/custom-forms')],
+	purge: {
+		content: ['./views/**/*.twig'],
+	},
 };

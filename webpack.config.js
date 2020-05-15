@@ -15,7 +15,7 @@ Encore
 	// directory where compiled assets will be stored
 	.setOutputPath('./dist')
 	// public path used by the web server to access the output path
-	.setPublicPath('')
+	.setPublicPath('/wp-content/themes/salvia-theme/dist/')
 	// only needed for CDN's or sub-directory deploy
 	.setManifestKeyPrefix('')
 
@@ -24,15 +24,14 @@ Encore
 	 */
 	.addEntry('app', './src/index.js')
 	.addEntry('images', './src/images/index.js')
-	// .addStyleEntry('styles', './src/styles/main.css')
 
 	// When enabled, Webpack "splits" your files into smaller pieces for greater optimization.
-	// .splitEntryChunks()
+	.splitEntryChunks()
 
 	// will require an extra script tag for runtime.js
 	// but, you probably want this, unless you're building a single-page app
-	.enableSingleRuntimeChunk()
-	// .disableSingleRuntimeChunk()
+	// .enableSingleRuntimeChunk()
+	.disableSingleRuntimeChunk()
 
 	.addExternals({
 		jquery: 'jQuery',

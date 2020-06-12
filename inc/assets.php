@@ -1,11 +1,7 @@
 <?php
-use Symfony\Component\Asset\Package;
-use Symfony\Component\Asset\VersionStrategy\JsonManifestVersionStrategy;
+use function BenTools\WebpackEncoreResolver\asset;
 
 function salvia_asset($file)
 {
-    $package = new Package(
-        new JsonManifestVersionStrategy(get_stylesheet_directory() . '/dist/manifest.json')
-    );
-    return $package->getUrl($file);
+    return asset($file, get_stylesheet_directory() . '/dist');
 }

@@ -12,7 +12,7 @@
   ],
   "require": {
     "timber/timber": "^1.15",
-    "symfony/asset": "^4.4",
-    "djboris88/timber-debugger": "^1.1"
+    "djboris88/timber-debugger": "^1.1",
+    "bentools/webpack-encore-resolver": "^0.1.0"
   }
 }

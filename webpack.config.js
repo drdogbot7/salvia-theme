@@ -30,8 +30,8 @@ Encore
 
 	// will require an extra script tag for runtime.js
 	// but, you probably want this, unless you're building a single-page app
-	// .enableSingleRuntimeChunk()
-	.disableSingleRuntimeChunk()
+	.enableSingleRuntimeChunk()
+	// .disableSingleRuntimeChunk()
 
 	.addExternals({
 		jquery: 'jQuery',
@@ -64,7 +64,7 @@ Encore
 			port: 3000,
 			logLevel: 'default',
 			files: ['**/*.(php|twig)'],
-			proxy: 'http://localhost:5318',
+			proxy: 'http://localhost',
 		})
 	);
 

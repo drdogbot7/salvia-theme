@@ -17,9 +17,34 @@ remove_action('wp_head', 'wp_shortlink_wp_head', 10, 0);
 /**
  * Theme assets
  */
+use function BenTools\WebpackEncoreResolver\encore_entry_css_files;
+use function BenTools\WebpackEncoreResolver\encore_entry_js_files;
+
 add_action('wp_enqueue_scripts', function () {
-    wp_enqueue_style('theme-css', salvia_asset('main.css'),  false, null);
-    wp_enqueue_script('theme-js', salvia_asset('main.js'), ['jquery'], null, true);
+    $asset_path = get_stylesheet_directory() . '/dist';
+    $css_assets = encore_entry_css_files('app', $asset_path);
+    $js_assets = encore_entry_js_files('app', $asset_path);
+    foreach ($css_assets as $key=>$resource) {
+        wp_enqueue_style('theme-css-' . $key, $resource, false, null);
+    }
+    foreach ($js_assets as $key=>$resource) {
+        wp_enqueue_script('theme-js-' . $key, $resource, ['jquery'], false, true);
+    }
+}, 100);
+
+/**
+ * Theme Editor assets
+ */
+add_action('enqueue_block_editor_assets', function () {
+    $asset_path = get_stylesheet_directory() . '/dist';
+    $css_assets = encore_entry_css_files('editor', $asset_path);
+    $js_assets = encore_entry_js_files('editor', $asset_path);
+    foreach ($css_assets as $key=>$resource) {
+        wp_enqueue_style('theme-editor-css-' . $key, $resource, false, null);
+    }
+    foreach ($js_assets as $key=>$resource) {
+        wp_enqueue_script('theme-editor-js-' . $key, $resource, ['jquery'], false, true);
+    }
 }, 100);
 
 
@@ -57,22 +82,20 @@ add_action('after_setup_theme', function () {
      * @link https://developer.wordpress.org/reference/functions/add_theme_support/#html5
      */
     add_theme_support('html5', ['caption', 'comment-form', 'comment-list', 'gallery', 'search-form']);
-    /**
-     * Enable selective refresh for widgets in customizer
-     * @link https://developer.wordpress.org/themes/advanced-topics/customizer-api/#theme-support-in-sidebars
-     */
+/**
+ * Enable selective refresh for widgets in customizer
+ * @link https://developer.wordpress.org/themes/advanced-topics/customizer-api/#theme-support-in-sidebars
+ */
     // add_theme_support('customize-selective-refresh-widgets');
-
-
 }, 20);
 
 
 add_action('rest_api_init', function () {
-	$namespace = 'presspack/v1';
-	register_rest_route( $namespace, '/path/(?P<url>.*?)', array(
-		'methods'  => 'GET',
-		'callback' => 'get_post_for_url',
-	));
+    $namespace = 'presspack/v1';
+    register_rest_route($namespace, '/path/(?P<url>.*?)', array(
+        'methods'  => 'GET',
+        'callback' => 'get_post_for_url',
+    ));
 });
 
 /**
@@ -94,7 +117,8 @@ function get_post_for_url($data)
 add_filter('body_class', 'add_slug_to_body_class'); // Add slug to body class (Starkers build)
 
 // Add page slug to body class, love this - Credit: Starkers Wordpress Theme
-function add_slug_to_body_class($classes) {
+function add_slug_to_body_class($classes)
+{
     global $post;
     if (is_home()) {
         $key = array_search('blog', $classes);

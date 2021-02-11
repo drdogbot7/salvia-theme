@@ -3,8 +3,7 @@
 dist
 node_modules
 npm-debug.log
-vendor
-.data
+./vendor
 
 .DS_Store
 *.log

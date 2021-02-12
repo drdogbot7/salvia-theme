@@ -1,17 +1,17 @@
 {
 	"extends": [
 		"stylelint-config-wordpress",
-		"stylelint-config-rational-order",
+		"stylelint-config-idiomatic-order",
 		"stylelint-config-prettier"
 	],
-	"plugins": ["stylelint-prettier"],
 	"rules": {
+		"block-no-empty": null,
 		"selector-class-pattern": null,
-		"prettier/prettier": true,
 		"at-rule-no-unknown": [
 			true,
 			{
 				"ignoreAtRules": [
+					"layer",
 					"extends",
 					"apply",
 					"tailwind",

@@ -11,12 +11,13 @@
 		{% include 'views/header.twig' %}
 
 		<div class="container mx-auto" role="document">
-			<main class="content"> {% block content %}{% endblock %}
-				</main>
-			</div>
+			<main class="content">
+			{% block content %}{% endblock %}
+			</main>
+		</div>
 
-			{% include 'views/footer.twig' %}
+		{% include 'views/footer.twig' %}
 
-		</body>
+	</body>
 
-	</html>
+</html>

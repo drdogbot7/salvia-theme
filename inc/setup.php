@@ -35,31 +35,23 @@ add_action('wp_enqueue_scripts', function () {
 /**
  * Theme Editor assets
  */
-add_action('enqueue_block_editor_assets', function () {
-    $asset_path = get_stylesheet_directory() . '/dist';
-    $css_assets = encore_entry_css_files('editor', $asset_path);
-    $js_assets = encore_entry_js_files('editor', $asset_path);
-    foreach ($css_assets as $key=>$resource) {
-        wp_enqueue_style('theme-editor-css-' . $key, $resource, false, null);
-    }
-    foreach ($js_assets as $key=>$resource) {
-        wp_enqueue_script('theme-editor-js-' . $key, $resource, ['jquery'], false, true);
-    }
-}, 100);
+// add_action('enqueue_block_editor_assets', function () {
+//     $asset_path = get_stylesheet_directory() . '/dist';
+//     $css_assets = encore_entry_css_files('editor', $asset_path);
+//     $js_assets = encore_entry_js_files('editor', $asset_path);
+//     foreach ($css_assets as $key=>$resource) {
+//         wp_enqueue_style('theme-editor-css-' . $key, $resource, false, null);
+//     }
+//     foreach ($js_assets as $key=>$resource) {
+//         wp_enqueue_script('theme-editor-js-' . $key, $resource, ['jquery'], false, true);
+//     }
+// }, 100);
 
 
 /**
  * Theme setup
  */
 add_action('after_setup_theme', function () {
-    /**
-     * Enable features from Soil when plugin is activated
-     * @link https://roots.io/plugins/soil/
-     */
-    add_theme_support('soil-clean-up');
-    add_theme_support('soil-jquery-cdn');
-    add_theme_support('soil-nice-search');
-    add_theme_support('soil-relative-urls');
     /**
      * Enable plugins to manage the document title
      * @link https://developer.wordpress.org/reference/functions/add_theme_support/#title-tag
@@ -70,7 +62,7 @@ add_action('after_setup_theme', function () {
      * @link https://developer.wordpress.org/reference/functions/register_nav_menus/
      */
     register_nav_menus([
-        'primary_navigation' => __('Primary Navigation', 'mini')
+        'primary_navigation' => 'Primary Navigation'
     ]);
     /**
      * Enable post thumbnails
@@ -88,31 +80,6 @@ add_action('after_setup_theme', function () {
  */
     // add_theme_support('customize-selective-refresh-widgets');
 }, 20);
-
-
-add_action('rest_api_init', function () {
-    $namespace = 'presspack/v1';
-    register_rest_route($namespace, '/path/(?P<url>.*?)', array(
-        'methods'  => 'GET',
-        'callback' => 'get_post_for_url',
-    ));
-});
-
-/**
-* This fixes the wordpress rest-api so we can just lookup pages by their full
-* path (not just their name). This allows us to use React Router.
-*
-* @return WP_Error|WP_REST_Response
-*/
-function get_post_for_url($data)
-{
-    $postId    = url_to_postid($data['url']);
-    $postType  = get_post_type($postId);
-    $controller = new WP_REST_Posts_Controller($postType);
-    $request    = new WP_REST_Request('GET', "/wp/v2/{$postType}s/{$postId}");
-    $request->set_url_params(array('id' => $postId));
-    return $controller->get_item($request);
-}
 
 add_filter('body_class', 'add_slug_to_body_class'); // Add slug to body class (Starkers build)
 

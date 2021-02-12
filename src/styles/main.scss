@@ -1,23 +1,33 @@
 /*
  * Tailwind Base Styles
  */
-@import "tailwindcss/base.css";
-@import "tailwindcss/components.css";
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
 
 /*
  * Theme Styles
  */
-@import "common/*.css";
-@import "blocks/*.css";
-@import "components/*.css";
-@import "vendor/*.css";
+@import 'common/global.scss';
+
+// Gutenberg blocks
+@import 'blocks/wp-block-button.scss';
+@import 'blocks/wp-block-quote.scss';
+@import 'blocks/wp-block-separator.scss';
+@import 'blocks/wp-block-table.scss';
+
+// Other components
+@import 'components/dropdown.scss';
+@import 'components/forms.scss';
+@import 'components/navbar.scss';
+@import 'components/pagination.scss';
+@import 'components/off-canvas.scss';
 
 /*
  * Tailwind Utilities
  */
-@import "tailwindcss/utilities.css";
+@import 'tailwindcss/utilities';
 
 /*
  * Custom Utilities
  */
-@import "utilities/*.css";
+@import 'utilities/screen-reader.scss';

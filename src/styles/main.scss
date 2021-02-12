@@ -1,8 +1,8 @@
 /*
  * Tailwind Base Styles
  */
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
+@tailwind base;
+@tailwind components;
 
 /*
  * Theme Styles
@@ -25,7 +25,7 @@
 /*
  * Tailwind Utilities
  */
-@import 'tailwindcss/utilities';
+@tailwind utilities;
 
 /*
  * Custom Utilities

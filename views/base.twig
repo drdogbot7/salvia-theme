@@ -1,9 +1,12 @@
-<!doctype html>
-<html {{ function('language_attributes') }}>
+{% block html_head_container %}
+	
+{% include 'html-header.twig' %}
+	{% block head %}
+	{% endblock %}
+	</head>
+{% endblock %}
 
-	{% include 'views/head.twig' %}
-
-	<body {{ function('body_class') }}>
+	<body class="{{ body_class }} font-sans text-gray-800">
 
 		{% include 'views/header.twig' %}
 

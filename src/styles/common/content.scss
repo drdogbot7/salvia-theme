@@ -1,0 +1,101 @@
+.content {
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		@apply font-bold;
+		@apply leading-tight;
+	}
+	h1 {
+		@apply text-4xl;
+	}
+	h2 {
+		@apply text-3xl;
+	}
+	h3 {
+		@apply text-xl;
+	}
+	h4 {
+		@apply text-lg;
+	}
+	h5 {
+		@apply text-base;
+	}
+	h6 {
+		@apply text-sm;
+	}
+
+	/*
+  Spacing
+*/
+	p,
+	ul,
+	ol,
+	dl,
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		margin-bottom: 1rem;
+	}
+	* + h1,
+	* + h2,
+	* + h3,
+	* + h4,
+	* + h5,
+	* + h6 {
+		margin-top: 1em;
+	}
+
+	p + p {
+		margin-top: -0.5em;
+	}
+	h1 + p,
+	h2 + p,
+	h3 + p,
+	h4 + p,
+	h5 + p,
+	h6 + p {
+		margin-top: -0.5rem;
+	}
+
+	p:last-child,
+	ul:last-child,
+	ol:last-child,
+	dl:last-child,
+	h1:last-child,
+	h2:last-child,
+	h3:last-child,
+	h4:last-child,
+	h5:last-child,
+	h6:last-child {
+		margin-bottom: 0;
+	}
+
+	/*
+  Lists
+*/
+	ul {
+		padding-left: 1.5em;
+		list-style-type: disc;
+	}
+	ol {
+		padding-left: 1.5em;
+		list-style-type: decimal;
+	}
+
+	/*
+  Links
+  */
+	a {
+		@apply text-blue-500;
+	}
+	a:hover {
+		@apply text-blue-700;
+		@apply underline;
+	}
+}

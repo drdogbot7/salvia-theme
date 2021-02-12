@@ -9,10 +9,10 @@
  *
  */
 
-  /**
-  * Load Timber
-  */
-  require_once(__DIR__ . '/vendor/autoload.php');
+/**
+ * Load Timber
+ */
+require_once(__DIR__ . '/vendor/autoload.php');
 
 $salvia_includes = [
   'inc/assets.php',     // Asset function

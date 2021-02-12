@@ -3,15 +3,17 @@
 */
 .btn,
 .wp-block-button__link {
-	@apply inline-block py-2 px-4;
-	@apply border border-solid border-transparent rounded-none;
-	@apply bg-blue-500;
-	@apply text-sm;
-	@apply text-white;
-	@apply no-underline;
-	@apply shadow-md uppercase;
+	display: inline-block;
+	color: theme('colors.white');
+	font-size: theme('fontSize.sm');
+	text-decoration: none;
+	background-color: theme('colors.blue.500');
+	border-color: transparent;
+	border-width: 1px;
 	cursor: pointer;
 	transition: 0s;
+	padding-block: theme('spacing.2');
+	padding-inline: theme('spacing.4');
 }
 .btn:hover,
 .wp-block-button__link:hover {

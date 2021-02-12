@@ -35,6 +35,7 @@
     "postcss-loader": "^3.0.0",
     "postcss-preset-env": "^6.7.0",
     "prettier": "^2.0.4",
+    "sass-loader": "^7.0.1",
     "stylelint": "^12.0.0",
     "stylelint-config-prettier": "^8.0.1",
     "stylelint-config-rational-order": "^0.1.2",

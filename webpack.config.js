@@ -64,7 +64,7 @@ Encore
 			port: 3000,
 			logLevel: 'default',
 			files: ['**/*.(php|twig)'],
-			proxy: 'http://localhost',
+			proxy: 'http://localhost:8080',
 		})
 	);
 

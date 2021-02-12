@@ -2,7 +2,7 @@ import jQuery from 'jquery';
 import toggleMenu from './components/toggleMenu';
 import { addBackToTop } from 'vanilla-back-to-top';
 
-import './styles/main.css';
+import './styles/main.scss';
 
 const initPage = () => {
 	document.getElementById('hamburger').addEventListener('click', function () {

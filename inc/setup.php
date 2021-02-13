@@ -74,11 +74,13 @@ add_action('after_setup_theme', function () {
      * @link https://developer.wordpress.org/reference/functions/add_theme_support/#html5
      */
     add_theme_support('html5', ['caption', 'comment-form', 'comment-list', 'gallery', 'search-form']);
-/**
- * Enable selective refresh for widgets in customizer
- * @link https://developer.wordpress.org/themes/advanced-topics/customizer-api/#theme-support-in-sidebars
- */
-    // add_theme_support('customize-selective-refresh-widgets');
+    /**
+     * Enable selective refresh for widgets in customizer
+     * @link https://developer.wordpress.org/themes/advanced-topics/customizer-api/#theme-support-in-sidebars
+     */
+    add_theme_support('customize-selective-refresh-widgets');
+
+    add_theme_support( 'responsive-embeds' );
 }, 20);
 
 add_filter('body_class', 'add_slug_to_body_class'); // Add slug to body class (Starkers build)

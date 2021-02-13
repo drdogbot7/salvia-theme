@@ -1,14 +1,20 @@
-import jQuery from 'jquery';
+import alpine from 'alpinejs';
+import WebFont from 'webfontloader';
 import { addBackToTop } from 'vanilla-back-to-top';
+import tailwind from './tailwind.config.js';
+import initFontAwesome from './components/fontAwesome';
 
 import './styles/main.scss';
 import './styles/editor.scss';
 
-const initPage = () => {
-	addBackToTop({ backgroundColor: '#008FD5' });
-};
+WebFont.load({
+	google: {
+		families: ['Raleway:200,400'],
+	},
+});
 
 /** Load Events */
 jQuery(function () {
-	initPage();
+	initFontAwesome();
+	addBackToTop({ backgroundColor: tailwind.gutenberg.colors.primary });
 });

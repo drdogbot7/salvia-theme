@@ -8,11 +8,11 @@ import {
 	faYoutube,
 } from '@fortawesome/free-brands-svg-icons';
 
-import { faHeart } from '@fortawesome/pro-solid-svg-icons';
+import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 
 const initFontAwesome = () => {
 	library.add(faTwitter, faFacebook, faLinkedin, faInstagram, faYoutube);
-	library.add(faHeart);
+	library.add(faBars, faTimes);
 	dom.watch();
 };
 

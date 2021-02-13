@@ -1,37 +1,88 @@
-<header class="p-4 bg-white">
-    <div class="container flex items-center justify-between mx-auto">
-        <h1>
-            <a href="{{ site.url }}" title="{{ site.name }}" alt="{{ site.name }} logo">
-                <img class="w-32 h-auto" src="{{ asset('logo.svg') }}" />
-            </a>
-        </h1>
-        <nav>
-            <ul class="navbar">
-                {% for item in menu.get_items %}
-                    {% if item.get_children %}
-                    <li class="navbar__item dropdown {{item.classes | join(' ')}}">
-                        <a class="navbar__link" href="{{item.get_link}}">
-                            {{item.title}}
-                        </a>
-                        <ul class="dropdown__menu">
-                            {% for child in item.get_children %}
-                                <li class="dropdown__item">
-                                    <a class="dropdown__link" href="{{child.get_link}}">
-                                        {{child.title}}
-                                    </a>
-                                </li>
-                            {% endfor %}
-                        </ul>
-                    </li>
-                    {% else %}
-                    <li class="navbar__item {{item.classes | join(' ')}}">
-                        <a class="navbar__link" href="{{item.get_link}}">
-                            {{item.title}}
-                        </a>
-                    </li>
-                    {% endif %}
-                {% endfor %}
-            </ul>
-        </nav>
-    </div>
+<header
+	x-data="{ menuOpen: false }" x-on:keydown.escape="menuOpen = false"
+	class="p-4 bg-gray-100"
+>
+	<div class="flex items-center justify-between mx-auto">
+		<h1>
+			<a href="{{ site.url }}" title="{{ site.name }}" alt="{{ site.name }} logo">
+				<img class="w-32 h-auto" src="{{ asset('logo.svg') }}" />
+			</a>
+		</h1>
+		<div class="mx-1 ml-4 md:hidden">
+			<button @click="menuOpen = true" aria-haspopup="true" aria-controls="navMenu">
+				<i class="text-3xl fas fa-bars"></i>
+			</button>
+		</div>
+		<nav class="hidden md:block">
+			<ul class="navbar">
+				{% for item in menu.get_items %}
+					{% if item.get_children %}
+					<li class="navbar__item dropdown {{item.classes | join(' ')}}">
+						<a class="navbar__link" href="{{item.get_link}}">
+							{{item.title}}
+						</a>
+						<ul class="dropdown__menu">
+							{% for child in item.get_children %}
+								<li class="dropdown__item">
+									<a class="dropdown__link" href="{{child.get_link}}">
+										{{child.title}}
+									</a>
+								</li>
+							{% endfor %}
+						</ul>
+					</li>
+					{% else %}
+					<li class="navbar__item {{item.classes | join(' ')}}">
+						<a class="navbar__link" href="{{item.get_link}}">
+							{{item.title}}
+						</a>
+					</li>
+					{% endif %}
+				{% endfor %}
+			</ul>
+		</nav>
+	</div>
+
+	<div
+		id="navMenu"
+		class="fixed inset-0 flex items-center justify-center bg-gray-200"
+		x-show.transition="menuOpen"
+		@click="menuOpen = false"
+		x-cloak
+	>
+		<div class="absolute top-0 right-0 p-4">
+			<button @click="menuOpen = false">
+				<i class="text-3xl fas fa-times"></i>
+			</button>
+		</div>
+		<nav>
+			<ul class="text-lg">
+				{% for item in menu.get_items %}
+					{% if item.get_children %}
+					<li class="mt-2 {{item.classes | join(' ')}}">
+						<a class="p-1" href="{{item.get_link}}">
+							{{item.title}}
+						</a>
+						<ul class="pl-4 text-base list-disc list-inside">
+							{% for child in item.get_children %}
+								<li>
+									<a class="p-1" href="{{child.get_link}}">
+										{{child.title}}
+									</a>
+								</li>
+							{% endfor %}
+						</ul>
+					</li>
+					{% else %}
+					<li class="mt-2 {{item.classes | join(' ')}}">
+						<a class="p-1" href="{{item.get_link}}">
+							{{item.title}}
+						</a>
+					</li>
+					{% endif %}
+				{% endfor %}
+			</ul>
+		</nav>
+	</div>
+	
 </header>

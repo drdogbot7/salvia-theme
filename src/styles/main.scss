@@ -21,7 +21,6 @@
 @import 'components/forms.scss';
 @import 'components/navbar.scss';
 @import 'components/pagination.scss';
-@import 'components/off-canvas.scss';
 
 /*
  * Tailwind Utilities
@@ -32,3 +31,4 @@
  * Custom Utilities
  */
 @import 'utilities/screen-reader.scss';
+@import 'utilities/alpinejs.scss';

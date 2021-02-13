@@ -23,7 +23,6 @@ Encore
 	 * ENTRY CONFIG
 	 */
 	.addEntry('app', './src/index.js')
-	.addEntry('images', './src/images/index.js')
 
 	// When enabled, Webpack "splits" your files into smaller pieces for greater optimization.
 	.splitEntryChunks()
@@ -35,6 +34,10 @@ Encore
 
 	.addExternals({
 		jquery: 'jQuery',
+	})
+
+	.copyFiles({
+		from: './src/images',
 	})
 
 	/*

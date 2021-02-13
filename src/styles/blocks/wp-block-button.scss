@@ -4,59 +4,54 @@
 .btn,
 .wp-block-button__link {
 	display: inline-block;
-	color: theme('colors.white');
-	font-size: theme('fontSize.sm');
-	text-decoration: none;
-	background-color: theme('colors.blue.500');
-	border-color: transparent;
 	border-width: 1px;
+	border-color: transparent;
+	background-color: theme('colors.gray.200');
+	border-radius: theme('borderRadius.md');
+	color: theme('colors.gray.800') !important;
 	cursor: pointer;
-	transition: 0s;
+	font-size: theme('fontSize.sm');
 	padding-block: theme('spacing.2');
 	padding-inline: theme('spacing.4');
+	text-decoration: none;
+	transition: 0s;
 }
 .btn:hover,
 .wp-block-button__link:hover {
-	@apply bg-blue-700;
-	@apply text-white border-white;
-	text-decoration: none;
+	background-color: theme('colors.gray.400');
+	color: theme('colors.black');
+	text-decoration: none !important;
 	transition: 0.25s;
-}
-.btn--green,
-.wp-block-button__link.has-green-background-color {
-	@apply bg-green-500;
-}
-.btn--green:hover,
-.wp-block-button__link.has-green-background-color:hover {
-	@apply bg-green-700;
 }
 
 .btn--small,
-.is-style-small .wp-block-button__link {
+.wp-block-button.is-style-small > .wp-block-button__link {
 	@apply py-1 px-2;
 	@apply text-xs;
 }
 
 .btn--large,
-.is-style-block .wp-block-button__link,
-.is-style-large .wp-block-button__link {
+.is-style-block > .wp-block-button__link,
+.is-style-large > .wp-block-button__link {
 	@apply py-4 px-6;
 	@apply text-xl;
 }
 
 .is-style-block,
-.is-style-block .wp-block-button__link {
+.is-style-block > .wp-block-button__link {
 	display: block;
 }
 
-.btn--outline {
-	@apply bg-transparent shadow-none;
-	text-shadow: initial;
+.btn--outline,
+.is-style-outline > .wp-block-button__link {
+	border-width: 1px;
 	border-color: currentColor;
+	background-color: transparent;
+	box-shadow: none;
+	text-shadow: initial;
 }
 
 .btn--outline:hover,
-.is-style-outline .wp-block-button__link:hover {
-	@apply bg-transparent;
-	text-decoration: underline;
+.is-style-outline > .wp-block-button__link:hover {
+	text-decoration: underline !important;
 }

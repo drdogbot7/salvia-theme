@@ -1,7 +1,12 @@
 .navbar {
+	--navbarColor: theme('colors.gray.500');
+	--navbarColorHover: theme('colors.gray.900');
+	--navbarBgColorHover: theme('colors.gray.400');
+	--navbarFontSize: theme('fontSize.sm');
+	--navbarPaddingBlock: theme('spacing.2');
+	--navbarPaddingInline: theme('spacing.4');
 	display: flex;
-	padding-left: 0;
-	list-style-type: none;
+	font-size: var(--navbarFontSize);
 }
 .navbar__item {
 	display: flex;
@@ -9,23 +14,14 @@
 .navbar__link {
 	display: flex;
 	align-items: center;
-}
-
-/**
- * Skin
- */
-.navbar {
-	@apply text-sm;
-}
-.navbar__item {
-}
-.navbar__link {
-	@apply text-gray-500;
-	@apply px-4 py-2;
+	color: var(--navbarColor);
+	padding-block: var(--navbarPaddingBlock);
+	padding-inline: var(--navbarPaddingInline);
 	transition: 0s;
 }
+
 .navbar__item:hover > .navbar__link {
-	@apply text-white no-underline;
-	@apply bg-gray-500;
+	background-color: var(--navbarBgColorHover);
+	color: var(--navbarColorHover);
 	transition: 0.15s;
 }

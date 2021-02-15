@@ -26,17 +26,22 @@ class SalviaTheme extends TimberSite
     }
     public function add_to_context($context)
     {
-
-        /* Add extra data */
-        $context['foo'] = 'I am some other typical value set in your functions.php file, unrelated to the menu';
-
+      
         /* Menu */
         $context['menu'] = new TimberMenu('primary_navigation');
 
         /* Site info */
         $context['site'] = $this;
-
+        
         $context['sidebar_primary'] = Timber::get_widgets('sidebar-primary');
+
+        /* Debugging */
+        if (
+            in_array(WP_DEBUG, ['true','TRUE',1])
+            && class_exists( 'Ajgl\Twig\Extension\BreakpointExtension' )
+        ) {
+            $context['debug'] = true;
+        }
 
         return $context;
     }

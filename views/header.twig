@@ -16,11 +16,12 @@
 		<nav class="hidden md:block">
 			<ul class="navbar">
 				{% for item in menu.get_items %}
-					{% if item.get_children %}
-					<li class="navbar__item dropdown {{item.classes | join(' ')}}">
+					<li class="navbar__item {{ item.get_children ? 'dropdown' }} {{item.classes | join(' ')}}">
 						<a class="navbar__link" href="{{item.get_link}}">
-							{{item.title}}
+						{{item.title}}
+  					{{item.get_children ? '<i class="ml-1 fas fa-caret-down"></i>' }}
 						</a>
+					{% if item.get_children %}
 						<ul class="dropdown__menu">
 							{% for child in item.get_children %}
 								<li class="dropdown__item">
@@ -30,14 +31,8 @@
 								</li>
 							{% endfor %}
 						</ul>
-					</li>
-					{% else %}
-					<li class="navbar__item {{item.classes | join(' ')}}">
-						<a class="navbar__link" href="{{item.get_link}}">
-							{{item.title}}
-						</a>
-					</li>
 					{% endif %}
+					</li>
 				{% endfor %}
 			</ul>
 		</nav>

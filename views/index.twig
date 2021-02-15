@@ -2,16 +2,16 @@
 
 {% block content %}
 
-    {% for post in posts %}
+    <div class="space-y-8">
+        {% for post in posts %}
 
-        {% include "views/content.twig" with {post: post}  %}
+            {% include "views/content.twig" with {post: post}  %}
 
-    {% endfor %}
+        {% endfor %}
+    </div>
 
-{% endblock %}
-
-{% block sidebar %}
-
-    {% include "views/sidebar.twig" %}
+    {% if posts.found_posts > posts|length %}
+        {% include "pagination.twig" %}
+    {% endif %}
 
 {% endblock %}

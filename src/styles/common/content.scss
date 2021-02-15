@@ -28,8 +28,8 @@
 	}
 
 	/*
-  Spacing
-*/
+		Spacing
+	*/
 	p,
 	ul,
 	ol,
@@ -39,8 +39,11 @@
 	h3,
 	h4,
 	h5,
-	h6 {
-		margin-bottom: 1rem;
+	h6,
+	div,
+	figure,
+	blockquote {
+		margin-bottom: 1.5em;
 	}
 	* + h1,
 	* + h2,
@@ -72,20 +75,21 @@
 	h3:last-child,
 	h4:last-child,
 	h5:last-child,
-	h6:last-child {
+	h6:last-child,
+	div:last-child {
 		margin-bottom: 0;
 	}
 
 	/*
   Lists
 */
-	ul {
-		padding-left: 1.5em;
-		list-style-type: disc;
-	}
 	ol {
 		padding-left: 1.5em;
 		list-style-type: decimal;
+	}
+	ul:not(.blocks-gallery-grid) {
+		padding-left: 1.5em;
+		list-style-type: disc;
 	}
 
 	/*

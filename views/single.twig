@@ -6,9 +6,13 @@
 
         <article {{ function('post_class') }}>
             <header>
-                <h1 class="entry-title">{{ post.title }}</h1>
+                <h1 class="text-3xl">{{ post.title }}</h1>
+                <div class="text-sm text-gray-400">
+    				{% include "meta.twig" with {post:post} %}
+                </div>
+                {% if post.edit_link %}<a class="underline text-primary" href="{{ post.edit_link }}">edit</a>{% endif %}
             </header>
-            <div class="entry-content">
+            <div class="mt-8 content">
                 {{ post.content }}
             </div>
         </article>

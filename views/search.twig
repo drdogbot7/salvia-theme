@@ -2,21 +2,34 @@
 
 {% block content %}
 
+    {% if posts.found_posts == 0 %}
+        
     <div class="page-header">
-        <h1>{{ post.title }}</h1>
+        <h1 class="text-2xl">No result for <q>{{ request.get.s }}</q></h1>
+    </div>
+    
+    <div class="mt-8">
+        {{ function('get_search_form') }}
     </div>
 
-    {% if posts.post_count == 0 %}
-        {{ __('Sorry, no results were found.', 'sage') }}
-        {{ function('get_search_form') }}
+    {% else %}
+
+    <div class="page-header">
+        <h1 class="text-2xl">{{ posts.found_posts == 1 ? '1 result' : posts.found_posts ~ ' results'  }} for <q>{{ request.get.s }}</q></h1>
+    </div>
+
+    <div class="mt-8 space-y-8">
+        {% for post in posts %}
+
+            {% include "views/content.twig" with {post: post}  %}
+
+        {% endfor %}
+    </div>
+
     {% endif %}
 
-    {% for post in posts %}
-
-        {% include "views/content.twig" with {post: post}  %}
-
-    {% endfor %}
-
-    {{ function('the_posts_navigation') }}
-
+    {% if posts.found_posts > posts|length %}
+    {% include "pagination.twig" %}
+    {% endif %}
+    
 {% endblock %}

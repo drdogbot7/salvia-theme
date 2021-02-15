@@ -1,6 +1,8 @@
 .navbar {
 	--navbarColor: theme('colors.gray.500');
 	--navbarColorHover: theme('colors.gray.900');
+	--navbarBgColor: transparent;
+	--navbarBgColorCurrent: theme('colors.gray.200');
 	--navbarBgColorHover: theme('colors.gray.400');
 	--navbarFontSize: theme('fontSize.sm');
 	--navbarPaddingBlock: theme('spacing.2');
@@ -24,4 +26,8 @@
 	background-color: var(--navbarBgColorHover);
 	color: var(--navbarColorHover);
 	transition: 0.15s;
+}
+
+.current-menu-item > .navbar__link {
+	background-color: var(--navbarBgColorCurrent);
 }

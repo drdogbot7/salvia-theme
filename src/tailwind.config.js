@@ -92,7 +92,7 @@ module.exports = {
 					minWidth: theme('screens.sm'),
 
 					// Side margin, defaults to core's 1em.
-					margin: theme('spacing.2'),
+					// margin: theme('spacing.4'),
 				},
 			},
 		}),

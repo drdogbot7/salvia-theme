@@ -1,30 +1,30 @@
 .content {
+	display: flow-root; //clear floats
 	h1,
 	h2,
 	h3,
 	h4,
 	h5,
 	h6 {
-		@apply font-bold;
-		@apply leading-tight;
+		font-weight: theme('fontWeight.bold');
 	}
 	h1 {
-		@apply text-4xl;
+		font-size: theme('fontSize.4xl');
 	}
 	h2 {
-		@apply text-3xl;
+		font-size: theme('fontSize.3xl');
 	}
 	h3 {
-		@apply text-xl;
+		font-size: theme('fontSize.xl');
 	}
 	h4 {
-		@apply text-lg;
+		font-size: theme('fontSize.lg');
 	}
 	h5 {
-		@apply text-base;
+		font-size: theme('fontSize.base');
 	}
 	h6 {
-		@apply text-sm;
+		font-size: theme('fontSize.sm');
 	}
 
 	/*
@@ -63,7 +63,7 @@
 	h4 + p,
 	h5 + p,
 	h6 + p {
-		margin-top: -0.5rem;
+		margin-top: -0.5em;
 	}
 
 	p:last-child,
@@ -81,25 +81,28 @@
 	}
 
 	/*
-  Lists
+	Lists
 */
-	ol {
+	ol,
+	ul {
 		padding-left: 1.5em;
+	}
+	ol {
 		list-style-type: decimal;
 	}
 	ul:not(.blocks-gallery-grid) {
-		padding-left: 1.5em;
 		list-style-type: disc;
 	}
 
 	/*
-  Links
-  */
-	a {
-		@apply text-blue-500;
+	Links
+*/
+	a:any-link {
+		color: theme('gutenberg.colors.primary');
 	}
-	a:hover {
-		@apply text-blue-700;
-		@apply underline;
+	a:hover,
+	a:focus,
+	a:active {
+		color: theme('gutenberg.colors.loud');
 	}
 }

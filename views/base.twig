@@ -6,20 +6,18 @@
 	</head>
 {% endblock %}
 
-	<body class="{{ body_class }} font-sans text-gray-800">
+	<body class="{{ body_class }} font-sans text-gray-800 break-words">
 
 		{% include 'views/header.twig' %}
 
-		<div class="max-w-2xl px-2 mx-auto mt-8" role="document">
-			<main>
+		<main class="mt-8" role="document">
 			{% block content %}{% endblock %}
-			</main>
-		</div>
+		</main>
 
 		{% include 'views/footer.twig' %}
 
 		{% if debug %}
-			{{ dump() }}
+			<div class="hidden md:block">{{ dump() }}</div>
 		{% endif %}
 
 	</body>

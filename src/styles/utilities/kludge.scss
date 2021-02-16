@@ -1,0 +1,4 @@
+// don't use position sticky when wordpress adds 'sticky' class to posts
+.post.sticky {
+	position: relative;
+}

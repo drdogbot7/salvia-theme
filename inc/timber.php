@@ -58,15 +58,3 @@ add_filter('timber/twig', function (\Twig_Environment $twig) {
     $twig->addFunction(new \Timber\Twig_Function('asset', 'salvia_asset'));
     return $twig;
 });
-
-
-/**
- * Title function.
- *
- * @param Twig_Environment $twig
- * @return $twig
- */
-add_filter('timber/twig', function (\Twig_Environment $twig) {
-    $twig->addFunction(new \Timber\Twig_Function('title', 'salvia_title'));
-    return $twig;
-});

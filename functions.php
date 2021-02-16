@@ -15,11 +15,11 @@
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $salvia_includes = [
-  'inc/assets.php',     // Asset function
-  'inc/setup.php',      // Theme setup
-  'inc/titles.php',     // Page titles
-  'inc/images.php',     // custom image sizes
-  'inc/timber.php',     // Twig magic
+  'inc/assets.php',       // Asset function
+  'inc/setup.php',        // Theme setup
+  'inc/block_editor.php', // Block editor theme
+  'inc/images.php',       // custom image sizes
+  'inc/timber.php',       // Twig magic
 ];
 
 foreach ($salvia_includes as $file) {

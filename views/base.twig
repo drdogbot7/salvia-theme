@@ -8,13 +8,13 @@
 
 	<body class="{{ body_class }} font-sans text-gray-800 break-words">
 
-		{% include 'views/header.twig' %}
+		{% include 'header.twig' %}
 
 		<main class="mt-8" role="document">
 			{% block content %}{% endblock %}
 		</main>
 
-		{% include 'views/footer.twig' %}
+		{% include 'footer.twig' %}
 
 		{% if debug %}
 			<div class="hidden md:block">{{ dump() }}</div>

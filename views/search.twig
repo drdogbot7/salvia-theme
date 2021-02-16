@@ -1,4 +1,4 @@
-{% extends "views/base.twig" %}
+{% extends "base.twig" %}
 
 {% block content %}
 
@@ -21,7 +21,7 @@
     <div class="mt-8 space-y-8">
         {% for post in posts %}
 
-            {% include "views/content.twig" with {post: post}  %}
+            {% include "content.twig" with {post: post}  %}
 
         {% endfor %}
     </div>

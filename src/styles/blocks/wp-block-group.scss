@@ -1,0 +1,13 @@
+/**
+* Styles for block editor 'group' block.
+*/
+
+.wp-block-group.has-background {
+	padding: theme('spacing.4');
+}
+
+@screen lg {
+	.wp-block-group.has-background {
+		padding: theme('spacing.8');
+	}
+}

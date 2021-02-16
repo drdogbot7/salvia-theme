@@ -1,6 +1,11 @@
-/*
-  Buttons
-*/
+/**
+ * Block editor button block.
+ * Outside of the block editor, we can also use the .btn class to style A or BUTTON elements. 
+ *
+ *
+ * @todo would be nice to extract this to a tailwind component and create buttons based on theme colors.
+**/
+
 .btn,
 .wp-block-button__link {
 	display: inline-block;

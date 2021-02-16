@@ -1,9 +1,7 @@
-.wp-block-table {
-  @apply mb-8;
-  & td,
-  & th {
-    @apply border border-shade-25;
-    @apply p-2;
-    text-align: left;
-  }
+.wp-block-table td,
+.wp-block-table th {
+	padding: theme('spacing.2');
+	border-width: 1px;
+	border-color: theme('colors.shade.25');
+	text-align: left;
 }

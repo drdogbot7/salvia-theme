@@ -1,2 +1,7 @@
+vendor
 acf-json
 dist
+node-modules
+fonts
+
+views/header.twig

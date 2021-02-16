@@ -71,10 +71,10 @@ Uncomment as needed.
 
 function my_image_sizes($sizes)
 {
-    $addsizes = array(
-    // "16-to-9_640w" => __( "16:9 cropped"),
-    // "4-to-3_640w" => __( "4:3 cropped")
-  );
-    $newsizes = array_merge($sizes, $addsizes);
-    return $newsizes;
+	$addsizes = [
+		// "16-to-9_640w" => __( "16:9 cropped"),
+		// "4-to-3_640w" => __( "4:3 cropped")
+	];
+	$newsizes = array_merge($sizes, $addsizes);
+	return $newsizes;
 }

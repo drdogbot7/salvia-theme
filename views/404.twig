@@ -1,19 +1,23 @@
-{% extends "base.twig" %}
+{% extends 'base.twig' %}
 
 {% block content %}
+	<div>
+		<h1>
+			{{ post.title }}
+		</h1>
+	</div>
 
-    <div>
-        <h1>{{ post.title }}</h1>
-    </div>
+	<div class="alert alert-warning">
+		{{
+			__('Sorry, but the page you were trying to view does not exist.', 'sage')
+		}}
+	</div>
 
-    <div class="alert alert-warning">
-        {{ __('Sorry, but the page you were trying to view does not exist.', 'sage') }}
-    </div>
+	<div>
+		<h1>
+			{{ post.title }}
+		</h1>
+	</div>
 
-    <div>
-        <h1>{{ post.title }}</h1>
-    </div>
-
-    {{ function('get_search_form') }}
-
+	{{ function('get_search_form') }}
 {% endblock %}

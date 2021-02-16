@@ -1,25 +1,35 @@
-{% block html_head_container %}
-	
-{% include 'html-header.twig' %}
-	{% block head %}
-	{% endblock %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="{{ site.charset }}" />
+		<meta name="description" content="{{ site.description }}" />
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="author" href="{{ site.theme.link }}/humans.txt" />
+		<link rel="pingback" href="{{ site.pingback_url }}" />
+		<link rel="profile" href="http://gmpg.org/xfn/11" />
+		{{ function('wp_head') }}
+		{% block head %}
+
+		{% endblock %}
 	</head>
-{% endblock %}
 
 	<body class="{{ body_class }} font-sans text-gray-800 break-words">
-
 		{% include 'header.twig' %}
 
 		<main class="mt-8" role="document">
-			{% block content %}{% endblock %}
+			{% block content %}
+
+			{% endblock %}
 		</main>
 
 		{% include 'footer.twig' %}
 
 		{% if debug %}
-			<div class="hidden md:block">{{ dump() }}</div>
+			<div class="hidden md:block">
+				{{ dump() }}
+			</div>
 		{% endif %}
-
 	</body>
-
 </html>

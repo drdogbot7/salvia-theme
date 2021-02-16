@@ -15,12 +15,14 @@
 		"dev": "encore dev",
 		"start": "encore dev --watch",
 		"build": "encore production",
-		"lint": "eslint --fix src"
+		"lint": "eslint --fix src",
+		"format": "prettier **/* --write --ignore-unknown"
 	},
 	"engines": {
 		"node": ">= 12.13.0"
 	},
 	"devDependencies": {
+		"@prettier/plugin-php": "^0.16.1",
 		"@symfony/webpack-encore": "^0.29.1",
 		"@wordpress/eslint-plugin": "^5.0.1",
 		"browser-sync": "^2.26.7",
@@ -34,7 +36,8 @@
 		"postcss": "^8.0",
 		"postcss-loader": "^3.0.0",
 		"postcss-preset-env": "^6.7.0",
-		"prettier": "^2.0.4",
+		"prettier": "^2.2.1",
+		"prettier-plugin-twig-melody": "^0.4.6",
 		"sass-loader": "^7.0.1",
 		"stylelint": "^12.0.0",
 		"stylelint-config-idiomatic-order": "^8.1.0",

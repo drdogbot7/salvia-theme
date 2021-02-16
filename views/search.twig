@@ -1,35 +1,52 @@
-{% extends "base.twig" %}
+{% extends 'base.twig' %}
 
 {% block content %}
+	{% if posts.found_posts == 0 %}
+		<div class="page-header">
+			<h1 class="text-2xl">
+				No result for <q>{{ request.get.s }}</q>
+			</h1>
+		</div>
 
-    {% if posts.found_posts == 0 %}
-        
-    <div class="page-header">
-        <h1 class="text-2xl">No result for <q>{{ request.get.s }}</q></h1>
-    </div>
-    
-    <div class="mt-8">
-        {{ function('get_search_form') }}
-    </div>
+		<div class="mt-8">
+			<form class="flex"
+				role="search"
+				method="get"
+				class="search-form"
+				action="index.php">
+				<label>
+					<span class="screen-reader-text">Search for:</span>
+					<input type="search"
+						class="border-gray-200 rounded-l"
+						placeholder="Search &hellip;"
+						value=""
+						name="s"
+						title="Search for:" />
+				</label>
+				<button class="rounded-l-none btn" type="submit" class="search-submit">
+					Search
+				</button>
+			</form>
+		</div>
+	{% else %}
+		<div class="page-header">
+			<h1 class="text-2xl">
+				{{ posts.found_posts == 1
+					? '1 result'
+					: posts.found_posts ~ ' results' }} for <q>{{ request.get.s }}</q>
+			</h1>
+		</div>
 
-    {% else %}
+		<div class="mt-8 space-y-8">
+			{% for post in posts %}
+				{% include 'content.twig' with {
+					post: post
+				} %}
+			{% endfor %}
+		</div>
+	{% endif %}
 
-    <div class="page-header">
-        <h1 class="text-2xl">{{ posts.found_posts == 1 ? '1 result' : posts.found_posts ~ ' results'  }} for <q>{{ request.get.s }}</q></h1>
-    </div>
-
-    <div class="mt-8 space-y-8">
-        {% for post in posts %}
-
-            {% include "content.twig" with {post: post}  %}
-
-        {% endfor %}
-    </div>
-
-    {% endif %}
-
-    {% if posts.found_posts > posts|length %}
-    {% include "pagination.twig" %}
-    {% endif %}
-    
+	{% if posts.found_posts > (posts|length) %}
+		{% include 'pagination.twig' %}
+	{% endif %}
 {% endblock %}

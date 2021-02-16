@@ -1,15 +1,17 @@
 <article {{ function('post_class') }}>
-
-    <header>
-        <h2 class="mb-0 text-2xl">
-            <a class="text-primary hover:underline" href="{{ post.link }}">{{ post.title }}</a>
-        </h2>
-        <div class="text-sm text-gray-400">
-            {% include "meta.twig" with {post:post} %}
-        </div>
-    </header>
-    <div class="content">
-        {{ post.preview }}
-    </div>
-
+	<header>
+		<h2 class="mb-0 text-2xl">
+			<a class="text-primary hover:underline" href="{{ post.link }}">
+				{{ post.title }}
+			</a>
+		</h2>
+		<div class="text-sm text-gray-400">
+			{% include 'meta.twig' with {
+				post: post
+			} %}
+		</div>
+	</header>
+	<div class="content">
+		{{ post.preview }}
+	</div>
 </article>

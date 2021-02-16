@@ -1,5 +1,6 @@
 <header
-	x-data="{ menuOpen: false }" x-on:keydown.escape="menuOpen = false"
+	x-data="{ menuOpen: false }"
+	x-on:keydown.escape="menuOpen = false"
 	class="p-4 bg-gray-100"
 >
 	<div class="flex items-center justify-between mx-auto">
@@ -9,7 +10,11 @@
 			</a>
 		</h1>
 		<div class="mx-1 ml-4 md:hidden">
-			<button @click="menuOpen = true" aria-haspopup="true" aria-controls="navMenu">
+			<button 
+				x-on:click="menuOpen = true" 
+				aria-haspopup="true" 
+				aria-controls="navMenu"
+			>
 				<i class="text-3xl fas fa-bars"></i>
 			</button>
 		</div>
@@ -42,11 +47,11 @@
 		id="navMenu"
 		class="fixed inset-0 z-50 bg-gray-200"
 		x-show.transition="menuOpen"
-		@click="menuOpen = false"
+		x-on:click="menuOpen = false"
 		x-cloak
 	>
 		<div class="absolute top-0 right-0 p-4">
-			<button @click="menuOpen = false">
+			<button x-on:click="menuOpen = false">
 				<i class="text-3xl fas fa-times"></i>
 			</button>
 		</div>
@@ -79,5 +84,4 @@
 			</ul>
 		</nav>
 	</div>
-	
 </header>

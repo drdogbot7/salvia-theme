@@ -1,14 +1,14 @@
-{% extends "base.twig" %}
+{% extends 'base.twig' %}
 
 {% block content %}
-
 	<article {{ function('post_class', 'max-w-2xl mx-auto') }}>
 		<header>
-			<h1 class="text-3xl">{{ post.title }}</h1>
+			<h1 class="text-3xl">
+				{{ post.title }}
+			</h1>
 		</header>
 		<div class="mt-8 content">
 			{{ post.content }}
 		</div>
 	</article>
-
 {% endblock %}

@@ -6,4 +6,4 @@
 
 $context = Timber::get_context();
 
-Timber::render( ['wide.twig', 'page.twig'], $context);
+Timber::render(['wide.twig', 'page.twig'], $context);

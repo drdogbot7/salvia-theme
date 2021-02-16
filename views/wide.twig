@@ -2,17 +2,13 @@
 
 {% block content %}
 
-    {% for post in posts %}
-
-        <article {{ function('post_class', 'container mx-auto') }}>
-            <header>
-                <h1 class="text-3xl">{{ post.title }}</h1>
-            </header>
-            <div class="mt-8 content">
-                {{ post.content }}
-            </div>
-        </article>
-
-    {% endfor %}
+    <article {{ function('post_class', 'container mx-auto') }}>
+        <header>
+            <h1 class="text-3xl">{{ post.title }}</h1>
+        </header>
+        <div class="mt-8 content">
+            {{ post.content }}
+        </div>
+    </article>
 
 {% endblock %}

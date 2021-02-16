@@ -2,8 +2,6 @@
 
 {% block content %}
 
-{% for post in posts %}
-
 	<article {{ function('post_class', 'max-w-2xl mx-auto') }}>
 		<header>
 			<h1 class="text-3xl">{{ post.title }}</h1>
@@ -12,7 +10,5 @@
 			{{ post.content }}
 		</div>
 	</article>
-
-	{% endfor %}
 
 {% endblock %}

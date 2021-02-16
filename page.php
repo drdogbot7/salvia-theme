@@ -1,4 +1,15 @@
 <?php
+/**
+ * The template for displaying all pages.
+ *
+ * To generate specific templates for your pages you can use:
+ * /mytheme/templates/page-mypage.twig
+ *
+ * @package WordPress
+ * @subpackage Timber
+ * @since 1.0.0
+ */
+
 $context         = Timber::context();
 $timber_post     = Timber::get_post();
 $context['post'] = $timber_post;

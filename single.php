@@ -1,4 +1,11 @@
 <?php
+/**
+ * The template for displaying all single posts.
+ *
+ * @package WordPress
+ * @subpackage Timber
+ * @since 1.0.0
+ */
 
 $context         = Timber::context();
 $timber_post     = Timber::get_post();

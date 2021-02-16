@@ -1,4 +1,11 @@
 <?php
+/**
+ * Initializes Timber
+ * 
+ * @package Wordpress
+ * @subpackage Timber
+ * @since Salvia 1.0.0
+ */
 
 $timber = new Timber\Timber();
 

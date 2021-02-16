@@ -1,4 +1,11 @@
 <?php
+/**
+ * Sets up theme and enqueues assets
+ * 
+ * @package Wordpress
+ * @subpackage Timber
+ * @since Salvia 1.0.0
+ */
 
 // Clean up wordpres <head>
 remove_action('wp_head', 'rsd_link'); // remove really simple discovery link
@@ -44,17 +51,17 @@ add_action(
 /**
  * Theme Editor assets
  */
-// add_action('enqueue_block_editor_assets', function () {
-//     $asset_path = get_stylesheet_directory() . '/dist';
-//     $css_assets = encore_entry_css_files('editor', $asset_path);
-//     $js_assets = encore_entry_js_files('editor', $asset_path);
-//     foreach ($css_assets as $key=>$resource) {
-//         wp_enqueue_style('theme-editor-css-' . $key, $resource, false, null);
-//     }
-//     foreach ($js_assets as $key=>$resource) {
-//         wp_enqueue_script('theme-editor-js-' . $key, $resource, ['jquery'], false, true);
-//     }
-// }, 100);
+add_action('enqueue_block_editor_assets', function () {
+    $asset_path = get_stylesheet_directory() . '/dist';
+    $css_assets = encore_entry_css_files('editor', $asset_path);
+    $js_assets = encore_entry_js_files('editor', $asset_path);
+    foreach ($css_assets as $key=>$resource) {
+        wp_enqueue_style('theme-editor-css-' . $key, $resource, false, null);
+    }
+    foreach ($js_assets as $key=>$resource) {
+        wp_enqueue_script('theme-editor-js-' . $key, $resource, ['jquery'], false, true);
+    }
+}, 100);
 
 /**
  * Theme setup

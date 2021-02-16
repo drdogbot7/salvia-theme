@@ -1,4 +1,11 @@
 <?php
+/**
+ * Configures the Wordpress Block Editor
+ * 
+ * @package Wordpress
+ * @subpackage Timber
+ * @since Salvia 1.0.0
+ */
 
 function block_editor_features($base_font_size = 16)
 {

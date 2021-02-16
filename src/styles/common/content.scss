@@ -1,5 +1,7 @@
 .content {
-	display: flow-root; //clear floats
+
+	/* Clear Floats! */
+	display: flow-root;
 	h1,
 	h2,
 	h3,
@@ -27,9 +29,7 @@
 		font-size: theme('fontSize.sm');
 	}
 
-	/*
-		Spacing
-	*/
+	/* Spacing */
 	p,
 	ul,
 	ol,
@@ -80,23 +80,17 @@
 		margin-bottom: 0;
 	}
 
-	/*
-	Lists
-*/
-	ol,
-	ul {
-		padding-left: 1.5em;
-	}
+	/* Lists */
 	ol {
+		padding-left: 1.5em;
 		list-style-type: decimal;
 	}
 	ul:not(.blocks-gallery-grid) {
+		padding-left: 1.5em;
 		list-style-type: disc;
 	}
 
-	/*
-	Links
-*/
+	/* Links */
 	a:any-link {
 		color: theme('gutenberg.colors.primary');
 	}

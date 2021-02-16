@@ -1,12 +1,15 @@
 <?php
 /**
- * Salvia includes
+ * Salvia Theme
  *
  * The $salvia_includes array determines the code library included in your theme.
  * Add or remove files to the array as needed. Supports child theme overrides.
  *
- * Please note that missing files will produce a fatal error.
- *
+ * Missing files will produce a fatal error.
+ * 
+ * @package WordPress
+ * @subpackage Timber
+ * @since 1.0.0
  */
 
 /**
@@ -18,7 +21,6 @@ $salvia_includes = [
   'inc/assets.php',       // Asset function
   'inc/setup.php',        // Theme setup
   'inc/block_editor.php', // Block editor theme
-  'inc/images.php',       // custom image sizes
   'inc/timber.php',       // Twig magic
 ];
 

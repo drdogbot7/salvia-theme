@@ -45,41 +45,40 @@
 
 	<div
 		id="navMenu"
-		class="fixed inset-0 z-50 bg-gray-200"
+		class="fixed inset-0 z-50 overflow-y-auto bg-gray-200"
 		x-show.transition="menuOpen"
 		x-on:click="menuOpen = false"
 		x-cloak
 	>
-		<div class="absolute top-0 right-0 p-4">
-			<button x-on:click="menuOpen = false">
-				<i class="text-3xl fas fa-times"></i>
-			</button>
+		<div class="sticky top-0">
+			<div class="absolute top-0 right-0 p-4">
+				<button x-on:click="menuOpen = false">
+					<i class="text-3xl fas fa-times"></i>
+				</button>
+			</div>
 		</div>
+		<a href="{{ site.url }}" title="{{ site.name }}" alt="{{ site.name }} logo">
+			<img class="w-1/2 h-auto py-4 mx-auto" src="{{ asset('logo.svg') }}" />
+		</a>
 		<nav>
-			<ul class="text-lg">
+			<ul class="text-lg text-center">
 				{% for item in menu.get_items %}
-					{% if item.get_children %}
-					<li class="mt-2 {{item.classes | join(' ')}}">
-						<a class="p-1" href="{{item.get_link}}">
+					<li class="{{item.classes | join(' ')}}">
+						<a class="block p-2 font-bold border-t border-shade-10" href="{{item.get_link}}">
 							{{item.title}}
 						</a>
-						<ul class="pl-4 text-base list-disc list-inside">
+					{% if item.get_children %}
+						<ul class="pb-2 text-sm text-center">
 							{% for child in item.get_children %}
 								<li>
-									<a class="p-1" href="{{child.get_link}}">
+									<a class="block py-2 border-shade-10" href="{{child.get_link}}">
 										{{child.title}}
 									</a>
 								</li>
 							{% endfor %}
 						</ul>
-					</li>
-					{% else %}
-					<li class="mt-2 {{item.classes | join(' ')}}">
-						<a class="p-1" href="{{item.get_link}}">
-							{{item.title}}
-						</a>
-					</li>
 					{% endif %}
+					</li>
 				{% endfor %}
 			</ul>
 		</nav>

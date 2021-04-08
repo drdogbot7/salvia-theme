@@ -7,24 +7,16 @@
 /*
  * Theme Styles
  */
-@import 'common/global.scss';
-@import 'common/content.scss';
+@import 'common/common';
 
 // Gutenberg blocks
-@import 'blocks/wp-block-button.scss';
-@import 'blocks/wp-block-group.scss';
-@import 'blocks/wp-block-quote.scss';
-@import 'blocks/wp-block-separator.scss';
-@import 'blocks/wp-block-table.scss';
+@import 'blocks/blocks';
 
-// Other components
-@import 'components/dropdown.scss';
-@import 'components/forms.scss';
-@import 'components/navbar.scss';
-@import 'components/pagination.scss';
+// Custom components
+@import 'components/components';
 
 // Page templates
-@import 'page_templates/wide.scss';
+@import 'page_templates/page_templates';
 
 /*
  * Tailwind Utilities
@@ -34,6 +26,10 @@
 /*
  * Custom Utilities
  */
-@import 'utilities/screen-reader.scss';
-@import 'utilities/alpinejs.scss';
-@import 'utilities/kludge.scss';
+@import 'utilities/utilities';
+
+/*
+ * Wordpress, Plugin and Misc styles
+ */
+@import 'wordpress/wordpress';
+@import 'misc/misc';

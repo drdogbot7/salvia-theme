@@ -5,7 +5,6 @@ import tailwind from './tailwind.config.js';
 import initFontAwesome from './components/fontAwesome';
 
 import './styles/main.scss';
-import './styles/editor.scss';
 
 WebFont.load({
 	google: {

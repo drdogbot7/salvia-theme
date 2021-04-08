@@ -1,0 +1,8 @@
+/**
+ * CSS specific to AlpineJS framework 
+ */
+
+// Avoid FOUC on elements initially hidden
+[x-cloak] {
+	display: none;
+}

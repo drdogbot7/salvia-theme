@@ -1,7 +1,6 @@
 const defaultTheme = require('tailwindcss/defaultTheme');
 const colors = require('./tailwind.colors');
 const gutenberg = require('tailwindcss-gutenberg');
-const forms = require('@tailwindcss/forms');
 
 module.exports = {
 	prefix: '',
@@ -100,7 +99,7 @@ module.exports = {
 	variants: {},
 	corePlugins: {},
 	plugins: [
-		forms,
+		require('@tailwindcss/forms'),
 
 		// Block Editor Color Palette utilities
 		gutenberg.colors,
@@ -114,6 +113,10 @@ module.exports = {
 		gutenberg.admin,
 	],
 	purge: {
+		layers: ['utilities'],
 		content: ['./views/**/*.twig'],
+		// options: {
+		// 	safelist: { standard: [/^has/] },
+		// },
 	},
 };

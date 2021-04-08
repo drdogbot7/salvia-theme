@@ -1,1 +1,43 @@
-@import 'main.scss';
+/*
+ * Tailwind Base Styles
+ */
+//  @tailwind base;
+//  @tailwind components;
+
+/*
+ * Theme Styles
+ */
+@import 'common/content.scss';
+
+// Gutenberg blocks
+@import 'blocks/blocks.scss';
+
+// Custom components
+@import 'components/components.scss';
+
+// Page templates
+@import 'page_templates/page_templates.scss';
+
+/*
+ * Tailwind Utilities
+ */
+@tailwind utilities;
+
+/*
+ * Custom Utilities
+ */
+@import 'utilities/utilities.scss';
+
+/*
+ * Wordpress, Plugin and Misc styles
+ */
+@import 'wordpress/wordpress.scss';
+@import 'misc/misc.scss';
+
+.editor-styles-wrapper {
+	font-family: theme('fontFamily.sans') !important;
+}
+
+.wp-block {
+	max-width: 1280px;
+}

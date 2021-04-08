@@ -1,7 +1,7 @@
 <?php
 /**
  * Configures the Wordpress Block Editor
- * 
+ *
  * @package Wordpress
  * @subpackage Timber
  * @since Salvia 1.0.0

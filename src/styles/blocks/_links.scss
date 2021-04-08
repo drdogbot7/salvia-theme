@@ -1,0 +1,11 @@
+.wp-block-paragraph,
+.wp-block-list,
+.wp-block-table {
+	a:any-link {
+		color: theme('colors.primary');
+	}
+	a:hover,
+	a:active {
+		text-decoration: underline;
+	}
+}

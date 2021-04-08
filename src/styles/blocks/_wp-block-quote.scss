@@ -1,0 +1,9 @@
+.wp-block-quote {
+	padding-top: 1rem;
+	padding-right: 1rem;
+	padding-bottom: 1rem;
+	padding-left: 2rem;
+	border-left: solid 2px theme('colors.gray.500');
+	background-color: theme('colors.gray.200');
+	quotes: '“' '”' '‘' '’';
+}

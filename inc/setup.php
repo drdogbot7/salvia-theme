@@ -1,7 +1,7 @@
 <?php
 /**
  * Sets up theme and enqueues assets
- * 
+ *
  * @package Wordpress
  * @subpackage Timber
  * @since Salvia 1.0.0
@@ -51,17 +51,32 @@ add_action(
 /**
  * Theme Editor assets
  */
-add_action('enqueue_block_editor_assets', function () {
-    $asset_path = get_stylesheet_directory() . '/dist';
-    $css_assets = encore_entry_css_files('editor', $asset_path);
-    $js_assets = encore_entry_js_files('editor', $asset_path);
-    foreach ($css_assets as $key=>$resource) {
-        wp_enqueue_style('theme-editor-css-' . $key, $resource, false, null);
-    }
-    foreach ($js_assets as $key=>$resource) {
-        wp_enqueue_script('theme-editor-js-' . $key, $resource, ['jquery'], false, true);
-    }
-}, 100);
+add_action(
+	'enqueue_block_editor_assets',
+	function () {
+		$asset_path = get_stylesheet_directory() . '/dist';
+		$css_assets = encore_entry_css_files('editor', $asset_path);
+		$js_assets = encore_entry_js_files('editor', $asset_path);
+		foreach ($css_assets as $key => $resource) {
+			wp_enqueue_style(
+				'theme-editor-css-' . $key,
+				$resource,
+				false,
+				null
+			);
+		}
+		foreach ($js_assets as $key => $resource) {
+			wp_enqueue_script(
+				'theme-editor-js-' . $key,
+				$resource,
+				['jquery'],
+				false,
+				true
+			);
+		}
+	},
+	100
+);
 
 /**
  * Theme setup
@@ -108,9 +123,9 @@ add_action(
 	20
 );
 
-add_filter('body_class', 'add_slug_to_body_class'); // Add slug to body class (Starkers build)
+// Add page slug to body class
+add_filter('body_class', 'add_slug_to_body_class');
 
-// Add page slug to body class, love this - Credit: Starkers Wordpress Theme
 function add_slug_to_body_class($classes)
 {
 	global $post;

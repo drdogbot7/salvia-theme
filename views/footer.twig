@@ -3,11 +3,11 @@
 	<img class="w-64 h-auto" src="{{ asset('logo.svg') }}" />
 	<div id="copyright">
 		©{{ 'now'|date('Y') }}
-		{{ theme.theme_mod('site_copyright_text', site.name) }}
+		{{ options.copyright_text ? options.copyright_text : site.name }}
 	</div>
-	{% if theme.theme_mod('site_footer_text') %}
-		<div id="site-info">
-			{{ theme.theme_mod('site_footer_text') }}
+	{% if options.footer_text %}
+		<div id="site-info" class="text-navy-500">
+			{{ options.footer_text }}
 		</div>
 	{% endif %}
 </footer>

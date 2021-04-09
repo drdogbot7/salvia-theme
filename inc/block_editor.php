@@ -43,7 +43,7 @@ function block_editor_features($base_font_size = 16)
 		['name' => 'Large', 'size' => 24, 'slug' => 'large'],
 		['name' => 'Huge', 'size' => 36, 'slug' => 'huge'],
 	]);
-	add_theme_support('align-wide');
+	// add_theme_support('align-wide');
 }
 
 add_action('after_setup_theme', 'block_editor_features');

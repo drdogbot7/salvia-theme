@@ -15,5 +15,5 @@ WebFont.load({
 /** Load Events */
 jQuery(function () {
 	initFontAwesome();
-	addBackToTop({ backgroundColor: tailwind.gutenberg.colors.primary });
+	addBackToTop({ backgroundColor: tailwind.theme.extend.colors.primary });
 });

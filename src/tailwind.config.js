@@ -5,6 +5,7 @@ const gutenberg = require('tailwindcss-gutenberg');
 module.exports = {
 	prefix: '',
 	important: false,
+	mode: 'jit',
 	separator: ':',
 	theme: {
 		/**

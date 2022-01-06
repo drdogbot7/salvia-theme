@@ -23,6 +23,7 @@ Encore
 	 * ENTRY CONFIG
 	 */
 	.addEntry('app', './src/index.js')
+	.addEntry('editor', './src/editor.js')
 
 	// When enabled, Webpack "splits" your files into smaller pieces for greater optimization.
 	.splitEntryChunks()

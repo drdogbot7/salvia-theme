@@ -5,39 +5,31 @@
 //  @tailwind components;
 
 /*
- * Theme Styles
- */
-@import 'common/content.scss';
+	* Theme Styles
+	*/
+@import 'common/common';
 
 // Gutenberg blocks
-@import 'blocks/blocks.scss';
+@import 'blocks/blocks';
 
 // Custom components
-@import 'components/components.scss';
+@import 'components/components';
 
 // Page templates
-@import 'page_templates/page_templates.scss';
+@import 'page_templates/page_templates';
 
 /*
- * Tailwind Utilities
- */
+	* Tailwind Utilities
+	*/
 @tailwind utilities;
 
 /*
- * Custom Utilities
- */
-@import 'utilities/utilities.scss';
+	* Custom Utilities
+	*/
+@import 'utilities/utilities';
 
 /*
- * Wordpress, Plugin and Misc styles
- */
-@import 'wordpress/wordpress.scss';
-@import 'misc/misc.scss';
-
-.editor-styles-wrapper {
-	font-family: theme('fontFamily.sans') !important;
-}
-
-.wp-block {
-	max-width: 1280px;
-}
+	* Wordpress, Plugin and Misc styles
+	*/
+@import 'wordpress/wordpress';
+@import 'misc/misc';

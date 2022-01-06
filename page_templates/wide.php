@@ -8,6 +8,8 @@
  * @since Salvia 1.0.0
  */
 
-$context = Timber::get_context();
+$context         = Timber::context();
+$timber_post     = Timber::get_post();
+$context['post'] = $timber_post;
 
 Timber::render(['wide.twig', 'page.twig'], $context);

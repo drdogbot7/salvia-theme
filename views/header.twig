@@ -46,7 +46,8 @@
 	<div
 		id="navMenu"
 		class="fixed inset-0 z-50 overflow-y-auto bg-gray-200"
-		x-show.transition="menuOpen"
+		x-show="menuOpen"
+		x-transition
 		x-on:click="menuOpen = false"
 		x-cloak
 	>

@@ -1,3 +1,7 @@
+@use 'sass:color';
+@use 'sass:list';
+@use 'sass:map';
+
 /**
  * Block editor button block.
  *
@@ -11,16 +15,15 @@ $colors: (
 	'white': #fff,
 );
 
-/* Button block
---------------------------------------------- */
+/* Button block */
 
 :root {
-	--btnBorderRadius: theme('borderRadius.md');
-	--btnBorderWidth: 2px;
-	--btnFontSize: theme('fontSize.base');
-	--btnFontWeight: theme('fontWeight.semibold');
-	--btnPaddingInline: theme('padding.6');
-	--btnPaddingBlock: theme('padding.1');
+	--btn-border-radius: theme('borderRadius.md');
+	--btn-border-width: 2px;
+	--btn-font-size: theme('fontSize.base');
+	--btn-font-weight: theme('fontWeight.semibold');
+	--btn-padding-inline: theme('padding.6');
+	--btn-padding-block: theme('padding.1');
 }
 
 .wp-block-buttons {
@@ -28,14 +31,14 @@ $colors: (
 }
 
 .wp-block-button__link {
-	border-width: var(--btnBorderWidth);
+	border-width: var(--btn-border-width);
 	border-style: solid;
-	border-color: rgba(255, 255, 255, 0.5);
-	border-radius: var(--btnBorderRadius);
-	font-size: var(--btnFontSize);
-	font-weight: var(--btnFontWeight);
-	padding-block: var(--btnPaddingBlock);
-	padding-inline: var(--btnPaddingInline);
+	border-color: rgb(255 255 255 / 50%);
+	border-radius: var(--btn-border-radius);
+	font-size: var(--btn-font-size);
+	font-weight: var(--btn-font-weight);
+	padding-block: var(--btn-padding-block);
+	padding-inline: var(--btn-padding-inline);
 
 	&:hover {
 		text-decoration: none;
@@ -51,12 +54,13 @@ $colors: (
 	}
 
 	&:not(.has-background) {
-		$default: nth(nth($colors, 1), 2); // first color in $colors array
+		$default: list.nth(list.nth($colors, 1), 2); // first color in $colors array
+
 		background-color: $default;
 
 		&:hover,
 		&:focus {
-			background-color: darken($default, 20%);
+			background-color: color.adjust($default, $lightness: -20%);
 		}
 	}
 
@@ -69,7 +73,7 @@ $colors: (
 
 		&.has-#{$name}-background-color:hover,
 		&.has-#{$name}-background-color:focus {
-			background-color: darken($color, 20%);
+			background-color: color.adjust($color, $lightness: -20%);
 		}
 	}
 }
@@ -77,6 +81,7 @@ $colors: (
 .is-style-outline .wp-block-button__link {
 	border-color: currentColor;
 	background-color: transparent;
+
 	&:hover,
 	&:focus {
 		background-color: transparent;
@@ -85,5 +90,5 @@ $colors: (
 }
 
 .wp-block-button__link.has-light-background-color {
-	border-color: darken(map-get($colors, 'light'), 20%);
+	border-color: color.adjust(map.get($colors, 'light'), $lightness: -20%);
 }

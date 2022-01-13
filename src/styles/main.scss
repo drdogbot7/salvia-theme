@@ -1,7 +1,10 @@
+/* stylelint-disable no-invalid-position-at-import-rule */
+
 /*
  * Tailwind Base Styles
  */
-@tailwind base;
+@import '~modern-normalize';
+
 @tailwind components;
 
 /*

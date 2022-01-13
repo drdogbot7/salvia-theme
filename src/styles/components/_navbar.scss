@@ -1,33 +1,36 @@
 .navbar {
-	--navbarColor: theme('colors.gray.500');
-	--navbarColorHover: theme('colors.gray.900');
-	--navbarBgColor: transparent;
-	--navbarBgColorCurrent: theme('colors.gray.200');
-	--navbarBgColorHover: theme('colors.gray.400');
-	--navbarFontSize: theme('fontSize.sm');
-	--navbarPaddingBlock: theme('spacing.2');
-	--navbarPaddingInline: theme('spacing.4');
+	--navbar-color: theme('colors.gray.500');
+	--navbar-color-hover: theme('colors.gray.900');
+	--navbar-bg-color: transparent;
+	--navbar-bg-color-current: theme('colors.gray.200');
+	--navbar-bg-color-hover: theme('colors.gray.400');
+	--navbar-font-size: theme('fontSize.sm');
+	--navbar-padding-block: theme('spacing.2');
+	--navbar-padding-inline: theme('spacing.4');
+
 	display: flex;
-	font-size: var(--navbarFontSize);
+	font-size: var(--navbar-font-size);
 }
+
 .navbar__item {
 	display: flex;
 }
+
 .navbar__link {
 	display: flex;
 	align-items: center;
-	color: var(--navbarColor);
-	padding-block: var(--navbarPaddingBlock);
-	padding-inline: var(--navbarPaddingInline);
+	color: var(--navbar-color);
+	padding-block: var(--navbar-padding-block);
+	padding-inline: var(--navbar-padding-inline);
 	transition: 0s;
 }
 
 .navbar__item:hover > .navbar__link {
-	background-color: var(--navbarBgColorHover);
-	color: var(--navbarColorHover);
+	background-color: var(--navbar-bg-color-hover);
+	color: var(--navbar-color-hover);
 	transition: 0.15s;
 }
 
 .current-menu-item > .navbar__link {
-	background-color: var(--navbarBgColorCurrent);
+	background-color: var(--navbar-bg-color-current);
 }

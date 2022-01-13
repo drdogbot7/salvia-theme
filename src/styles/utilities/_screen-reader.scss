@@ -11,6 +11,7 @@
 	clip-path: inset(50%);
 	word-wrap: normal !important;
 }
+
 .screen-reader-text:focus {
 	z-index: 100000; /* Above WP toolbar. */
 	top: 5px;

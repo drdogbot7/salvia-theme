@@ -1,4 +1,4 @@
-import alpine from 'alpinejs';
+import Alpine from 'alpinejs';
 import WebFont from 'webfontloader';
 import { addBackToTop } from 'vanilla-back-to-top';
 import tailwind from './tailwind.config.js';
@@ -16,4 +16,6 @@ WebFont.load({
 jQuery(function () {
 	initFontAwesome();
 	addBackToTop({ backgroundColor: tailwind.theme.extend.colors.primary });
+	window.Alpine = Alpine;
+	Alpine.start();
 });

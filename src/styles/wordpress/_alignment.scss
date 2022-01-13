@@ -1,0 +1,33 @@
+.alignfull,
+.alignwide {
+	width: 100vw;
+	max-width: 100vw;
+	margin-right: calc(50% - 50vw);
+	margin-left: calc(50% - 50vw);
+}
+
+@screen lg {
+	.alignwide {
+		width: theme('screens.lg');
+		max-width: theme('screens.lg');
+		margin-right: calc((theme('screens.md') - theme('screens.lg')) / 2);
+		margin-left: calc((theme('screens.md') - theme('screens.lg')) / 2);
+	}
+}
+
+.alignleft {
+	float: left;
+}
+
+.alignright {
+	float: right;
+}
+
+.aligncenter {
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.alignnone {
+	float: none;
+}

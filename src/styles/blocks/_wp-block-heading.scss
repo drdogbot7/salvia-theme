@@ -1,48 +1,33 @@
-.wp-block-heading {
-	margin-top: 1em;
-	margin-bottom: 0.5em;
+/**
+	Block Editor headings
+
+	Using :where selector to reduce specificity
+*/
+
+.content :where(h1, h2, h3, h4, h5, h6) {
+	font-family: serif;
 }
 
-.wp-block-heading--h1 {
-	font-size: theme('fontSize.2xl');
+.content :where(h1) {
+	font-size: var(--wp--preset--font-size--xxl);
 }
 
-.wp-block-heading--h2 {
-	font-size: theme('fontSize.xl');
+.content :where(h2) {
+	font-size: var(--wp--preset--font-size--xl);
 }
 
-.wp-block-heading--h3 {
-	font-size: theme('fontSize.lg');
+.content :where(h3) {
+	font-size: var(--wp--preset--font-size--lg);
 }
 
-.wp-block-heading--h4 {
-	font-size: theme('fontSize.base');
+.content :where(h4) {
+	font-size: var(--wp--preset--font-size--md);
 }
 
-@screen lg {
-	.wp-block-heading--h1 {
-		font-size: theme('fontSize.3xl');
-	}
-
-	.wp-block-heading--h2 {
-		font-size: theme('fontSize.2xl');
-	}
-
-	.wp-block-heading--h3 {
-		font-size: theme('fontSize.xl');
-	}
-
-	.wp-block-heading--h4 {
-		font-size: theme('fontSize.lg');
-	}
+.content :where(h5) {
+	font-size: var(--wp--preset--font-size--base);
 }
 
-@screen xl {
-	.wp-block-heading--h1 {
-		font-size: theme('fontSize.4xl');
-	}
-
-	.wp-block-heading--h2 {
-		font-size: theme('fontSize.3xl');
-	}
+.content :where(h6) {
+	font-size: var(--wp--preset--font-size--sm);
 }

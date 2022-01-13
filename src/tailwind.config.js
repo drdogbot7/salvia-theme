@@ -1,6 +1,5 @@
 const defaultTheme = require('tailwindcss/defaultTheme');
 const colors = require('./tailwind.colors');
-const gutenberg = require('tailwindcss-gutenberg');
 
 module.exports = {
 	prefix: '',

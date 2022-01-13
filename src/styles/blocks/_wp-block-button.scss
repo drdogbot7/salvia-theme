@@ -1,7 +1,3 @@
-@use 'sass:color';
-@use 'sass:list';
-@use 'sass:map';
-
 /**
  * Block editor button block.
  *
@@ -33,7 +29,7 @@ $colors: (
 .wp-block-button__link {
 	border-width: var(--btn-border-width);
 	border-style: solid;
-	border-color: rgb(255 255 255 / 50%);
+	border-color: #fff8;
 	border-radius: var(--btn-border-radius);
 	font-size: var(--btn-font-size);
 	font-weight: var(--btn-font-weight);
@@ -54,13 +50,13 @@ $colors: (
 	}
 
 	&:not(.has-background) {
-		$default: list.nth(list.nth($colors, 1), 2); // first color in $colors array
+		$default: nth(nth($colors, 1), 2); // first color in $colors array
 
 		background-color: $default;
 
 		&:hover,
 		&:focus {
-			background-color: color.adjust($default, $lightness: -20%);
+			background-color: darken($default, 20%);
 		}
 	}
 
@@ -73,7 +69,7 @@ $colors: (
 
 		&.has-#{$name}-background-color:hover,
 		&.has-#{$name}-background-color:focus {
-			background-color: color.adjust($color, $lightness: -20%);
+			background-color: darken($color, 20%);
 		}
 	}
 }
@@ -90,5 +86,5 @@ $colors: (
 }
 
 .wp-block-button__link.has-light-background-color {
-	border-color: color.adjust(map.get($colors, 'light'), $lightness: -20%);
+	border-color: darken(map-get($colors, 'light'), 20%);
 }

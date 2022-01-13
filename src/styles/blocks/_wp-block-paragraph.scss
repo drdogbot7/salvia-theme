@@ -1,3 +1,11 @@
-.wp-block-paragraph {
-	margin-bottom: 1em;
+/**
+	Block Editor paragraphs
+
+	Using :where selector to reduce specificity
+*/
+
+/* default size and line height for paragraphs */
+.content :where(p) {
+	font-size: var(--wp--preset--font-size--base);
+	line-height: 1.375;
 }

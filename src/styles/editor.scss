@@ -1,0 +1,35 @@
+/*
+ * Tailwind Base Styles
+ */
+//  @tailwind base;
+//  @tailwind components;
+
+/*
+	* Theme Styles
+	*/
+@import 'common/common';
+
+// Gutenberg blocks
+@import 'blocks/blocks';
+
+// Custom components
+@import 'components/components';
+
+// Page templates
+@import 'page_templates/page_templates';
+
+/*
+	* Tailwind Utilities
+	*/
+@tailwind utilities;
+
+/*
+	* Custom Utilities
+	*/
+@import 'utilities/utilities';
+
+/*
+	* Wordpress, Plugin and Misc styles
+	*/
+@import 'wordpress/wordpress';
+@import 'misc/misc';

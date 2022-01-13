@@ -1,0 +1,7 @@
+.wp-block-table td,
+.wp-block-table th {
+	padding: theme('spacing.2');
+	border-width: 1px;
+	border-color: theme('colors.shade.25');
+	text-align: left;
+}

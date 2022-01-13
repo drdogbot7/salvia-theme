@@ -1,0 +1,4 @@
+// Hide annoying recaptcha badge, used by invisible recaptcha (v3)
+.grecaptcha-badge {
+	display: none !important;
+}

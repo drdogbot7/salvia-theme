@@ -1,17 +1,17 @@
-{% extends "views/base.twig" %}
+{% extends 'base.twig' %}
 
 {% block content %}
+	<div class="container mx-auto">
+		<div class="space-y-8">
+			{% for post in posts %}
+				{% include 'content.twig' with {
+					post: post
+				} %}
+			{% endfor %}
+		</div>
 
-    {% for post in posts %}
-
-        {% include "views/content.twig" with {post: post}  %}
-
-    {% endfor %}
-
-{% endblock %}
-
-{% block sidebar %}
-
-    {% include "views/sidebar.twig" %}
-
+		{% if posts.found_posts > (posts|length) %}
+			{% include 'pagination.twig' %}
+		{% endif %}
+	</div>
 {% endblock %}

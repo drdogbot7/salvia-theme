@@ -1,0 +1,5 @@
+{
+  "useTabs": true,
+  "singleQuote": true,
+  "plugins": ["./node_modules/prettier-plugin-twig-melody"]
+}

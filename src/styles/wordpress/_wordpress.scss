@@ -1,0 +1,27 @@
+/**
+ * Styles and fixes for misc wordpress-generated classes
+ */
+
+// "read-more" links
+.read-more {
+	color: theme('colors.blue.500');
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
+// Tailwind and wordpress have conflicting 'sticky' classes
+.post.sticky {
+	position: relative;
+}
+
+// Utility class that sets top based on wordpress admin bar
+.admin-bar .top-admin {
+	top: 46px;
+}
+
+@screen md {
+	.admin-bar .top-admin {
+		top: 36px;
+	}
+}

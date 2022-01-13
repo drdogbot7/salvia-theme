@@ -1,26 +1,26 @@
 {
-  "extends": [
-    "stylelint-config-wordpress",
-    "stylelint-config-rational-order",
-    "stylelint-config-prettier"
-  ],
-  "plugins": [
-    "stylelint-prettier"
-  ],
-  "rules": {
-    "prettier/prettier": true,
-    "at-rule-no-unknown": [
-      true,
-      {
-        "ignoreAtRules": [
-          "extends",
-          "apply",
-          "tailwind",
-          "components",
-          "utilities",
-          "screen"
-        ]
-      }
-    ]
-  }
+	"extends": [
+		"stylelint-config-wordpress",
+		"stylelint-config-idiomatic-order",
+		"stylelint-config-prettier"
+	],
+	"rules": {
+		"block-no-empty": null,
+		"no-descending-specificity": null,
+		"selector-class-pattern": null,
+		"at-rule-no-unknown": [
+			true,
+			{
+				"ignoreAtRules": [
+					"layer",
+					"extends",
+					"apply",
+					"tailwind",
+					"components",
+					"utilities",
+					"screen"
+				]
+			}
+		]
+	}
 }

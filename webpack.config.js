@@ -23,7 +23,7 @@ Encore
 	 * ENTRY CONFIG
 	 */
 	.addEntry('app', './src/index.js')
-	.addEntry('images', './src/images/index.js')
+	.addEntry('editor', './src/editor.js')
 
 	// When enabled, Webpack "splits" your files into smaller pieces for greater optimization.
 	.splitEntryChunks()
@@ -35,6 +35,10 @@ Encore
 
 	.addExternals({
 		jquery: 'jQuery',
+	})
+
+	.copyFiles({
+		from: './src/images',
 	})
 
 	/*
@@ -54,6 +58,9 @@ Encore
 		config.useBuiltIns = 'usage';
 		config.corejs = 3;
 	})
+	// enable sass
+	.enableSassLoader()
+
 	// enables postcss
 	.enablePostCssLoader()
 
@@ -64,7 +71,7 @@ Encore
 			port: 3000,
 			logLevel: 'default',
 			files: ['**/*.(php|twig)'],
-			proxy: 'http://localhost',
+			proxy: 'http://localhost:8080',
 		})
 	);
 

@@ -1,9 +1,0 @@
-.wp-block-table {
-  @apply mb-8;
-  & td,
-  & th {
-    @apply border border-shade-25;
-    @apply p-2;
-    text-align: left;
-  }
-}

@@ -1,37 +1,86 @@
-<header class="bg-white p-4">
-    <div class="container mx-auto flex justify-between items-center">
-        <h1>
-            <a href="{{ site.url }}" title="{{ site.name }}" alt="{{ site.name }} logo">
-                <img class="w-32 h-auto" src="{{ asset('images/logo.svg') }}" />
-            </a>
-        </h1>
-        <nav>
-            <ul class="navbar">
-                {% for item in menu.get_items %}
-                    {% if item.get_children %}
-                    <li class="navbar__item dropdown {{item.classes | join(' ')}}">
-                        <a class="navbar__link" href="{{item.get_link}}">
-                            {{item.title}}
-                        </a>
-                        <ul class="dropdown__menu">
-                            {% for child in item.get_children %}
-                                <li class="dropdown__item">
-                                    <a class="dropdown__link" href="{{child.get_link}}">
-                                        {{child.title}}
-                                    </a>
-                                </li>
-                            {% endfor %}
-                        </ul>
-                    </li>
-                    {% else %}
-                    <li class="navbar__item {{item.classes | join(' ')}}">
-                        <a class="navbar__link" href="{{item.get_link}}">
-                            {{item.title}}
-                        </a>
-                    </li>
-                    {% endif %}
-                {% endfor %}
-            </ul>
-        </nav>
-    </div>
+<header
+	x-data="{ menuOpen: false }"
+	x-on:keydown.escape="menuOpen = false"
+	class="p-4 bg-gray-100"
+>
+	<div class="flex items-center justify-between mx-auto">
+		<h1>
+			<a href="{{ site.url }}" title="{{ site.name }}" alt="{{ site.name }} logo">
+				<img class="w-32 h-auto" src="{{ asset('logo.svg') }}" />
+			</a>
+		</h1>
+		<div class="mx-1 ml-4 md:hidden">
+			<button 
+				x-on:click="menuOpen = true" 
+				aria-haspopup="true" 
+				aria-controls="navMenu"
+			>
+				<i class="text-3xl fas fa-bars"></i>
+			</button>
+		</div>
+		<nav class="hidden md:block">
+			<ul class="navbar">
+				{% for item in menu.get_items %}
+					<li class="navbar__item {{ item.get_children ? 'dropdown' }} {{item.classes | join(' ')}}">
+						<a class="navbar__link" href="{{item.get_link}}">
+						{{item.title}}
+  					{{item.get_children ? '<i class="ml-1 fas fa-caret-down"></i>' }}
+						</a>
+					{% if item.get_children %}
+						<ul class="dropdown__menu">
+							{% for child in item.get_children %}
+								<li class="dropdown__item">
+									<a class="dropdown__link" href="{{child.get_link}}">
+										{{child.title}}
+									</a>
+								</li>
+							{% endfor %}
+						</ul>
+					{% endif %}
+					</li>
+				{% endfor %}
+			</ul>
+		</nav>
+	</div>
+
+	<div
+		id="navMenu"
+		class="fixed inset-0 z-50 overflow-y-auto bg-gray-200"
+		x-show.transition="menuOpen"
+		x-on:click="menuOpen = false"
+		x-cloak
+	>
+		<div class="sticky top-0">
+			<div class="absolute top-0 right-0 p-4">
+				<button x-on:click="menuOpen = false">
+					<i class="text-3xl fas fa-times"></i>
+				</button>
+			</div>
+		</div>
+		<a href="{{ site.url }}" title="{{ site.name }}" alt="{{ site.name }} logo">
+			<img class="w-1/2 h-auto py-4 mx-auto" src="{{ asset('logo.svg') }}" />
+		</a>
+		<nav>
+			<ul class="text-lg text-center">
+				{% for item in menu.get_items %}
+					<li class="{{item.classes | join(' ')}}">
+						<a class="block p-2 font-bold border-t border-shade-10" href="{{item.get_link}}">
+							{{item.title}}
+						</a>
+					{% if item.get_children %}
+						<ul class="pb-2 text-sm text-center">
+							{% for child in item.get_children %}
+								<li>
+									<a class="block py-2 border-shade-10" href="{{child.get_link}}">
+										{{child.title}}
+									</a>
+								</li>
+							{% endfor %}
+						</ul>
+					{% endif %}
+					</li>
+				{% endfor %}
+			</ul>
+		</nav>
+	</div>
 </header>

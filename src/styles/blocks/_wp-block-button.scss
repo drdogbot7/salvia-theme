@@ -1,0 +1,89 @@
+/**
+ * Block editor button block.
+ *
+ * @todo would be nice to extract this to a tailwind component and create buttons based on theme colors.
+**/
+
+$colors: (
+	'dark': #1b1b3a,
+	'primary': #cc0001,
+	'light': #f2f0e1,
+	'white': #fff,
+);
+
+/* Button block
+--------------------------------------------- */
+
+:root {
+	--btnBorderRadius: theme('borderRadius.md');
+	--btnBorderWidth: 2px;
+	--btnFontSize: theme('fontSize.base');
+	--btnFontWeight: theme('fontWeight.semibold');
+	--btnPaddingInline: theme('padding.6');
+	--btnPaddingBlock: theme('padding.1');
+}
+
+.wp-block-buttons {
+	margin-bottom: 1rem;
+}
+
+.wp-block-button__link {
+	border-width: var(--btnBorderWidth);
+	border-style: solid;
+	border-color: rgba(255, 255, 255, 0.5);
+	border-radius: var(--btnBorderRadius);
+	font-size: var(--btnFontSize);
+	font-weight: var(--btnFontWeight);
+	padding-block: var(--btnPaddingBlock);
+	padding-inline: var(--btnPaddingInline);
+
+	&:hover {
+		text-decoration: none;
+		transition: 0.5s;
+	}
+
+	&:not(.has-text-color) {
+		color: white;
+
+		&:hover {
+			color: white;
+		}
+	}
+
+	&:not(.has-background) {
+		$default: nth(nth($colors, 1), 2); // first color in $colors array
+		background-color: $default;
+
+		&:hover,
+		&:focus {
+			background-color: darken($default, 20%);
+		}
+	}
+
+	@each $name, $color in $colors {
+		&.has-#{$name}-color:any-link,
+		&.has-#{$name}-color:hover,
+		&.has-#{$name}-color:focus {
+			color: $color;
+		}
+
+		&.has-#{$name}-background-color:hover,
+		&.has-#{$name}-background-color:focus {
+			background-color: darken($color, 20%);
+		}
+	}
+}
+
+.is-style-outline .wp-block-button__link {
+	border-color: currentColor;
+	background-color: transparent;
+	&:hover,
+	&:focus {
+		background-color: transparent;
+		text-decoration: underline;
+	}
+}
+
+.wp-block-button__link.has-light-background-color {
+	border-color: darken(map-get($colors, 'light'), 20%);
+}

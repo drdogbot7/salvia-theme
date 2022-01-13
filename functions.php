@@ -21,7 +21,6 @@ $salvia_includes = [
 	'inc/assets.php', // Asset function
 	'inc/setup.php', // Theme setup
 	'inc/carbon_fields.php', // Theme options page
-	'inc/block_editor.php', // Block editor theme
 	'inc/timber.php', // Twig magic
 	'inc/queries.php', // Modify queries
 	'inc/plugins.php', // plugin related

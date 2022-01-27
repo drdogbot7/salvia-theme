@@ -17,6 +17,7 @@ Encore
 	// public path used by the web server to access the output path
 	.setPublicPath('/wp-content/themes/salvia-theme/dist/')
 	// only needed for CDN's or sub-directory deploy
+	// !! we need this for our twig asset function to work
 	.setManifestKeyPrefix('')
 
 	/*

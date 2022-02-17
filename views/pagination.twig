@@ -1,22 +1,25 @@
 <div class="my-8">
 	<div class="flex justify-center">
-		<ul class="pagination">
+		<ul class="flex p-0 overflow-hidden border border-gray-200 rounded">
 			{% if posts.pagination.prev %}
-				<li class="pagination__item pagination__item--prev">
+				<li>
 					<a href="{{ posts.pagination.prev.link }}"
-						class="pagination__link {{
+						class="block px-3 py-2 text-blue-500 border-r border-gray-200 hover:text-white hover:bg-blue-500 {{
 						posts.pagination.prev.link|length
 							? ''
 							: 'hidden'
 						}}">
-						Prev
+						&larr;
 					</a>
 				</li>
 			{% endif %}
 			{% for page in posts.pagination.pages %}
 				<li class="pagination__item">
 					{% if page.link %}
-						<a href="{{ page.link }}" class="pagination__link {{ page.class }}">
+						<a href="{{ page.link }}"
+							class="block text-blue-500 border-r border-gray-200 px-3 py-2 hover:text-white hover:bg-blue-500 {{
+							page.class
+							}}">
 							{{ page.title }}
 						</a>
 					{% else %}
@@ -27,14 +30,14 @@
 				</li>
 			{% endfor %}
 			{% if posts.pagination.next %}
-				<li class="pagination__item pagination__item--next">
+				<li class="pagination__item">
 					<a href="{{ posts.pagination.next.link }}"
-						class="pagination__link {{
+						class="block text-blue-500 border-r border-gray-200 px-3 py-2 hover:text-white hover:bg-blue-500 {{
 						posts.pagination.next.link|length
 							? ''
 							: 'hidden'
 						}}">
-						Next
+						&rarr;
 					</a>
 				</li>
 			{% endif %}

@@ -11,12 +11,12 @@ import {
 import {
 	faBars,
 	faTimes,
-	faCaretDown,
+	faChevronDown,
 } from '@fortawesome/free-solid-svg-icons';
 
 const initFontAwesome = () => {
 	library.add(faTwitter, faFacebook, faLinkedin, faInstagram, faYoutube);
-	library.add(faBars, faTimes, faCaretDown);
+	library.add(faBars, faTimes, faChevronDown);
 	dom.watch();
 };
 

@@ -2,7 +2,7 @@
 
 {% block content %}
 	<article {{ function('post_class', 'max-w-2xl mx-auto') }}>
-		<header>
+		<header class="{{ post._crb_hide_title == 'true' ? 'hidden' : '' }}">
 			<h1 class="text-3xl">
 				{{ post.title }}
 			</h1>

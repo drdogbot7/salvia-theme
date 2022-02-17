@@ -28,24 +28,6 @@ function crb_attach_theme_options()
 				'Footer Text'
 			)->set_help_text('Appears in footer below copyright.'),
 		])
-		->add_tab(__('Contact'), [
-			Field::make('text', 'crb_address', 'Address'),
-			Field::make('text', 'crb_address_url', 'Address URL'),
-			Field::make('text', 'crb_telephone', 'Phone Number')->set_attribute(
-				'placeholder',
-				'(***) ***-****'
-			),
-			Field::make('text', 'crb_email', 'Contact Email'),
-		])
-		->add_tab(__('Misc'), [
-			Field::make(
-				'image',
-				'crb_default_image',
-				'Default Image'
-			)->set_help_text(
-				'Used as a fallback when a Featured Image is not set.'
-			),
-		])
 		->add_tab(__('Scripts'), [
 			Field::make(
 				'header_scripts',

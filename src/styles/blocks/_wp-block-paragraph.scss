@@ -9,3 +9,7 @@
 	font-size: var(--wp--preset--font-size--base);
 	line-height: 1.375;
 }
+
+.content :where(p):not(:first-child) {
+	margin-top: var(--wp--style--block-gap);
+}

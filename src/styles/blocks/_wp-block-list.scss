@@ -1,13 +1,21 @@
-.wp-block-list {
+/**
+ * Block Editor Lists
+*/
+
+.content :where(ul, ol) {
 	padding-left: 1.5em;
-	margin-bottom: 1em;
-	list-style-position: inside;
+	font-size: var(--wp--preset--font-size--sm);
+	line-height: 1.375;
 }
 
-.wp-block-list--unordered {
+.content :where(ul, ol):not(:first-child) {
+	margin-top: var(--wp--style--block-gap);
+}
+
+.content :where(ul) {
 	list-style-type: disc;
 }
 
-.wp-block-list--ordered {
+.content :where(ol) {
 	list-style-type: decimal;
 }

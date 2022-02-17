@@ -1,12 +1,8 @@
-/*
- * Tailwind Base Styles
- */
-//  @tailwind base;
-//  @tailwind components;
+/* stylelint-disable no-invalid-position-at-import-rule */
 
 /*
-	* Theme Styles
-	*/
+ * Theme Styles
+ */
 @import 'common/common';
 
 // Gutenberg blocks
@@ -19,17 +15,17 @@
 @import 'page_templates/page_templates';
 
 /*
-	* Tailwind Utilities
-	*/
+ * Tailwind Utilities
+ */
 @tailwind utilities;
 
 /*
-	* Custom Utilities
-	*/
+ * Custom Utilities
+ */
 @import 'utilities/utilities';
 
 /*
-	* Wordpress, Plugin and Misc styles
-	*/
+ * Wordpress, Plugin and Misc styles
+ */
 @import 'wordpress/wordpress';
 @import 'misc/misc';

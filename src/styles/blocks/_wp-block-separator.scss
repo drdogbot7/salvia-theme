@@ -1,4 +1,4 @@
 .wp-block-separator {
 	border-bottom-width: 0; // override tailwindcss base, because Wordpress block editor uses top border.
-	margin-block: theme('spacing.8');
+	margin-block: calc(2 * var(--wp--style--block-gap));
 }

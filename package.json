@@ -16,7 +16,8 @@
 		"start": "encore dev --watch",
 		"build": "encore production",
 		"lint": "eslint --fix src",
-		"format": "prettier **/* --write --ignore-unknown"
+		"format": "prettier **/* --write --ignore-unknown",
+		"stylelint-check": "stylelint-config-prettier-check"
 	},
 	"engines": {
 		"node": ">= 12.13.0"
@@ -53,8 +54,6 @@
 		"@fortawesome/free-solid-svg-icons": "^5.15.4",
 		"@tailwindcss/forms": "^0.4.0",
 		"alpinejs": "^3.8.0",
-		"eslint-plugin-prettier": "^4.0.0",
-		"modern-normalize": "^1.1.0",
 		"tailwindcss": "^3.0",
 		"vanilla-back-to-top": "^7.2.1",
 		"webfontloader": "^1.6.28"

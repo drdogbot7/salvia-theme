@@ -1,2 +1,4 @@
 body {
+	/* prevent 100vw images from adding horizontal scrollbar */
+	overflow-x: hidden;
 }

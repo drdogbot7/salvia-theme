@@ -5,29 +5,39 @@
 */
 
 .content :where(h1, h2, h3, h4, h5, h6) {
-	font-family: serif;
+	font-weight: 700;
+}
+
+.content :where(:is(h1, h2, h3, h4, h5, h6):not(:first-child)) {
+	margin-top: 1.5em;
 }
 
 .content :where(h1) {
-	font-size: var(--wp--preset--font-size--xxl);
+	font-size: var(--wp--preset--font-size--xl);
+	line-height: 1.1;
 }
 
 .content :where(h2) {
-	font-size: var(--wp--preset--font-size--xl);
+	font-size: var(--wp--preset--font-size--lg);
+	line-height: 1.25;
 }
 
 .content :where(h3) {
-	font-size: var(--wp--preset--font-size--lg);
+	font-size: var(--wp--preset--font-size--md);
+	line-height: 1.25;
 }
 
 .content :where(h4) {
-	font-size: var(--wp--preset--font-size--md);
+	font-size: var(--wp--preset--font-size--base);
+	line-height: 1.375;
 }
 
 .content :where(h5) {
-	font-size: var(--wp--preset--font-size--base);
+	font-size: var(--wp--preset--font-size--sm);
+	line-height: 1.375;
 }
 
 .content :where(h6) {
 	font-size: var(--wp--preset--font-size--sm);
+	line-height: 1.375;
 }

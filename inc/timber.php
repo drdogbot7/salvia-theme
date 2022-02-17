@@ -43,7 +43,7 @@ class SalviaTheme extends TimberSite
 		/* Site info */
 		$context['site'] = $this;
 
-		$context['sidebar_primary'] = Timber::get_widgets('sidebar-primary');
+		$context['sidebar_footer'] = Timber::get_widgets('sidebar_footer');
 
 		/* Theme Options */
 		$context['options']['copyright_text'] = carbon_get_theme_option(

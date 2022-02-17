@@ -70,11 +70,8 @@ function crb_attach_post_meta()
 		->where('post_type', '=', 'page')
 		->where('post_id', '!=', get_option('page_for_posts'))
 		->add_fields([
-			Field::make('checkbox', 'crb_show_title', 'Show Page Title')
+			Field::make('checkbox', 'crb_hide_title', 'Hide Page Title')
 				->set_option_value('true')
-				->set_default_value('true'),
-			Field::make('checkbox', 'crb_show_featured', 'Show Featured Image')
-				->set_option_value('true')
-				->set_default_value('true'),
+				->set_default_value(null),
 		]);
 }

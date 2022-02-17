@@ -97,6 +97,16 @@ add_action(
 			'primary_navigation' => 'Primary Navigation',
 		]);
 		/**
+		 * Register widget areas
+		 * @link https://developer.wordpress.org/reference/functions/register_sidebar/
+		 */
+		register_sidebar([
+			'id' => 'sidebar_footer',
+			'name' => 'Footer Sidebar',
+			'before_widget' => '<div>',
+			'after_widget' => '</div>',
+		]);
+		/**
 		 * Enable post thumbnails
 		 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 		 */

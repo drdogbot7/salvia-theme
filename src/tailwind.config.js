@@ -1,6 +1,3 @@
-const defaultTheme = require('tailwindcss/defaultTheme');
-const colors = require('./tailwind.colors');
-
 module.exports = {
 	prefix: '',
 	important: false,
@@ -21,13 +18,14 @@ module.exports = {
 			center: true,
 		},
 		extend: {
-			colors: {
-				tint: colors.tint,
-				shade: colors.shade,
+			fontFamily: {
+				display: '"Roboto Slab", sans-serif',
 			},
 		},
 	},
 	variants: {},
-	corePlugins: {},
-	plugins: [require('@tailwindcss/forms')],
+	corePlugins: {
+		fontSize: false,
+	},
+	plugins: [require('@tailwindcss/forms'), require('tailwindcss-fluid-type')],
 };

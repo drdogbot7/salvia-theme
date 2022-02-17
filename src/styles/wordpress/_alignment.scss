@@ -16,10 +16,12 @@
 }
 
 .alignleft {
+	margin-right: var(--wp--style--block-gap);
 	float: left;
 }
 
 .alignright {
+	margin-left: var(--wp--style--block-gap);
 	float: right;
 }
 

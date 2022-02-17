@@ -1,12 +1,24 @@
-.wp-block-paragraph,
-.wp-block-list,
-.wp-block-table {
-	a:any-link {
-		color: theme('colors.blue.500');
-	}
+/**
+ * Links
+ */
 
-	a:hover,
-	a:active {
-		text-decoration: underline;
-	}
+.content a:any-link {
+	color: theme('colors.blue.500');
+}
+
+.content a:hover,
+.content a:active {
+	text-decoration: underline;
+}
+
+/**
+ * Images
+ */
+
+.content img {
+	max-width: 100%;
+}
+
+.wp-caption {
+	max-width: 100%;
 }

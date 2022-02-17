@@ -1,9 +1,11 @@
-.wp-block-quote {
-	padding-top: 1rem;
-	padding-right: 1rem;
-	padding-bottom: 1rem;
-	padding-left: 2rem;
-	border-left: solid 2px theme('colors.gray.500');
-	background-color: theme('colors.gray.200');
-	quotes: '“' '”' '‘' '’';
+.wp-block-quote > cite {
+	display: block;
+	margin-top: 0.5rem;
+	font-size: var(--wp-preset--font-size--sm);
+}
+
+.wp-block-quote.is-style-default {
+	padding: 1rem 1rem 1rem 2rem;
+	border-left: solid 5px theme('colors.gray.500');
+	background-color: theme('colors.gray.100');
 }

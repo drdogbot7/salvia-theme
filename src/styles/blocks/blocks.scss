@@ -1,4 +1,5 @@
 @import 'wp-block-button';
+@import 'wp-block-file';
 @import 'wp-block-group';
 @import 'wp-block-heading';
 @import 'wp-block-list';
@@ -8,3 +9,14 @@
 @import 'wp-block-table';
 
 @import 'links';
+
+/**
+ * block spacing
+ * setting block gap in theme.json doesn't automatically set this for top-level blocks, as of 1/12/2022
+ * though it seems to work for blocks within other blocks
+ * 
+ * :where used to reduce specificity
+ */
+.content > :where([class*='wp-block-']:not(:first-child)) {
+	margin-top: var(--wp--style--block-gap);
+}

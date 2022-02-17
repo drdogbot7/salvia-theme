@@ -1,0 +1,15 @@
+.wp-block-media-text .wp-block-media-text__content {
+	padding-inline: 0;
+}
+
+.wp-block-media-text.has-background .wp-block-media-text__content {
+	padding: 1rem;
+	margin-top: 0;
+}
+
+@screen sm {
+	.wp-block-media-text .wp-block-media-text__content {
+		margin-top: 0;
+		padding-inline: 8%;
+	}
+}

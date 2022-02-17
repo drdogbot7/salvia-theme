@@ -1,13 +1,15 @@
 /**
  * Links
+ * Using :where to reduce specificity so that these are easier to override.
+ * This is kludgy, but Tailwindcss preflight removes all default link styles.
  */
 
-.content a:any-link {
+.content :where(a:any-link) {
 	color: theme('colors.blue.500');
 }
 
-.content a:hover,
-.content a:active {
+.content :where(a:hover),
+.content :where(a:active) {
 	text-decoration: underline;
 }
 
@@ -15,7 +17,7 @@
  * Images
  */
 
-.content img {
+.content :where(img) {
 	max-width: 100%;
 }
 

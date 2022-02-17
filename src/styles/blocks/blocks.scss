@@ -3,6 +3,7 @@
 @import 'wp-block-group';
 @import 'wp-block-heading';
 @import 'wp-block-list';
+@import 'wp-block-media-text';
 @import 'wp-block-paragraph';
 @import 'wp-block-quote';
 @import 'wp-block-separator';
@@ -12,11 +13,10 @@
 
 /**
  * block spacing
- * setting block gap in theme.json doesn't automatically set this for top-level blocks, as of 1/12/2022
- * though it seems to work for blocks within other blocks
+ * Using default block gap setting from theme.json
  * 
  * :where used to reduce specificity
  */
-.content > :where([class*='wp-block-']:not(:first-child)) {
+:where(.content [class*='wp-block-']:not(:first-child)) {
 	margin-top: var(--wp--style--block-gap);
 }

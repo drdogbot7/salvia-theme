@@ -135,7 +135,8 @@
 				"typography": {
 					"fontSizes": []
 				}
-			}
+			},
+			"core/separator": { "color": { "palette": [] } }
 		}
 	},
 	"styles": {

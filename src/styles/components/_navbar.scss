@@ -3,7 +3,8 @@
 	--navbar-color-hover: theme('colors.gray.900');
 	--navbar-bg-color: transparent;
 	--navbar-bg-color-current: theme('colors.gray.100');
-	--navbar-bg-color-hover: theme('colors.gray.200');
+	--navbar-bg-color-hover: theme('colors.gray.300');
+	--navbar-bg-color-focus-within: theme('colors.gray.200');
 	--navbar-font-size: theme('fontSize.sm');
 	--navbar-padding-block: theme('spacing.2');
 	--navbar-padding-inline: theme('spacing.4');
@@ -25,9 +26,17 @@
 	transition: 0s;
 }
 
-.navbar__item:hover > .navbar__link {
-	background-color: var(--navbar-bg-color-hover);
+.navbar__link:hover,
+.navbar__link:focus {
+	background-color: var(--navbar-bg-color-hover) !important;
 	color: var(--navbar-color-hover);
+}
+
+.navbar__item:hover > .navbar__link,
+.navbar__item:focus-within > .navbar__link {
+	background-color: var(--navbar-bg-color-focus-within);
+	color: var(--navbar-color-hover);
+	outline: none;
 	transition: 0.15s;
 }
 

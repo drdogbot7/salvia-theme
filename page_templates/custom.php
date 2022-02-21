@@ -3,9 +3,6 @@
  * Template Name: Custom
  * Description: A custom page template
  *
- * @package WordPress
- * @subpackage Timber
- * @since Salvia 1.0.0
  */
 
 $context = Timber::context();

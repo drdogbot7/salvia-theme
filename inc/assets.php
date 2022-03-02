@@ -2,7 +2,7 @@
 /**
  * Asset function for referencing theme assets
  * reads webpack asset manifest
- * 
+ *
  * @package Wordpress
  * @subpackage Timber
  * @since Salvia 1.0.0

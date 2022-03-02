@@ -1,9 +1,7 @@
 {% extends 'base.twig' %}
 
 {% block content %}
-	
 	<div class="container mx-auto">
-	
 		<header>
 			<h1 class="text-2xl">
 				Couldn't find that page. Try searching below:
@@ -11,9 +9,9 @@
 		</header>
 
 		<div class="mt-8">
-			{% include 'searchform.twig' with {post:post} %}
+			{% include 'searchform.twig' with {
+				post: post
+			} %}
 		</div>
-
 	</div>
-
 {% endblock %}

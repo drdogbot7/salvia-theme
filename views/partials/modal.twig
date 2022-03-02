@@ -1,23 +1,23 @@
-			<template x-teleport="body">
-				<div
-					x-show="open" 
-					x-trap.noscroll.inert="open"
-					x-cloak 
-					x-transition		
-					role="region"
-					aria-modal="true"
-					class="fixed inset-0 z-50 overflow-y-auto bg-white/90 admin:pt-[46px] backdrop-blur"
-					@keydown.escape.prevent.stop="open = false"
-				>
-					<div class="sticky top-0">
-						<div class="absolute top-0 right-0 p-2">
-							<button @click="open = false">
-								<svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-								</svg>
-							</button>
-						</div>
-					</div>
-          {% block content %}{% endblock %}
-				</div>
-			</template>
+<template x-teleport="body">
+	<div
+		x-show="open" 
+		x-trap.noscroll.inert="open"
+		x-cloak 
+		x-transition		
+		role="region"
+		aria-modal="true"
+		class="fixed inset-0 z-50 overflow-y-auto bg-white/90 admin:pt-[46px] backdrop-blur"
+		@keydown.escape.prevent.stop="open = false"
+	>
+		<div class="sticky top-0">
+			<div class="absolute top-0 right-0 p-2">
+				<button @click="open = false">
+					<svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+					</svg>
+				</button>
+			</div>
+		</div>
+		{% block content %}{% endblock %}
+	</div>
+</template>

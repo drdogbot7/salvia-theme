@@ -1,0 +1,48 @@
+{% extends 'partials/modal.twig' %}
+
+{% block content %}
+<nav x-data="{ active: null }" role="navigation" class="p-4 pr-16">
+	{% for item in menu.get_items %}
+  {% if item.get_children %}
+  <div
+    x-data="{
+      id: {{ loop.index }},
+      get expanded() {
+        return this.active === this.id
+      },
+      set expanded(value) {
+        this.active = value ? this.id : null
+      },
+    }"
+  >
+    <h2 class="text-xl">
+      <button class="p-2" @click="expanded = !expanded" :aria-expanded="expanded">
+        {{ item.title }}
+        <span x-show="expanded" aria-hidden="true">&minus;</span>
+        <span x-show="!expanded" aria-hidden="true">&plus;</span>
+      </button>
+    </h2>
+    <div x-show="expanded" x-collapse>
+      <ul class="pl-4 text-lg">
+        {% for child in item.get_children %}
+          <li>
+            <a class="block py-2 border-shade-10"
+              href="{{ child.get_link }}">
+              {{ child.title }}
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+  {% else %}
+  <div>
+    <h2 class="text-xl">
+        <a class="block p-2" href="{{item.get_link}}">{{ item.title }}</a>
+    </h2>
+  </div>
+  {% endif %}
+  {% endfor %}
+</nav>
+
+{% endblock %}

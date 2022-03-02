@@ -1,0 +1,13 @@
+<div x-data="{show: false}" @scroll.window="show = window.pageYOffset > 20" class="fixed bottom-0 right-0 p-2">
+  <button
+    title="back to top"
+    x-show="show" 
+    x-transition
+    class="block bg-gray-200 rounded-full hover:bg-gray-300"
+    @click="window.scroll({top: 0, left: 0, behavior: 'smooth'})"
+  >
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 11l5-5m0 0l5 5m-5-5v12" />
+    </svg>
+  </button>
+</div>

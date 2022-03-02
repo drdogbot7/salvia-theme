@@ -1,30 +1,23 @@
-<header
-	x-data="{ menuOpen: false }"
-	x-on:keydown.escape="menuOpen = false"
-	class="p-2 md:p-4"
->
+<header class="p-2 md:p-4">
 	<div class="flex items-center justify-between mx-auto">
 		<h1>
 			<a href="{{ site.url }}" title="{{ site.name }}" alt="{{ site.name }} logo">
 				<img class="w-32 h-auto" src="{{ asset('logo.svg') }}" />
 			</a>
 		</h1>
-		<div class="mx-1 ml-4 md:hidden">
-			<button 
-				x-on:click="menuOpen = true" 
-				aria-haspopup="true" 
-				aria-controls="navMenu"
-			>
-				<i class="text-3xl fas fa-bars"></i>
-			</button>
-		</div>
+
+		<!-- Desktop Nav -->
 		<nav class="hidden md:block">
 			<ul class="navbar">
 				{% for item in menu.get_items %}
 					<li class="navbar__item {{ item.get_children ? 'dropdown' }} {{item.classes | join(' ')}}">
 						<a class="navbar__link" href="{{item.get_link}}">
 						{{item.title}}
-  					{{item.get_children ? '<i class="ml-1 fas fa-chevron-down fa-xs"></i>' }}
+  					{{item.get_children ?
+							'<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
+								<path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+							</svg>'
+						}}
 						</a>
 					{% if item.get_children %}
 						<ul class="dropdown__menu">
@@ -41,47 +34,23 @@
 				{% endfor %}
 			</ul>
 		</nav>
+
+	<!-- Mobile Nav -->
+	<div class="mx-1 ml-4 md:hidden" x-data="{ open: false }">
+	
+		<!-- Mobile Menu Toggle -->
+		<span @click="open = true">
+			<button>
+				<svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 fill-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+				</svg>
+			</button>
+		</span>
+
+		<!-- Mobile Overlay Menu -->
+		{% include "modals/mobile-nav.twig" %}
+		
+	</div>
 	</div>
 
-	<div
-		id="navMenu"
-		class="fixed inset-0 z-50 overflow-y-auto bg-gray-200"
-		x-show="menuOpen"
-		x-transition
-		x-on:click="menuOpen = false"
-		x-cloak
-	>
-		<div class="sticky top-0">
-			<div class="absolute top-0 right-0 p-4">
-				<button x-on:click="menuOpen = false">
-					<i class="text-3xl fas fa-times"></i>
-				</button>
-			</div>
-		</div>
-		<a href="{{ site.url }}" title="{{ site.name }}" alt="{{ site.name }} logo">
-			<img class="w-1/2 h-auto py-4 mx-auto" src="{{ asset('logo.svg') }}" />
-		</a>
-		<nav>
-			<ul class="text-lg text-center">
-				{% for item in menu.get_items %}
-					<li class="{{item.classes | join(' ')}}">
-						<a class="block p-2 font-bold border-t border-shade-10" href="{{item.get_link}}">
-							{{item.title}}
-						</a>
-					{% if item.get_children %}
-						<ul class="pb-2 text-sm text-center">
-							{% for child in item.get_children %}
-								<li>
-									<a class="block py-2 border-shade-10" href="{{child.get_link}}">
-										{{child.title}}
-									</a>
-								</li>
-							{% endfor %}
-						</ul>
-					{% endif %}
-					</li>
-				{% endfor %}
-			</ul>
-		</nav>
-	</div>
 </header>

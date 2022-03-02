@@ -1,9 +1,14 @@
 import Alpine from 'alpinejs';
+import collapse from '@alpinejs/collapse';
+import focus from '@alpinejs/focus';
 import WebFont from 'webfontloader';
-import { addBackToTop } from 'vanilla-back-to-top';
-import initFontAwesome from './components/fontAwesome';
 
 import './styles/main.scss';
+
+Alpine.plugin(collapse);
+Alpine.plugin(focus);
+Alpine.start();
+window.Alpine = Alpine;
 
 WebFont.load({
 	google: {
@@ -12,9 +17,4 @@ WebFont.load({
 });
 
 /** Load Events */
-jQuery(function () {
-	initFontAwesome();
-	addBackToTop({ backgroundColor: 'black' });
-	window.Alpine = Alpine;
-	Alpine.start();
-});
+jQuery(function () {});

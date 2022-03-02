@@ -23,24 +23,24 @@ remove_action('wp_head', 'wp_shortlink_wp_head', 10, 0);
 /**
  * Theme assets
  */
-use function BenTools\WebpackEncoreResolver\encore_entry_css_files;
-use function BenTools\WebpackEncoreResolver\encore_entry_js_files;
+// use function BenTools\WebpackEncoreResolver\encore_entry_css_files;
+// use function BenTools\WebpackEncoreResolver\encore_entry_js_files;
 
 add_action('wp_enqueue_scripts', 'salvia_enqueue_front', 100);
 
 function salvia_enqueue_front()
 {
-	$asset = include get_template_directory() . '/build/index.asset.php';
+	$asset_file = include get_template_directory() . '/build/index.asset.php';
 	wp_enqueue_script(
 		'salvia_js',
-		get_template_directory() . '/build/index.js',
-		$asset_file['dependencies'],
+		get_template_directory_uri() . '/build/index.js',
+		['jquery'],
 		$asset_file['version']
 	);
 	wp_enqueue_style(
 		'salvia_css',
-		get_template_directory() . '/build/index.css',
-		$asset_file['dependencies'],
+		get_template_directory_uri() . '/build/index.css',
+		null,
 		$asset_file['version']
 	);
 }
@@ -51,17 +51,17 @@ function salvia_enqueue_front()
 add_action('enqueue_block_editor_assets', 'salvia_enqueue_editor_assets', 100);
 function salvia_enqueue_editor_assets()
 {
-	$asset = include get_template_directory() . '/build/editor.asset.php';
+	$asset_file = include get_template_directory() . '/build/editor.asset.php';
 	wp_enqueue_script(
 		'salvia_editor_js',
-		get_template_directory() . '/build/editor.js',
-		$asset_file['dependencies'],
+		get_template_directory_uri() . '/build/editor.js',
+		['jquery'],
 		$asset_file['version']
 	);
 	wp_enqueue_style(
 		'salvia_editor_css',
-		get_template_directory() . '/build/editor.css',
-		$asset_file['dependencies'],
+		get_template_directory_uri() . '/build/editor.css',
+		null,
 		$asset_file['version']
 	);
 }

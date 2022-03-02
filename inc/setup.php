@@ -26,57 +26,45 @@ remove_action('wp_head', 'wp_shortlink_wp_head', 10, 0);
 use function BenTools\WebpackEncoreResolver\encore_entry_css_files;
 use function BenTools\WebpackEncoreResolver\encore_entry_js_files;
 
-add_action(
-	'wp_enqueue_scripts',
-	function () {
-		$asset_path = get_stylesheet_directory() . '/dist';
-		$css_assets = encore_entry_css_files('app', $asset_path);
-		$js_assets = encore_entry_js_files('app', $asset_path);
-		foreach ($css_assets as $key => $resource) {
-			wp_enqueue_style('theme-css-' . $key, $resource, false, null);
-		}
-		foreach ($js_assets as $key => $resource) {
-			wp_enqueue_script(
-				'theme-js-' . $key,
-				$resource,
-				['jquery'],
-				false,
-				true
-			);
-		}
-	},
-	100
-);
+add_action('wp_enqueue_scripts', 'salvia_enqueue_front', 100);
+
+function salvia_enqueue_front()
+{
+	$asset = include get_template_directory() . '/build/index.asset.php';
+	wp_enqueue_script(
+		'salvia_js',
+		get_template_directory() . '/build/index.js',
+		$asset_file['dependencies'],
+		$asset_file['version']
+	);
+	wp_enqueue_style(
+		'salvia_css',
+		get_template_directory() . '/build/index.css',
+		$asset_file['dependencies'],
+		$asset_file['version']
+	);
+}
 
 /**
  * Theme Editor assets
  */
-add_action(
-	'enqueue_block_editor_assets',
-	function () {
-		$asset_path = get_stylesheet_directory() . '/dist';
-		$css_assets = encore_entry_css_files('editor', $asset_path);
-		$js_assets = encore_entry_js_files('editor', $asset_path);
-		foreach ($css_assets as $key => $resource) {
-			wp_enqueue_style(
-				'theme-editor-css-' . $key,
-				$resource,
-				false,
-				null
-			);
-		}
-		foreach ($js_assets as $key => $resource) {
-			wp_enqueue_script(
-				'theme-editor-js-' . $key,
-				$resource,
-				['jquery'],
-				false,
-				true
-			);
-		}
-	},
-	100
-);
+add_action('enqueue_block_editor_assets', 'salvia_enqueue_editor_assets', 100);
+function salvia_enqueue_editor_assets()
+{
+	$asset = include get_template_directory() . '/build/editor.asset.php';
+	wp_enqueue_script(
+		'salvia_editor_js',
+		get_template_directory() . '/build/editor.js',
+		$asset_file['dependencies'],
+		$asset_file['version']
+	);
+	wp_enqueue_style(
+		'salvia_editor_css',
+		get_template_directory() . '/build/editor.css',
+		$asset_file['dependencies'],
+		$asset_file['version']
+	);
+}
 
 /**
  * Theme setup

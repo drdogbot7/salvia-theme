@@ -5,11 +5,6 @@ import WebFont from 'webfontloader';
 
 import './styles/main.scss';
 
-Alpine.plugin(collapse);
-Alpine.plugin(focus);
-Alpine.start();
-window.Alpine = Alpine;
-
 WebFont.load({
 	google: {
 		families: ['Roboto Slab:400,400i'],
@@ -17,4 +12,9 @@ WebFont.load({
 });
 
 /** Load Events */
-jQuery(function () {});
+jQuery(function () {
+	Alpine.plugin(collapse);
+	Alpine.plugin(focus);
+	Alpine.start();
+	window.Alpine = Alpine;
+});

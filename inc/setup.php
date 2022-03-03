@@ -23,9 +23,6 @@ remove_action('wp_head', 'wp_shortlink_wp_head', 10, 0);
 /**
  * Theme assets
  */
-// use function BenTools\WebpackEncoreResolver\encore_entry_css_files;
-// use function BenTools\WebpackEncoreResolver\encore_entry_js_files;
-
 add_action('wp_enqueue_scripts', 'salvia_enqueue_front', 100);
 
 function salvia_enqueue_front()

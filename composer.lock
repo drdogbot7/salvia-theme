@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "802c0c3e62269475f0ed169eb7ab9669",
+    "content-hash": "7f41321c56952b4cba4837547a3e0fca",
     "packages": [
         {
             "name": "ajgl/breakpoint-twig-extension",
@@ -130,56 +130,6 @@
                 "source": "https://github.com/dannyvankooten/AltoRouter/tree/2.0.2"
             },
             "time": "2020-03-09T08:34:59+00:00"
-        },
-        {
-            "name": "bentools/webpack-encore-resolver",
-            "version": "0.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/bpolaszek/webpack-encore-resolver.git",
-                "reference": "a4bf65a718be82af1f9297239a259fa28b4757b2"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/bpolaszek/webpack-encore-resolver/zipball/a4bf65a718be82af1f9297239a259fa28b4757b2",
-                "reference": "a4bf65a718be82af1f9297239a259fa28b4757b2",
-                "shasum": ""
-            },
-            "require": {
-                "ext-json": "*",
-                "php": ">=5.6"
-            },
-            "require-dev": {
-                "php-coveralls/php-coveralls": "^2.2",
-                "phpunit/phpunit": "^5.7",
-                "squizlabs/php_codesniffer": "^3.5",
-                "symfony/var-dumper": "^3.4"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "BenTools\\WebpackEncoreResolver\\": "src"
-                },
-                "files": [
-                    "src/functions.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Benoit POLASZEK",
-                    "email": "bpolaszek@gmail.com"
-                }
-            ],
-            "description": "Standalone path resolver for Webpack Encore",
-            "support": {
-                "issues": "https://github.com/bpolaszek/webpack-encore-resolver/issues",
-                "source": "https://github.com/bpolaszek/webpack-encore-resolver/tree/0.1"
-            },
-            "time": "2019-12-11T10:21:26+00:00"
         },
         {
             "name": "composer/installers",

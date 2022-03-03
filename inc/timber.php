@@ -52,17 +52,6 @@ class SalviaTheme extends TimberSite
 		$context['options']['footer_text'] = carbon_get_theme_option(
 			'crb_footer_text'
 		);
-		$context['options']['telephone'] = carbon_get_theme_option(
-			'crb_telephone'
-		);
-		$context['options']['address'] = carbon_get_theme_option('crb_address');
-		$context['options']['address_url'] = carbon_get_theme_option(
-			'crb_address_url'
-		);
-		$context['options']['email'] = carbon_get_theme_option('crb_email');
-		$context['options']['default_image'] = carbon_get_theme_option(
-			'crb_default_image'
-		);
 
 		/* Debugging */
 		if (
@@ -76,14 +65,3 @@ class SalviaTheme extends TimberSite
 	}
 }
 new SalviaTheme();
-
-/**
- * Asset function.
- *
- * @param Twig_Environment $twig
- * @return $twig
- */
-add_filter('timber/twig', function (\Twig_Environment $twig) {
-	$twig->addFunction(new \Timber\Twig_Function('asset', 'salvia_asset'));
-	return $twig;
-});

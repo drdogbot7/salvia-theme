@@ -15,14 +15,3 @@
 .post.sticky {
 	position: relative;
 }
-
-// Utility class that sets top based on wordpress admin bar
-.admin-bar .top-admin {
-	top: 46px;
-}
-
-@screen md {
-	.admin-bar .top-admin {
-		top: 36px;
-	}
-}

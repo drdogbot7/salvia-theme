@@ -1,5 +1,5 @@
 const postcssConfig = {
-	plugins: [require('tailwindcss'), require('postcss-preset-env')],
+	plugins: [require('tailwindcss'), require('autoprefixer')],
 };
 
 if (process.env.NODE_ENV === 'production') {

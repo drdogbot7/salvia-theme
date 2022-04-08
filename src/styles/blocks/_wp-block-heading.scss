@@ -4,39 +4,47 @@
 	Using :where selector to reduce specificity
 */
 
+.editor-styles-wrapper :where(h1, h2, h3, h4, h5, h6),
 .content :where(h1, h2, h3, h4, h5, h6) {
 	font-family: theme('fontFamily.display');
 }
 
+.editor-styles-wrapper :where(:is(h1, h2, h3, h4, h5, h6):not(:first-child)),
 .content :where(:is(h1, h2, h3, h4, h5, h6):not(:first-child)) {
 	margin-top: 1.5em;
 }
 
+.editor-styles-wrapper :where(h1),
 .content :where(h1) {
 	font-size: var(--wp--preset--font-size--xl);
 	line-height: 1.1;
 }
 
+.editor-styles-wrapper :where(h2),
 .content :where(h2) {
 	font-size: var(--wp--preset--font-size--lg);
 	line-height: 1.25;
 }
 
+.editor-styles-wrapper :where(h3),
 .content :where(h3) {
 	font-size: var(--wp--preset--font-size--md);
 	line-height: 1.25;
 }
 
+.editor-styles-wrapper :where(h4),
 .content :where(h4) {
 	font-size: var(--wp--preset--font-size--base);
 	line-height: 1.375;
 }
 
+.editor-styles-wrapper :where(h5),
 .content :where(h5) {
 	font-size: var(--wp--preset--font-size--sm);
 	line-height: 1.375;
 }
 
+.editor-styles-wrapper :where(h6),
 .content :where(h6) {
 	font-size: var(--wp--preset--font-size--sm);
 	line-height: 1.375;

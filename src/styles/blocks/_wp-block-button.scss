@@ -2,7 +2,27 @@
  * Block editor button block.
 **/
 
+.wp-block-button__link {
+	background-color: var(--wp--preset--color--dark-gray);
+	border-radius: theme('borderRadius.lg');
+	color: var(--wp--preset--color--light-gray);
+	font-size: var(--wp--preset--font-size--sm);
+	padding-block: 0.5em;
+	padding-inline: 1.5em;
+}
+
 .wp-block-button__link:hover {
 	opacity: 0.8;
 	text-decoration: none;
+}
+
+.is-style-small > .wp-block-button__link {
+	font-size: var(--wp--preset--font-size--xs);
+	padding-block: 0.25em;
+	padding-inline: 1em;
+}
+
+.is-style-large > .wp-block-button__link {
+	border-radius: theme('borderRadius.xl');
+	font-size: var(--wp--preset--font-size--base);
 }

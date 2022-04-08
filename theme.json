@@ -140,20 +140,7 @@
 		}
 	},
 	"styles": {
-		"blocks": {
-			"core/button": {
-				"border": {
-					"radius": "4px"
-				},
-				"color": {
-					"background": "var(--wp--preset--color--dark-gray)",
-					"text": "var(--wp--preset--color--light-gray)"
-				},
-				"typography": {
-					"fontSize": "var(--wp--preset--font-size--base)"
-				}
-			}
-		},
+		"blocks": {},
 		"spacing": {
 			"blockGap": "1.5rem"
 		},

@@ -7,30 +7,42 @@
 		</h1>
 
 		<!-- Desktop Nav -->
-		<nav class="hidden md:block">
-			<ul class="navbar">
+		<nav
+			class="hidden md:block"
+		>
+			<ul class="flex">
 				{% for item in menu.get_items %}
-					<li class="navbar__item {{ item.get_children ? 'dropdown' }} {{item.classes | join(' ')}}">
-						<a class="navbar__link" href="{{item.get_link}}">
-						{{item.title}}
-  					{{item.get_children ?
-							'<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
-								<path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
-							</svg>'
-						}}
-						</a>
 					{% if item.get_children %}
-						<ul class="dropdown__menu">
-							{% for child in item.get_children %}
-								<li class="dropdown__item">
-									<a class="dropdown__link" href="{{child.get_link}}">
-										{{child.title}}
-									</a>
-								</li>
-							{% endfor %}
-						</ul>
-					{% endif %}
+						<li 
+							x-data="{open: false}"
+							@scroll.window="open = false" 
+							class="relative overflow-visible {{item.classes | join(' ')}}"
+						>
+							<button class="flex items-center p-2 hover:bg-gray-100" :class="open ? 'bg-gray-100' : ''" @click="open = !open">
+								{{item.title}}
+								<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+									<path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+								</svg>
+							</button>
+							<div class="absolute z-10 bg-gray-100 shadow top-full" x-show="open" x-cloak x-collapse @click.outside="open = false">
+								<ul class="text-xs min-w-[120px]">
+									{% for child in item.get_children %}
+										<li class="whitespace-nowrap">
+											<a class="block p-2 hover:bg-gray-200" href="{{child.get_link}}">
+												{{child.title}}
+											</a>
+										</li>
+									{% endfor %}
+								</ul>
+							</div>
 					</li>
+					{% else %}
+					<li class="{{item.classes | join(' ')}}">
+						<a class="block p-2 hover:bg-gray-100" href="{{item.get_link}}">
+						{{item.title}}
+						</a>
+					</li>
+					{% endif %}
 				{% endfor %}
 			</ul>
 		</nav>

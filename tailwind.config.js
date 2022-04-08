@@ -1,3 +1,5 @@
+const plugin = require('tailwindcss/plugin');
+
 module.exports = {
 	prefix: '',
 	important: false,

@@ -11,7 +11,7 @@
 		</div>
 
 		{% if posts.found_posts > (posts|length) %}
-			{% include 'pagination.twig' %}
+			{% include 'pagination.twig' with { pagination: posts.pagination }  %}
 		{% endif %}
 	</div>
 {% endblock %}

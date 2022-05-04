@@ -16,7 +16,10 @@
 			{% endif %}
 		</header>
 		<div class="mt-8 content">
-			{{ post.content }}
+		{{ post.pagination ? post.paged_content : post.content }}
 		</div>
+		{% if post.pagination %}
+			{% include 'pagination.twig' with { pagination: post.pagination }  %}
+		{% endif %}
 	</article>
 {% endblock %}

@@ -1,48 +1,48 @@
 <div class="my-8">
-	<div class="flex justify-center text-sm">
+	<na class="flex justify-center text-sm">
 		<ul class="flex p-0 overflow-hidden border border-gray-300 rounded">
-			{% if posts.pagination.prev %}
 				<li>
-					<a href="{{ posts.pagination.prev.link }}"
-						class="block px-3 py-1 text-gray-800 border-r border-gray-300 hover:bg-gray-200 {{
-						posts.pagination.prev.link|length
-							? ''
-							: 'hidden'
-						}}">
+			{% if pagination.prev %}
+					<a href="{{ pagination.prev.link }}"
+						class="block px-3 py-1 text-gray-800 border-r border-gray-300 hover:bg-gray-200">
 						&larr;
 					</a>
-				</li>
+			{% else %}
+					<span class="block px-3 py-1 text-gray-400 border-r border-gray-300">
+						&larr;
+					</span>
 			{% endif %}
-			{% for page in posts.pagination.pages %}
-				<li class="pagination__item">
-					{% if page.link %}
+				</li>
+			{% for page in pagination.pages %}
+				<li>
+					{% if page.current or page.class == "dots" %}
+						<span class="block text-gray-400 border-r border-gray-300 px-3 py-1 {{
+							page.class
+							}}">
+							{{ page.title }}
+						</span>
+					{% else %}
 						<a href="{{ page.link }}"
 							class="block text-gray-800 border-r border-gray-300 px-3 py-1 hover:bg-gray-200 {{
 							page.class
 							}}">
 							{{ page.title }}
 						</a>
-					{% else %}
-						<span class="block text-gray-400 border-r border-gray-300 px-3 py-1 {{
-							page.class
-							}}">
-							{{ page.title }}
-						</span>
 					{% endif %}
 				</li>
 			{% endfor %}
-			{% if posts.pagination.next %}
-				<li class="pagination__item">
-					<a href="{{ posts.pagination.next.link }}"
-						class="block text-gray-800 px-3 py-1 hover:bg-gray-200 {{
-						posts.pagination.next.link|length
-							? ''
-							: 'hidden'
-						}}">
+				<li>
+				{% if pagination.next %}
+					<a href="{{ pagination.next.link }}"
+						class="block text-gray-800 px-3 py-1 hover:bg-gray-200 ">
 						&rarr;
 					</a>
+				{% else %}
+					<span class="block px-3 py-1 text-gray-400">
+						&rarr;
+					</span>
+				{% endif %}
 				</li>
-			{% endif %}
 		</ul>
-	</div>
+	</na>
 </div>

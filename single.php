@@ -7,8 +7,12 @@
  * @since 1.0.0
  */
 
-$context         = Timber::context();
-$timber_post     = Timber::get_post();
+$context         = Timber::get_context();
+// using Timber::query_post instead of Timber::get_post 
+// to make post pagination to work
+// 
+$timber_post     = Timber::query_post();
+// $timber_post     = Timber::query_post();
 $context['post'] = $timber_post;
 
 if ( post_password_required( $timber_post->ID ) ) {

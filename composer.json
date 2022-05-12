@@ -1,23 +1,22 @@
 {
-  "name": "drdogbot/salvia",
-  "description": "Starter theme - mix of Sage and Timber with webpack and tailwindcss",
-  "type": "wordpress-theme",
-  "minimum-stability": "stable",
-  "authors": [
-    {
-      "name": "Jeremy Mullis",
-      "email": "jeremy.mullis@gmail.com",
-      "homepage": "https://github.com/drdogbot7"
-    }
-  ],
-  "require": {
-    "timber/timber": "^1.18",
-    "djboris88/timber-debugger": "^1.1",
-    "htmlburger/carbon-fields": "^3.3"
-  },
-  "config": {
-    "allow-plugins": {
-      "composer/installers": true
-    }
-  }
+	"name": "drdogbot/salvia",
+	"description": "Starter theme - mix of Sage and Timber with webpack and tailwindcss",
+	"type": "wordpress-theme",
+	"minimum-stability": "stable",
+	"authors": [
+		{
+			"name": "Jeremy Mullis",
+			"email": "jeremy.mullis@gmail.com",
+			"homepage": "https://github.com/drdogbot7"
+		}
+	],
+	"require": {
+		"timber/timber": "^1.18",
+		"djboris88/timber-debugger": "^1.1"
+	},
+	"config": {
+		"allow-plugins": {
+			"composer/installers": true
+		}
+	}
 }

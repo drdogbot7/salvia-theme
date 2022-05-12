@@ -2,8 +2,8 @@
 
 {% block content %}
 <nav x-data="{ active: null }" role="navigation" class="p-4 pr-16">
-	{% for item in menu.get_items %}
-  {% if item.get_children %}
+	{% for item in menu.items %}
+  {% if item.children %}
   <div
     x-data="{
       id: {{ loop.index }},
@@ -24,7 +24,7 @@
     </h2>
     <div x-show="expanded" x-collapse>
       <ul class="pl-4 text-lg">
-        {% for child in item.get_children %}
+        {% for child in item.children %}
           <li>
             <a class="block py-2 border-shade-10"
               href="{{ child.get_link }}">

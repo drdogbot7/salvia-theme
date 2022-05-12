@@ -17,11 +17,13 @@
  */
 require_once __DIR__ . '/vendor/autoload.php';
 
+$timber = new Timber\Timber();
+
 $salvia_includes = [
 	'inc/setup.php', // Theme setup
-	'inc/timber.php', // Twig magic
 	'inc/queries.php', // Modify queries
 	'inc/plugins.php', // plugin related
+	'inc/timber.php', // Twig magic
 ];
 
 foreach ($salvia_includes as $file) {

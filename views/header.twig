@@ -11,8 +11,8 @@
 			class="hidden md:block"
 		>
 			<ul class="flex">
-				{% for item in menu.get_items %}
-					{% if item.get_children %}
+				{% for item in menu.items %}
+					{% if item.children %}
 						<li 
 							x-data="{open: false}"
 							@scroll.window="open = false" 
@@ -26,7 +26,7 @@
 							</button>
 							<div class="absolute z-10 bg-gray-100 shadow top-full" x-show="open" x-cloak x-collapse @click.outside="open = false">
 								<ul class="text-xs min-w-[120px]">
-									{% for child in item.get_children %}
+									{% for child in item.children %}
 										<li class="whitespace-nowrap">
 											<a class="block p-2 hover:bg-gray-200" href="{{child.get_link}}">
 												{{child.title}}

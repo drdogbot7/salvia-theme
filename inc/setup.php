@@ -3,11 +3,12 @@
  * Sets up theme and enqueues assets
  *
  * @package Wordpress
- * @subpackage Timber
- * @since Salvia 1.0.0
+ * @since Salvia 2.0.0
  */
 
-// Clean up wordpres <head>
+/**
+ * Clean up wordpres <head>
+ */
 remove_action('wp_head', 'rsd_link'); // remove really simple discovery link
 remove_action('wp_head', 'wp_generator'); // remove wordpress version
 remove_action('wp_head', 'feed_links', 2); // remove rss feed links (make sure you add them in yourself if youre using feedblitz or an rss service)
@@ -107,32 +108,8 @@ add_action(
 			'gallery',
 			'search-form',
 		]);
-		/**
-		 * Enable selective refresh for widgets in customizer
-		 * @link https://developer.wordpress.org/themes/advanced-topics/customizer-api/#theme-support-in-sidebars
-		 */
-		add_theme_support('customize-selective-refresh-widgets');
 
 		add_theme_support('responsive-embeds');
 	},
 	20
 );
-
-// Add page slug to body class
-add_filter('body_class', 'add_slug_to_body_class');
-
-function add_slug_to_body_class($classes)
-{
-	global $post;
-	if (is_home()) {
-		$key = array_search('blog', $classes);
-		if ($key > -1) {
-			unset($classes[$key]);
-		}
-	} elseif (is_page()) {
-		$classes[] = sanitize_html_class($post->post_name);
-	} elseif (is_singular()) {
-		$classes[] = sanitize_html_class($post->post_name);
-	}
-	return $classes;
-}

@@ -7,7 +7,7 @@
  * @since Salvia 1.0.0
  */
 
-$timber = new Timber\Timber();
+// use Timber\Timber;
 
 /**
  * Check if Timber is activated
@@ -24,36 +24,17 @@ if (!class_exists('Timber')) {
 	return;
 }
 
-/**
- * Timber
- */
+add_filter('timber/context', 'add_to_context');
 
-class SalviaTheme extends TimberSite
+function add_to_context($context)
 {
-	public function __construct()
-	{
-		add_filter('timber_context', [$this, 'add_to_context']);
-		parent::__construct();
+	/* Menu */
+	$context['menu'] = Timber::get_menu('primary_navigation');
+	/* Site info */
+	$context['sidebar_footer'] = Timber::get_widgets('sidebar_footer');
+	/* Debugging */
+	if (in_array(WP_DEBUG, ['true', 'TRUE', 1])) {
+		$context['debug'] = true;
 	}
-	public function add_to_context($context)
-	{
-		/* Menu */
-		$context['menu'] = new TimberMenu('primary_navigation');
-
-		/* Site info */
-		$context['site'] = $this;
-
-		$context['sidebar_footer'] = Timber::get_widgets('sidebar_footer');
-
-		/* Debugging */
-		if (
-			in_array(WP_DEBUG, ['true', 'TRUE', 1]) &&
-			class_exists('Ajgl\Twig\Extension\BreakpointExtension')
-		) {
-			$context['debug'] = true;
-		}
-
-		return $context;
-	}
+	return $context;
 }
-new SalviaTheme();

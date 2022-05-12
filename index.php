@@ -7,6 +7,6 @@
  * @since 1.0.0
  */
 
-$context = Timber::get_context();
+$context = Timber::context();
 
 Timber::render('index.twig', $context);

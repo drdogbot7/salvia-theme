@@ -2,7 +2,7 @@
 	"name": "drdogbot/salvia",
 	"description": "Starter theme - mix of Sage and Timber with webpack and tailwindcss",
 	"type": "wordpress-theme",
-	"minimum-stability": "stable",
+	"minimum-stability": "alpha",
 	"authors": [
 		{
 			"name": "Jeremy Mullis",
@@ -11,12 +11,15 @@
 		}
 	],
 	"require": {
-		"timber/timber": "^1.18",
-		"djboris88/timber-debugger": "^1.1"
+		"timber/timber": "^2.00",
+		"hellonico/timber-dump-extension": "^1.0"
 	},
 	"config": {
 		"allow-plugins": {
 			"composer/installers": true
+		},
+		"platform": {
+			"php": "7.4.8"
 		}
 	}
 }

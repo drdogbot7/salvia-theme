@@ -19,7 +19,6 @@ require_once __DIR__ . '/vendor/autoload.php';
 
 $salvia_includes = [
 	'inc/setup.php', // Theme setup
-	'inc/carbon_fields.php', // Theme options page
 	'inc/timber.php', // Twig magic
 	'inc/queries.php', // Modify queries
 	'inc/plugins.php', // plugin related

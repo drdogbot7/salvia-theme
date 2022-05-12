@@ -45,14 +45,6 @@ class SalviaTheme extends TimberSite
 
 		$context['sidebar_footer'] = Timber::get_widgets('sidebar_footer');
 
-		/* Theme Options */
-		$context['options']['copyright_text'] = carbon_get_theme_option(
-			'crb_copyright_text'
-		);
-		$context['options']['footer_text'] = carbon_get_theme_option(
-			'crb_footer_text'
-		);
-
 		/* Debugging */
 		if (
 			in_array(WP_DEBUG, ['true', 'TRUE', 1]) &&

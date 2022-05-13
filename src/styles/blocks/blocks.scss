@@ -2,6 +2,7 @@
 @import 'wp-block-file';
 @import 'wp-block-group';
 @import 'wp-block-heading';
+@import 'wp-block-image';
 @import 'wp-block-list';
 @import 'wp-block-media-text';
 @import 'wp-block-paragraph';
@@ -17,6 +18,10 @@
  * 
  * :where used to reduce specificity
  */
-:where(.content [class*='wp-block-']:not(:first-child)) {
+.content :where([class*='wp-block-']:not(:first-child)) {
 	margin-top: var(--wp--style--block-gap);
+}
+
+.editor-styles-wrapper {
+	font-family: theme('fontFamily.sans');
 }

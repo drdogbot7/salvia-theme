@@ -1,5 +1,5 @@
 {
-	"$schema": "https://schemas.wp.org/trunk/theme.json",
+	"$schema": "https://raw.githubusercontent.com/WordPress/gutenberg/trunk/schemas/json/theme.json",
 	"version": 2,
 	"settings": {
 		"appearanceTools": false,
@@ -46,19 +46,14 @@
 					"color": "#ffffff"
 				},
 				{
-					"slug": "primary",
+					"slug": "blue",
 					"color": "#3b82f6",
-					"name": "Primary"
+					"name": "Red"
 				},
 				{
-					"slug": "secondary",
+					"slug": "red",
 					"color": "#ef4444",
-					"name": "Secondary"
-				},
-				{
-					"slug": "tertiary",
-					"color": "#F6F6F6",
-					"name": "Tertiary"
+					"name": "Blue"
 				}
 			],
 			"text": true
@@ -78,37 +73,37 @@
 				{
 					"name": "Extra Small",
 					"size": "clamp(0.625rem, calc(0.75rem + (.875 - 0.625) * ((100vw - 20rem) / (60 - 20))), .875rem)",
-					"slug": "xs"
+					"slug": "x-small"
 				},
 				{
 					"name": "Small",
 					"size": "clamp(0.75rem, calc(0.75rem + (1 - 0.75) * ((100vw - 20rem) / (60 - 20))), 1rem)",
-					"slug": "sm"
-				},
-				{
-					"name": "Base",
-					"size": "clamp(1rem, calc(1rem + (1.25 - 1) * ((100vw - 20rem) / (60 - 20))), 1.25rem)",
-					"slug": "base"
+					"slug": "small"
 				},
 				{
 					"name": "Medium",
-					"size": "clamp(1.125rem, calc(1.25rem + (1.5 - 1.125) * ((100vw - 20rem) / (60 - 20))), 1.5rem)",
-					"slug": "md"
+					"size": "clamp(1rem, calc(1rem + (1.25 - 1) * ((100vw - 20rem) / (60 - 20))), 1.25rem)",
+					"slug": "medium"
 				},
 				{
 					"name": "Large",
+					"size": "clamp(1.125rem, calc(1.25rem + (1.5 - 1.125) * ((100vw - 20rem) / (60 - 20))), 1.5rem)",
+					"slug": "large"
+				},
+				{
+					"name": "Extra Large",
 					"size": "clamp(1.75rem, calc(1.5rem + (2.25 - 1.75) * ((100vw - 20rem) / (60 - 20))), 2.25rem)",
-					"slug": "lg"
+					"slug": "x-large"
 				},
 				{
-					"name": "XL",
+					"name": "2XL",
 					"size": "clamp(2.25rem, calc(2.25rem + (3.25 - 2.25) * ((100vw - 20rem) / (60 - 20))), 3.25rem)",
-					"slug": "xl"
+					"slug": "2x-large"
 				},
 				{
-					"name": "XXL",
+					"name": "3XL",
 					"size": "clamp(2.5rem, calc(3rem + (4.5 - 2.5) * ((100vw - 20rem) / (60 - 20))), 4.5rem)",
-					"slug": "xxl"
+					"slug": "3x-large"
 				}
 			],
 			"fontStyle": false,
@@ -120,7 +115,7 @@
 		},
 		"layout": {
 			"contentSize": "782px",
-			"wideSize": "960px"
+			"wideSize": "1080px"
 		},
 		"blocks": {
 			"core/heading": {
@@ -136,7 +131,11 @@
 					"fontSizes": []
 				}
 			},
-			"core/separator": { "color": { "palette": [] } }
+			"core/separator": {
+				"color": {
+					"palette": []
+				}
+			}
 		}
 	},
 	"styles": {
@@ -152,7 +151,5 @@
 				"typography": {}
 			}
 		}
-	},
-	"customTemplates": [],
-	"templateParts": []
+	}
 }

@@ -16,36 +16,36 @@
 
 .editor-styles-wrapper :where(h1),
 .content :where(h1) {
-	font-size: var(--wp--preset--font-size--xl);
+	font-size: var(--wp--preset--font-size--2-x-large);
 	line-height: 1.1;
 }
 
 .editor-styles-wrapper :where(h2),
 .content :where(h2) {
-	font-size: var(--wp--preset--font-size--lg);
+	font-size: var(--wp--preset--font-size--x-large);
 	line-height: 1.25;
 }
 
 .editor-styles-wrapper :where(h3),
 .content :where(h3) {
-	font-size: var(--wp--preset--font-size--md);
+	font-size: var(--wp--preset--font-size--large);
 	line-height: 1.25;
 }
 
 .editor-styles-wrapper :where(h4),
 .content :where(h4) {
-	font-size: var(--wp--preset--font-size--base);
+	font-size: var(--wp--preset--font-size--medium);
 	line-height: 1.375;
 }
 
 .editor-styles-wrapper :where(h5),
 .content :where(h5) {
-	font-size: var(--wp--preset--font-size--sm);
+	font-size: var(--wp--preset--font-size--small);
 	line-height: 1.375;
 }
 
 .editor-styles-wrapper :where(h6),
 .content :where(h6) {
-	font-size: var(--wp--preset--font-size--sm);
+	font-size: var(--wp--preset--font-size--x-small);
 	line-height: 1.375;
 }

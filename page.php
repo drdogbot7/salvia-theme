@@ -12,7 +12,7 @@
 
 $context = Timber::context();
 
-if (post_password_required($timber_post->ID)) {
+if (post_password_required($post->ID)) {
 	Timber::render('single-password.twig', $context);
 } else {
 	Timber::render(

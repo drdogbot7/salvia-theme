@@ -7,11 +7,16 @@
 /* default size and line height for paragraphs */
 .editor-styles-wrapper :where(p),
 .content :where(p) {
-	font-size: var(--wp--preset--font-size--base);
-	line-height: 1.375;
+	font-size: var(--wp--preset--font-size--medium);
+	line-height: 1.5;
 }
 
-.editor-styles-wrapper :where(p):not(:first-child),
-.content :where(p):not(:first-child) {
+.editor-styles-wrapper :where(p:not(:first-child)),
+.content :where(p:not(:first-child)) {
 	margin-top: var(--wp--style--block-gap);
+}
+
+.editor-styles-wrapper :where(p + p),
+.content :where(p + p) {
+	margin-top: calc(var(--wp--style--block-gap) / 2);
 }

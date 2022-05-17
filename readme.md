@@ -5,7 +5,7 @@ Salvia is a WIP Wordpress starter theme. It is most tailored to be a starting po
 - Timber (for twig templates)
 - Tailwindcss (utility-first CSS library)
 - AlpineJS (declarative JS framework)
-- Webpack-Encore (build tool)
+- WP-Scripts (build tool)
 
 ## Requirements:
 

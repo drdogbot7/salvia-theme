@@ -1,11 +1,13 @@
 .wp-block-quote > cite {
+	@apply text-sm;
+
 	display: block;
-	margin-top: 0.5rem;
-	font-size: var(--wp-preset--font-size--sm);
+	margin-top: calc(var(--wp--style--block-gap) / 2);
 }
 
 .wp-block-quote.is-style-default {
-	padding: 1rem 1rem 1rem 2rem;
+	padding: var(--wp--style--block-gap) var(--wp--style--block-gap)
+		var(--wp--style--block-gap) calc(2 * var(--wp--style--block-gap));
 	border-left: solid 5px theme('colors.gray.500');
 	background-color: theme('colors.gray.100');
 }

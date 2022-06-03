@@ -28,12 +28,8 @@ module.exports = {
 		},
 	},
 	variants: {},
-	corePlugins: {
-		fontSize: false,
-	},
 	plugins: [
 		require('@tailwindcss/forms'),
-		require('tailwindcss-fluid-type'),
 		plugin(function ({ addVariant }) {
 			addVariant('admin', '.admin-bar &');
 		}),

@@ -1,6 +1,13 @@
-<article {{ function('post_class') }}>
+<article class="
+	{{ fn('get_post_class')|join(' ') }}
+	{{
+	fn('is_sticky')
+		? ' border border-black p-2'
+		: ''
+	}}
+">
 	<header>
-		<h2 class="mb-0 text-2xl font-display">
+		<h2 class="font-display mb-0 text-2xl">
 			<a class="text-primary hover:underline" href="{{ post.link }}">
 				{{ post.title }}
 			</a>

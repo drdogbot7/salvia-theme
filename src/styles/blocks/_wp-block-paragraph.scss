@@ -1,15 +1,11 @@
 /**
-	Block Editor paragraphs
-
-	Using :where selector to reduce specificity
-*/
+ * Block editor paragraph block
+ * 
+ * Unfortunately these don't have classes by default >:(
+ * Using :where selector to reduce specificity
+ */
 
 /* default size and line height for paragraphs */
-.editor-styles-wrapper :where(p),
-.content :where(p) {
-	font-size: var(--wp--preset--font-size--medium);
-	line-height: 1.5;
-}
 
 .editor-styles-wrapper :where(p:not(:first-child)),
 .content :where(p:not(:first-child)) {

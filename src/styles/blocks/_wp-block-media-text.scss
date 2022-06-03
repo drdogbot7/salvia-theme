@@ -1,5 +1,9 @@
+/**
+ * Block editor media and text block.
+ **/
+
 .wp-block-media-text {
-	grid-gap: 2rem;
+	grid-gap: var(--wp--style--block-gap);
 }
 
 .wp-block-media-text .wp-block-media-text__content {

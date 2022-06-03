@@ -1,0 +1,8 @@
+/**
+ * Block editor cover block.
+ */
+
+// don't add margin to inner-container. I think this is deprecated since 5.9
+.wp-block-cover > .wp-block-cover__inner-container {
+	margin-top: 0;
+}

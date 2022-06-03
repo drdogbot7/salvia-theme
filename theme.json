@@ -61,9 +61,9 @@
 		"custom": {},
 		"spacing": {
 			"blockGap": true,
-			"margin": false,
-			"padding": false,
-			"units": ["px", "em", "rem", "vh", "vw"]
+			"margin": true,
+			"padding": true,
+			"units": ["rem"]
 		},
 		"typography": {
 			"customFontSize": false,
@@ -72,38 +72,38 @@
 			"fontSizes": [
 				{
 					"name": "Extra Small",
-					"size": "clamp(0.625rem, calc(0.75rem + (.875 - 0.625) * ((100vw - 20rem) / (60 - 20))), .875rem)",
+					"size": "var(--theme--preset--font-size--x-small)",
 					"slug": "x-small"
 				},
 				{
 					"name": "Small",
-					"size": "clamp(0.75rem, calc(0.75rem + (1 - 0.75) * ((100vw - 20rem) / (60 - 20))), 1rem)",
+					"size": "var(--theme--preset--font-size--small)",
 					"slug": "small"
 				},
 				{
 					"name": "Medium",
-					"size": "clamp(1rem, calc(1rem + (1.25 - 1) * ((100vw - 20rem) / (60 - 20))), 1.25rem)",
+					"size": "var(--theme--preset--font-size--medium)",
 					"slug": "medium"
 				},
 				{
 					"name": "Large",
-					"size": "clamp(1.125rem, calc(1.25rem + (1.5 - 1.125) * ((100vw - 20rem) / (60 - 20))), 1.5rem)",
+					"size": "var(--theme--preset--font-size--large)",
 					"slug": "large"
 				},
 				{
 					"name": "Extra Large",
-					"size": "clamp(1.75rem, calc(1.5rem + (2.25 - 1.75) * ((100vw - 20rem) / (60 - 20))), 2.25rem)",
+					"size": "var(--theme--preset--font-size--x-large)",
 					"slug": "x-large"
 				},
 				{
 					"name": "2XL",
-					"size": "clamp(2.25rem, calc(2.25rem + (3.25 - 2.25) * ((100vw - 20rem) / (60 - 20))), 3.25rem)",
-					"slug": "2x-large"
+					"size": "var(--theme--preset--font-size--2-x-large)",
+					"slug": "2-x-large"
 				},
 				{
 					"name": "3XL",
-					"size": "clamp(2.5rem, calc(3rem + (4.5 - 2.5) * ((100vw - 20rem) / (60 - 20))), 4.5rem)",
-					"slug": "3x-large"
+					"size": "var(--theme--preset--font-size--3-x-large)",
+					"slug": "3-x-large"
 				}
 			],
 			"fontStyle": false,
@@ -141,7 +141,7 @@
 	"styles": {
 		"blocks": {},
 		"spacing": {
-			"blockGap": "1.5rem"
+			"blockGap": "2rem"
 		},
 		"elements": {
 			"link": {

@@ -15,7 +15,7 @@
 		{% endblock %}
 	</head>
 
-	<body class="{{ body_class }} font-sans text-gray-800 break-words">
+	<body class="{{ body_class }} font-base font-sans text-gray-800 break-words">
 		{% include 'header.twig' %}
 
 		<main class="mt-8" role="document">
@@ -29,7 +29,7 @@
 		{% include 'partials/back-to-top.twig' %}
 
 		{% if debug %}
-			<div class="hidden md:block">
+			<div class="md:block hidden">
 				{{ dump() }}
 			</div>
 		{% endif %}

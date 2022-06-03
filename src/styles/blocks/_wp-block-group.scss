@@ -1,13 +1,7 @@
 /**
-* Styles for block editor 'group' block.
-*/
+ * Block editor group block.
+ */
 
 .wp-block-group.has-background {
-	padding: theme('spacing.4');
-}
-
-@screen lg {
-	.wp-block-group.has-background {
-		padding: theme('spacing.8');
-	}
+	padding: var(--wp--style--block-gap);
 }

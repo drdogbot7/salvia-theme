@@ -25,29 +25,28 @@
 		"node": ">= 12.13.0"
 	},
 	"devDependencies": {
-		"@prettier/plugin-php": "^0.18.4",
-		"@wordpress/eslint-plugin": "^12.2.0",
-		"@wordpress/scripts": "^23.0.0",
-		"browser-sync": "^2.27.9",
-		"cssnano": "^5.1.7",
-		"eslint": "^8.15.0",
+		"@prettier/plugin-php": "^0.18.7",
+		"@wordpress/eslint-plugin": "^12.4.0",
+		"@wordpress/scripts": "^23.2.0",
+		"browser-sync": "^2.27.10",
+		"cssnano": "^5.1.11",
+		"eslint": "^8.16.0",
 		"eslint-plugin-prettier": "^4.0.0",
 		"prettier": "^2.6.2",
 		"prettier-plugin-twig-melody": "^0.4.6",
-		"stylelint": "^14.8.2",
+		"stylelint": "^14.8.5",
 		"stylelint-config-idiomatic-order": "^8.1.0",
 		"stylelint-config-prettier": "^9.0.3",
-		"stylelint-config-standard-scss": "^3.0.0",
+		"stylelint-config-standard-scss": "^4.0.0",
 		"stylelint-prettier": "^2.0.0"
 	},
 	"dependencies": {
 		"@alpinejs/collapse": "^3.10.2",
 		"@alpinejs/focus": "^3.10.2",
-		"@tailwindcss/forms": "^0.5.1",
+		"@tailwindcss/forms": "^0.5.2",
 		"alpinejs": "^3.10.2",
 		"autoprefixer": "^10.4.7",
 		"tailwindcss": "^3.0",
-		"tailwindcss-fluid-type": "^1.3.3",
 		"webfontloader": "^1.6.28"
 	}
 }

@@ -1,4 +1,4 @@
-<header class="p-2 md:p-4">
+<header class="md:p-4 p-2">
 	<div class="flex items-center justify-between mx-auto">
 		<h1>
 			<a href="{{ site.url }}" title="{{ site.name }}" alt="{{ site.name }} logo">
@@ -8,7 +8,7 @@
 
 		<!-- Desktop Nav -->
 		<nav
-			class="hidden md:block"
+			class="md:block hidden"
 		>
 			<ul class="flex">
 				{% for item in menu.items %}
@@ -18,17 +18,17 @@
 							@scroll.window="open = false" 
 							class="relative overflow-visible {{item.classes | join(' ')}}"
 						>
-							<button class="flex items-center p-2 hover:bg-gray-100" :class="open ? 'bg-gray-100' : ''" @click="open = !open">
+							<button class="hover:bg-gray-100 flex items-center p-2" :class="open ? 'bg-gray-100' : ''" @click="open = !open">
 								{{item.title}}
 								<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
 									<path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
 								</svg>
 							</button>
-							<div class="absolute z-10 bg-gray-100 shadow top-full" x-show="open" x-cloak x-collapse @click.outside="open = false">
+							<div class="top-full absolute z-10 bg-gray-100 shadow" x-show="open" x-cloak x-collapse @click.outside="open = false">
 								<ul class="text-xs min-w-[120px]">
 									{% for child in item.children %}
 										<li class="whitespace-nowrap">
-											<a class="block p-2 hover:bg-gray-200" href="{{child.get_link}}">
+											<a class="hover:bg-gray-200 block p-2" href="{{child.link}}">
 												{{child.title}}
 											</a>
 										</li>
@@ -38,7 +38,7 @@
 					</li>
 					{% else %}
 					<li class="{{item.classes | join(' ')}}">
-						<a class="block p-2 hover:bg-gray-100" href="{{item.get_link}}">
+						<a class="hover:bg-gray-100 block p-2" href="{{item.link}}">
 						{{item.title}}
 						</a>
 					</li>
@@ -48,12 +48,12 @@
 		</nav>
 
 	<!-- Mobile Nav -->
-	<div class="mx-1 ml-4 md:hidden" x-data="{ open: false }">
+	<div class="md:hidden mx-1 ml-4" x-data="{ open: false }">
 	
 		<!-- Mobile Menu Toggle -->
 		<span @click="open = true">
 			<button>
-				<svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 fill-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+				<svg xmlns="http://www.w3.org/2000/svg" class="fill-black w-12 h-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
 				</svg>
 			</button>

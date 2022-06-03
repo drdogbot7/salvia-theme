@@ -1,0 +1,42 @@
+/**
+ * Preset Font Sizes Used by Block Editor
+ */
+
+// this is kind of a kludge so we don't have to repeat these font sizes in theme.json.
+:root {
+	--theme--preset--font-size--x-small: theme('fontSize.xs');
+	--theme--preset--font-size--small: theme('fontSize.sm');
+	--theme--preset--font-size--medium: theme('fontSize.base');
+	--theme--preset--font-size--large: theme('fontSize.lg');
+	--theme--preset--font-size--x-large: theme('fontSize.xl');
+	--theme--preset--font-size--2-x-large: theme('fontSize.2xl');
+	--theme--preset--font-size--3-x-large: theme('fontSize.3xl');
+}
+
+.has-x-small-font-size {
+	@apply text-xs;
+}
+
+.has-small-font-size {
+	@apply text-sm;
+}
+
+.has-medium-font-size {
+	@apply text-base;
+}
+
+.has-large-font-size {
+	@apply text-lg;
+}
+
+.has-x-large-font-size {
+	@apply text-xl;
+}
+
+.has-2-x-large-font-size {
+	@apply text-2xl;
+}
+
+.has-3-x-large-font-size {
+	@apply text-3xl;
+}

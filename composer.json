@@ -2,7 +2,7 @@
 	"name": "drdogbot/salvia",
 	"description": "Starter theme - mix of Sage and Timber with webpack and tailwindcss",
 	"type": "wordpress-theme",
-	"minimum-stability": "alpha",
+	"minimum-stability": "beta",
 	"authors": [
 		{
 			"name": "Jeremy Mullis",
@@ -19,7 +19,7 @@
 			"composer/installers": true
 		},
 		"platform": {
-			"php": "7.4.8"
+			"php": "8.0"
 		}
 	}
 }

@@ -8,7 +8,8 @@
 require_once __DIR__ . '/vendor/autoload.php';
 
 // Timber Setup
-$timber = new Timber\Timber();
+Timber\Timber::init();
+
 add_filter('timber/context', 'salvia_add_to_context');
 add_filter('timber/twig', 'salvia_add_to_twig');
 

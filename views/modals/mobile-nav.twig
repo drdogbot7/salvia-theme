@@ -2,7 +2,7 @@
 
 {% block content %}
 <nav x-data="{ active: null }" role="navigation" class="p-4 pr-16">
-	{% for item in menu.items %}
+	{% for item in menu.primary.items %}
   {% if item.children %}
   <div
     x-data="{
@@ -26,7 +26,7 @@
       <ul class="pl-4 text-lg">
         {% for child in item.children %}
           <li>
-            <a class="block py-2 border-shade-10"
+            <a class="border-shade-10 block py-2"
               href="{{ child.get_link }}">
               {{ child.title }}
             </a>

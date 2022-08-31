@@ -11,7 +11,7 @@
 			class="md:block hidden"
 		>
 			<ul class="flex">
-				{% for item in menu.items %}
+				{% for item in menu.primary.items %}
 					{% if item.children %}
 						<li 
 							x-data="{open: false}"

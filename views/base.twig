@@ -28,7 +28,7 @@
 
 		{% include 'partials/back-to-top.twig' %}
 
-		{% if debug %}
+		{% if env.debug %}
 			<div class="md:block hidden">
 				{{ dump() }}
 			</div>

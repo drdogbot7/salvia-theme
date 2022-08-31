@@ -27,24 +27,32 @@ add_action('enqueue_block_editor_assets', 'salvia_enqueue_editor', 100);
 add_action('init', 'salvia_disable_comments');
 add_action('admin_init', 'salvia_disable_comments_admin');
 
+// Add to Timber Context
 function salvia_add_to_context($context)
 {
-	$context['menu'] = Timber::get_menu('primary_navigation');
-	$context['sidebar_footer'] = Timber::get_widgets('sidebar_footer');
+	$context['menu']['primary'] = Timber::get_menu('menu_primary');
+	$context['widgets']['footer'] = Timber::get_widgets('widgets_footer');
 
-	// show twig debugging if WP_DEBUG enabled
+	// set debug true if WP_DEBUG enabled
 	if (in_array(WP_DEBUG, ['true', 'TRUE', 1])) {
-		$context['debug'] = true;
+		$context['env']['debug'] = true;
+	} else {
+		$context['env']['debug'] = false;
 	}
+
+	// Add wordpress environment to context
+	$context['env']['type'] = wp_get_environment_type();
 
 	return $context;
 }
 
+// Add functions to Twig
 function salvia_add_to_twig($twig)
 {
 	return $twig;
 }
 
+// Clean up Wordpress cruft
 function salvia_wp_cleanup()
 {
 	remove_action('wp_head', 'rsd_link'); // remove really simple discovery link
@@ -60,6 +68,7 @@ function salvia_wp_cleanup()
 	remove_action('wp_head', 'wp_shortlink_wp_head', 10, 0);
 }
 
+// Wordpress theme supports
 function salvia_theme_supports()
 {
 	add_theme_support('title-tag');
@@ -75,14 +84,15 @@ function salvia_theme_supports()
 	remove_theme_support('block-templates'); // is there a way to do this in theme.json
 }
 
+// Register menus and widgets
 function salvia_menus_widgets()
 {
 	register_nav_menus([
-		'primary_navigation' => 'Primary Navigation',
+		'menu_primary' => 'Primary Menu',
 	]);
 	register_sidebar([
-		'id' => 'sidebar_footer',
-		'name' => 'Footer Sidebar',
+		'id' => 'widgets_footer',
+		'name' => 'Footer Widgets',
 		'before_widget' => '<div>',
 		'after_widget' => '</div>',
 	]);

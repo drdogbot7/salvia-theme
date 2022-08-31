@@ -2,9 +2,6 @@
 /**
  * The default template.
  *
- * @package WordPress
- * @subpackage Timber
- * @since 1.0.0
  */
 
 $context = Timber::context();

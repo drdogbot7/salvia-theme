@@ -6,9 +6,6 @@
  * If you're not using a plugin that requries this behavior (ones that do include Events Calendar Pro and
  * WooCommerce) you can delete this file and footer.php
  *
- * @package  WordPress
- * @subpackage  Timber
- * @since   Timber 0.1
  */
 
 $GLOBALS['timberContext'] = Timber::context();

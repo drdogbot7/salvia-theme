@@ -3,11 +3,8 @@
  * The template for displaying all pages.
  *
  * To generate specific templates for your pages you can use:
- * /mytheme/templates/page-mypage.twig
+ * /mytheme/views/page-mypage.twig
  *
- * @package WordPress
- * @subpackage Timber
- * @since 1.0.0
  */
 
 $context = Timber::context();

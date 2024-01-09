@@ -1,13 +1,13 @@
 {
-	"$schema": "https://raw.githubusercontent.com/WordPress/gutenberg/trunk/schemas/json/theme.json",
+	"$schema": "https://schemas.wp.org/trunk/theme.json",
 	"version": 2,
 	"settings": {
-		"appearanceTools": false,
+		"appearanceTools": true,
 		"border": {
-			"color": false,
-			"radius": false,
-			"style": false,
-			"width": false
+			"color": true,
+			"radius": true,
+			"style": true,
+			"width": true
 		},
 		"color": {
 			"background": true,
@@ -46,19 +46,18 @@
 					"color": "#ffffff"
 				},
 				{
+					"name": "Blue",
 					"slug": "blue",
-					"color": "#3b82f6",
-					"name": "Red"
+					"color": "#3b82f6"
 				},
 				{
+					"name": "Red",
 					"slug": "red",
-					"color": "#ef4444",
-					"name": "Blue"
+					"color": "#ef4444"
 				}
 			],
 			"text": true
 		},
-		"custom": {},
 		"spacing": {
 			"blockGap": true,
 			"margin": true,
@@ -66,52 +65,37 @@
 			"units": ["rem"]
 		},
 		"typography": {
-			"customFontSize": false,
+			"customFontSize": true,
 			"dropCap": false,
 			"fontFamilies": [],
 			"fontSizes": [
 				{
-					"name": "Extra Small",
-					"size": "var(--theme--preset--font-size--x-small)",
-					"slug": "x-small"
+					"slug": "small",
+					"size": ".875rem",
+					"name": "Small"
 				},
 				{
-					"name": "Small",
-					"size": "var(--theme--preset--font-size--small)",
-					"slug": "small"
+					"slug": "medium",
+					"size": "1.25rem",
+					"name": "Medium"
 				},
 				{
-					"name": "Medium",
-					"size": "var(--theme--preset--font-size--medium)",
-					"slug": "medium"
+					"slug": "large",
+					"size": "2.25rem",
+					"name": "Large"
 				},
 				{
-					"name": "Large",
-					"size": "var(--theme--preset--font-size--large)",
-					"slug": "large"
-				},
-				{
-					"name": "Extra Large",
-					"size": "var(--theme--preset--font-size--x-large)",
-					"slug": "x-large"
-				},
-				{
-					"name": "2XL",
-					"size": "var(--theme--preset--font-size--2-x-large)",
-					"slug": "2-x-large"
-				},
-				{
-					"name": "3XL",
-					"size": "var(--theme--preset--font-size--3-x-large)",
-					"slug": "3-x-large"
+					"slug": "x-large",
+					"size": "2.625rem",
+					"name": "Extra Large"
 				}
 			],
-			"fontStyle": false,
-			"fontWeight": false,
-			"letterSpacing": false,
-			"lineHeight": false,
+			"fontStyle": true,
+			"fontWeight": true,
+			"letterSpacing": true,
+			"lineHeight": true,
 			"textDecoration": true,
-			"textTransform": false
+			"textTransform": true
 		},
 		"layout": {
 			"contentSize": "782px",
@@ -125,7 +109,7 @@
 			},
 			"core/button": {
 				"border": {
-					"radius": false
+					"radius": true
 				},
 				"typography": {
 					"fontSizes": []
@@ -139,17 +123,11 @@
 		}
 	},
 	"styles": {
-		"blocks": {},
+		"typography": {
+			"fontSize": "16px"
+		},
 		"spacing": {
 			"blockGap": "2rem"
-		},
-		"elements": {
-			"link": {
-				"border": {},
-				"color": {},
-				"spacing": {},
-				"typography": {}
-			}
 		}
 	}
 }

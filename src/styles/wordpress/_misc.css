@@ -2,7 +2,7 @@
  * Styles and fixes for misc wordpress-generated classes
  */
 
-// "read-more" links
+/* "read-more" links */
 .read-more {
 	color: theme('colors.blue.500');
 
@@ -11,7 +11,7 @@
 	}
 }
 
-// Tailwind and wordpress have conflicting 'sticky' classes
+/* Tailwind and wordpress have conflicting 'sticky' classes */
 .post.sticky {
 	position: relative;
 }

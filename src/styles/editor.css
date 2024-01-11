@@ -1,0 +1,28 @@
+/**
+ *  Salvia Theme - Editor Styles
+ */
+
+/* Common Styles */
+@import 'common/common';
+
+/* Gutenberg blocks */
+@import 'blocks/blocks';
+
+/* Page templates */
+@import 'page_templates/page_templates';
+
+/* Tailwind Utilities */
+@import "tailwindcss/utilities";
+
+/* Custom Utilities */
+@import 'utilities/utilities';
+
+/* Wordpress, Plugin and Misc styles */
+@import 'wordpress/wordpress';
+@import 'misc/misc';
+
+/* Block Editor Additional Styles */
+
+.editor-styles-wrapper {
+	font-family: theme('fontFamily.sans');
+}

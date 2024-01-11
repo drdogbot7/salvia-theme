@@ -1,0 +1,7 @@
+/**
+ * Google Maps Tailwind Fix
+ * https://github.com/tailwindlabs/tailwindcss/issues/484
+ */
+.google-map * {
+	border-style: none;
+}

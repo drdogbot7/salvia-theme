@@ -1,9 +1,7 @@
 {
 	"extends": [
-		"stylelint-config-standard-scss",
-		"stylelint-config-idiomatic-order",
+		"stylelint-config-idiomatic-order"
 	],
-	"customSyntax": "postcss-scss",
 	"rules": {
 		"block-no-empty": null,
 		"no-descending-specificity": null,

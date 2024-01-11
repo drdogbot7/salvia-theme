@@ -3,7 +3,7 @@ import collapse from '@alpinejs/collapse';
 import focus from '@alpinejs/focus';
 import WebFont from 'webfontloader';
 
-import './styles/main.scss';
+import './styles/main.css';
 
 WebFont.load({
 	google: {

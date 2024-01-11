@@ -1,4 +1,4 @@
-import './styles/editor.scss';
+import './styles/editor.css';
 
 /**
  *  Add and Remove block styles

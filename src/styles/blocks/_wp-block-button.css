@@ -18,7 +18,7 @@
 .wp-block-button__link:focus,
 .wp-block-button__link:hover,
 .wp-block-button__link:active {
-	// opacity: 0.8;
+	/*  opacity: 0.8; */
 	text-decoration: none;
 	@apply ring;
 }

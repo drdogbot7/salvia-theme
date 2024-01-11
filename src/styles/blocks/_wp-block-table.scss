@@ -1,7 +1,4 @@
 .wp-block-table td,
 .wp-block-table th {
-	padding: calc(var(--wp--style--block-gap) / 4);
-	border-width: 1px;
-	border-color: theme('colors.gray.200');
-	text-align: left;
+	border-color: theme('colors.gray.300');
 }

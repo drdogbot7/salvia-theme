@@ -1,25 +1,25 @@
 {% extends 'base.twig' %}
 
 {% block content %}
-	<article {{ function('post_class', 'max-w-screen-md mx-auto') }}>
-		<header>
+	<article {{ function('post_class', '') }}>
+		<header class="max-w-screen-md mx-auto">
 			<h1 class="text-3xl">
 				{{ post.title }}
 			</h1>
-			<div class="text-sm text-gray-400">
-				{% include 'meta.twig' with {
-					post: post
-				} %}
+			<div class="mt-4">
+				{% include 'meta.twig' %}
+				{% if post.edit_link %}
+					<a class="text-primary underline" href="{{ post.edit_link }}">edit</a>
+				{% endif %}
 			</div>
-			{% if post.edit_link %}
-				<a class="underline text-primary" href="{{ post.edit_link }}">edit</a>
-			{% endif %}
 		</header>
-		<div class="mt-8 content">
-		{{ post.pagination ? post.paged_content : post.content }}
+		<div class="content space-y-wp-gap mt-wp-gap">
+			{{ post.pagination ? post.paged_content : post.content }}
 		</div>
 		{% if post.pagination %}
-			{% include 'pagination.twig' with { pagination: post.pagination }  %}
+			{% include 'pagination.twig' with {
+				pagination: post.pagination
+			} %}
 		{% endif %}
 	</article>
 {% endblock %}

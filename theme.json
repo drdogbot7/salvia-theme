@@ -62,7 +62,14 @@
 			"blockGap": true,
 			"margin": true,
 			"padding": true,
-			"units": ["rem"]
+			"units": ["rem"],
+			"spacingScale": {
+				"operator": "+",
+				"increment": 0.5,
+				"steps": 8,
+				"mediumStep": 2,
+				"unit": "rem"
+			}
 		},
 		"typography": {
 			"customFontSize": true,
@@ -102,17 +109,9 @@
 			"wideSize": "1080px"
 		},
 		"blocks": {
-			"core/heading": {
-				"typography": {
-					"fontSizes": []
-				}
-			},
 			"core/button": {
 				"border": {
-					"radius": true
-				},
-				"typography": {
-					"fontSizes": []
+					"radius": false
 				}
 			},
 			"core/separator": {
@@ -128,6 +127,7 @@
 		},
 		"spacing": {
 			"blockGap": "2rem"
-		}
+		},
+		"elements": {}
 	}
 }

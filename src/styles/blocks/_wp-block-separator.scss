@@ -1,4 +1,8 @@
 .wp-block-separator {
+	--wp--style--block-gap: 4rem;
+
+	border-color: theme('colors.gray.300');
+	border-top-width: 1px;
 	border-bottom-width: 0; // override tailwindcss base, because Wordpress block editor uses top border.
-	margin-block: calc(2 * var(--wp--style--block-gap));
+	margin-bottom: var(--wp--style--block-gap);
 }

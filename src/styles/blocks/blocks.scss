@@ -10,16 +10,6 @@
 @import 'wp-block-separator';
 @import 'wp-block-table';
 
-/**
- * block spacing
- * Using default block gap setting from theme.json
- * 
- * :where used to reduce specificity
- */
-.content :where([class*='wp-block-']:not(:first-child)) {
-	margin-top: var(--wp--style--block-gap);
-}
-
 .editor-styles-wrapper {
 	font-family: theme('fontFamily.sans');
 }

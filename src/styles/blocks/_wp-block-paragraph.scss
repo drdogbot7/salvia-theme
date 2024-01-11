@@ -9,10 +9,7 @@
 
 .editor-styles-wrapper :where(p:not(:first-child)),
 .content :where(p:not(:first-child)) {
-	margin-top: var(--wp--style--block-gap);
-}
+	--wp--style--block-gap: 1rem;
 
-.editor-styles-wrapper :where(p + p),
-.content :where(p + p) {
-	margin-top: calc(var(--wp--style--block-gap) / 2);
+	margin-top: var(--wp--style--block-gap);
 }

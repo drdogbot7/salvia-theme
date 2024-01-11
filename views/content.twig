@@ -1,24 +1,35 @@
-<article class="
+{% set sticky = fn('is_sticky') %}
+
+<article class="max-w-content mx-auto 
 	{{ fn('get_post_class')|join(' ') }}
-	{{
-	fn('is_sticky')
-		? ' border border-black p-2'
-		: ''
-	}}
+
 ">
-	<header>
-		<h2 class="font-display mb-0 text-2xl">
-			<a class="text-primary hover:underline" href="{{ post.link }}">
-				{{ post.title }}
+	<div class="space-y-4 {{
+		sticky
+			? ' border border-gray-400 p-wp-gap  bg-gray-50'
+			: ''
+		}}">
+		{% if post.thumbnail.src %}
+			<a class="" href="{{ post.link }}">
+				<img src="{{ post.thumbnail.src('large') }}"
+					class="max-w-full"
+					alt="Image for {{ post.title }}" />
 			</a>
-		</h2>
-		<div class="text-sm text-gray-400">
-			{% include 'meta.twig' with {
-				post: post
-			} %}
+		{% endif %}
+		<div class="">
+			<header>
+				<h2 class="font-display text-wp-large mb-0">
+					<a class="text-primary hover:underline" href="{{ post.link }}">
+						{{ post.title }}
+					</a>
+				</h2>
+				<div class="text-sm">
+					{% include 'meta.twig' %}
+				</div>
+			</header>
+			<div class="mt-2">
+				{{ post.excerpt }}
+			</div>
 		</div>
-	</header>
-	<div class="mt-2 text-sm">
-		{{ post.excerpt }}
 	</div>
 </article>

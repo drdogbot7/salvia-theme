@@ -4,7 +4,7 @@
  * This is kludgy, but Tailwindcss preflight removes all default link styles.
  */
 
-.content :where(a:any-link) {
+.content :where(a:any-link:not(.wp-block-button__link)) {
 	color: theme('colors.blue.500');
 }
 

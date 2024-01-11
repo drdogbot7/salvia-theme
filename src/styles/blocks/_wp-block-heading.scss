@@ -2,46 +2,34 @@
  * 
  * Block Editor headings
  * 
- * Unfortunately these don't have classes by default >:(
- * Using :where selector to reduce specificity
  */
 
-.editor-styles-wrapper :where(h1, h2, h3, h4, h5, h6),
-.content :where(h1, h2, h3, h4, h5, h6) {
+.wp-block-heading {
 	font-family: theme('fontFamily.display');
+
+	--wp--style--block-gap: 1.5em;
 }
 
-.editor-styles-wrapper :where(:is(h1, h2, h3, h4, h5, h6):not(:first-child)),
-.content :where(:is(h1, h2, h3, h4, h5, h6):not(:first-child)) {
-	margin-top: 1.5em;
-}
-
-.editor-styles-wrapper :where(h1),
-.content :where(h1) {
+h1.wp-block-heading {
 	@apply text-6xl;
 }
 
-.editor-styles-wrapper :where(h2),
-.content :where(h2) {
+h2.wp-block-heading {
 	@apply text-4xl;
 }
 
-.editor-styles-wrapper :where(h3),
-.content :where(h3) {
+h3.wp-block-heading {
 	@apply text-2xl;
 }
 
-.editor-styles-wrapper :where(h4),
-.content :where(h4) {
+h4.wp-block-heading {
 	@apply text-xl;
 }
 
-.editor-styles-wrapper :where(h5),
-.content :where(h5) {
+h5.wp-block-heading {
 	@apply text-lg;
 }
 
-.editor-styles-wrapper :where(h6),
-.content :where(h6) {
+h6.wp-block-heading {
 	@apply text-base;
 }

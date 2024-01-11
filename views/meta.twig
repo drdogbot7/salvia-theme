@@ -1,4 +1,23 @@
+{% set categories = post.categories() %}
+{% set tags = post.tags() %}
+
 <span>By</span>
 <a href="{{ post.author.path }}">{{ post.author.name }}</a>
 <span>|</span>
 <time datetime="{{ post.date|date('Y-m-d H:i:s') }}">{{ post.date }}</time>
+<div>
+	<span class="italic">Posted in:</span>
+	{% for term in categories %}
+		<a class="hover:underline" href="{{ term.link }}">{{ term.title }}</a>
+		{{ not loop.last ? 1 == loop.revindex0 ? ' and ' : ', ' }}
+	{% endfor %}
+</div>
+{% if tags %}
+	<div>
+		<span class="italic">Tagged:</span>
+		{% for term in tags %}
+			<a class="hover:underline" href="{{ term.link }}">{{ term.title }}</a>
+			{{ not loop.last ? 1 == loop.revindex0 ? ' and ' : ', ' }}
+		{% endfor %}
+	</div>
+{% endif %}

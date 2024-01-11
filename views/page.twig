@@ -1,13 +1,17 @@
 {% extends 'base.twig' %}
 
 {% block content %}
-	<article {{ function('post_class', 'max-w-screen-md mx-auto') }}>
-		<header class="{{ post.hide_title == 'true' ? 'hidden' : '' }}">
-			<h1 class="text-3xl font-display">
+	<article {{ function('post_class', '') }}>
+		<header class="max-w-content mx-auto {{
+			post.hide_title == 'true'
+				? 'hidden'
+				: ''
+			}}">
+			<h1 class="font-display text-3xl">
 				{{ post.title }}
 			</h1>
 		</header>
-		<div class="mt-8 content">
+		<div class="content space-y-wp-gap mt-8">
 			{{ post.content }}
 		</div>
 	</article>
